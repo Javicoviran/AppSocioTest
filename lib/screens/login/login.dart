@@ -10,57 +10,62 @@ class Login extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        const CoviBar(),
-        const BaseAppBar(title: "Área Pública"),
-        Container(
-          height: hJM(25),
-          width: double.infinity,
-          color: CommonTheme.backgroundColor,
-          child: Image.asset('assets/images/truck_left.jpg',fit: BoxFit.fitWidth,),
-        ),
-        const LoginBanner(
-          text: "QUIÉNES SOMOS",
-        ),
-        const LoginBanner(
-          text: "QUIERE SER SOCIO",
-        ),
-        const LoginBanner(
-          text: "ÁREA PRIVADA",
-        ),
-        Expanded(
-          child: Container(
-            margin: EdgeInsets.all(wJM(4)),
+    return Scaffold(
+      body: Column(
+        children: [
+          const CoviBar(),
+          const BaseAppBar(title: "Área Pública"),
+          Container(
+            height: hJM(25),
             width: double.infinity,
-            child: const Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Icon(Icons.phone, color: AppColors.lightGreen600),
-                Icon(Icons.mail, color: AppColors.lightGreen600),
-                Icon(Icons.social_distance, color: AppColors.lightGreen600),
-              ],
+            color: CommonTheme.backgroundColor,
+            child: Image.asset(
+              'assets/images/truck_left.jpg',
+              fit: BoxFit.fitWidth,
             ),
           ),
-        ),
-        SizedBox(
-          height: hJM(10),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              Text("COVIRAN S.C.A", style: CommonTheme.bodyLarge),
-              Row(
+          const LoginBanner(
+            text: "QUIÉNES SOMOS",
+          ),
+          const LoginBanner(
+            text: "QUIERE SER SOCIO",
+          ),
+          const LoginBanner(
+            text: "ÁREA PRIVADA",
+          ),
+          Expanded(
+            child: Container(
+              margin: EdgeInsets.all(wJM(4)),
+              width: double.infinity,
+              child: const Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  const Icon(
-                    Icons.phone,
-                  ),
-                  Text("901 116 955", style: CommonTheme.bodyLarge),
+                  Icon(Icons.phone, color: AppColors.lightGreen600),
+                  Icon(Icons.mail, color: AppColors.lightGreen600),
+                  Icon(Icons.social_distance, color: AppColors.lightGreen600),
                 ],
               ),
-            ],
+            ),
           ),
-        )
-      ],
+          SizedBox(
+            height: hJM(10),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Text("COVIRAN S.C.A", style: CommonTheme.bodyLarge),
+                Row(
+                  children: [
+                    const Icon(
+                      Icons.phone,
+                    ),
+                    Text("901 116 955", style: CommonTheme.bodyLarge),
+                  ],
+                ),
+              ],
+            ),
+          )
+        ],
+      ),
     );
   }
 }
@@ -88,9 +93,9 @@ class LoginBanner extends StatelessWidget {
           ),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.25),
-              spreadRadius: 10,
-              blurRadius: 10,
+              color: Colors.black.withOpacity(0.2),
+              spreadRadius: 5,
+              blurRadius: 5,
               offset: const Offset(0, 0),
             ),
           ],
@@ -98,7 +103,7 @@ class LoginBanner extends StatelessWidget {
         child: Center(
           child: Text(
             text,
-            style: CommonTheme.titleLarge.copyWith(fontWeight: FontWeight.normal, color: CommonTheme.backgroundColor),
+            style: CommonTheme.titleLarge.copyWith(fontWeight: FontWeight.normal, color: CommonTheme.darkButtonTextColor),
           ),
         ),
       ),
