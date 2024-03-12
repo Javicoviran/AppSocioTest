@@ -15,62 +15,46 @@ class Login extends StatelessWidget {
         const CoviBar(),
         const BaseAppBar(title: "Área Pública"),
         Container(
-          //Todo Cambiar por una imagen
           height: hJM(25),
+          width: double.infinity,
           color: CommonTheme.backgroundColor,
+          child: Image.asset('assets/images/truck_left.jpg',fit: BoxFit.fitWidth,),
         ),
-         const LoginBanner(
+        const LoginBanner(
           text: "QUIÉNES SOMOS",
-          elevation: 0,
         ),
-         const LoginBanner(
+        const LoginBanner(
           text: "QUIERE SER SOCIO",
-          elevation: 10,
         ),
-         const LoginBanner(
+        const LoginBanner(
           text: "ÁREA PRIVADA",
-          elevation: 20,
         ),
         Expanded(
           child: Container(
             margin: EdgeInsets.all(wJM(4)),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),
-              color: AppColors.green800,
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black.withOpacity(0.15),
-                  spreadRadius: 10,
-                  blurRadius: 10,
-                  offset: const Offset(0, 0), 
-                ),
-              ],
-            ),
             width: double.infinity,
             child: const Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Icon(Icons.mail, color: CommonTheme.backgroundColor),
-                Icon(Icons.mail, color: CommonTheme.backgroundColor),
-                Icon(Icons.mail, color: CommonTheme.backgroundColor),
+                Icon(Icons.phone, color: AppColors.lightGreen600),
+                Icon(Icons.mail, color: AppColors.lightGreen600),
+                Icon(Icons.social_distance, color: AppColors.lightGreen600),
               ],
             ),
           ),
         ),
-        Container(
-          color: AppColors.olive2,
+        SizedBox(
           height: hJM(10),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              Text("COVIRAN S.C.A", style: CommonTheme.bodyLarge.copyWith(color: CommonTheme.backgroundColor)),
+              Text("COVIRAN S.C.A", style: CommonTheme.bodyLarge),
               Row(
                 children: [
                   const Icon(
                     Icons.phone,
-                    color: CommonTheme.backgroundColor,
                   ),
-                  Text("901 116 955", style: CommonTheme.bodyLarge.copyWith(color: CommonTheme.backgroundColor)),
+                  Text("901 116 955", style: CommonTheme.bodyLarge),
                 ],
               ),
             ],
@@ -83,33 +67,38 @@ class Login extends StatelessWidget {
 
 class LoginBanner extends StatelessWidget {
   final String text;
-  final double elevation;
 
-  const LoginBanner({super.key, required this.text, required this.elevation});
+  const LoginBanner({super.key, required this.text});
 
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      child: Material(
-        elevation: elevation,
-        child: Container(
-          width: double.infinity,
-          decoration: BoxDecoration(
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withOpacity(0.15),
-                spreadRadius: 10,
-                blurRadius: 10,
-                offset: const Offset(0, -10),
-              ),
+      child: Container(
+        width: double.infinity,
+        margin: EdgeInsets.all(wJM(4)),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10),
+          gradient: const LinearGradient(
+            begin: Alignment.centerLeft,
+            end: Alignment.centerRight,
+            colors: [
+              AppColors.lightGreen500,
+              AppColors.lightGreen800,
             ],
-            color: CommonTheme.primaryColor,
           ),
-          child: Center(
-            child: Text(
-              text,
-              style: CommonTheme.titleLarge.copyWith(fontWeight: FontWeight.normal, color: CommonTheme.backgroundColor),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.25),
+              spreadRadius: 10,
+              blurRadius: 10,
+              offset: const Offset(0, 0),
             ),
+          ],
+        ),
+        child: Center(
+          child: Text(
+            text,
+            style: CommonTheme.titleLarge.copyWith(fontWeight: FontWeight.normal, color: CommonTheme.backgroundColor),
           ),
         ),
       ),

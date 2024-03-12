@@ -1,5 +1,4 @@
 import 'package:app_socio_test/helpers/screen_functions.dart';
-import 'package:app_socio_test/styles/colors.dart';
 import 'package:app_socio_test/styles/theme.dart';
 import 'package:flutter/material.dart';
 
@@ -17,7 +16,6 @@ class BaseAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: AppColors.olive2,
         border: Border.all(
           width: 0,
           color: Colors.transparent,
@@ -32,7 +30,7 @@ class BaseAppBar extends StatelessWidget {
               padding: EdgeInsets.only(left: back ? 0 : wJM(3)),
               child: Text(
                 title,
-                style: CommonTheme.appBarTextStyle,
+                style: CommonTheme.appBarTextStyle.copyWith(color: CommonTheme.statusBarColor),
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
               ),
