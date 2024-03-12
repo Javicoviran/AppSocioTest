@@ -66,7 +66,7 @@ class CommonTheme {
   static TextStyle displayMedium = TextStyle(fontSize: 45.sp);
   static TextStyle displayLarge = TextStyle(fontSize: 57.sp);
 
-  static final appBarTextStyle = titleLarge.copyWith(color: darkButtonTextColor);
+  static final appBarTextStyle = titleLarge.copyWith(color: statusBarColor);
   static final searchMapAppBarTextStyle = bodyLarge.copyWith(color: darkButtonTextColor);
 
   static final cardBodyTextStyle = bodyMedium.copyWith(fontWeight: FontWeight.bold, color: textColor);

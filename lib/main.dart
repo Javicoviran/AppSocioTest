@@ -1,8 +1,9 @@
 import 'package:app_socio_test/helpers/extensions.dart';
 import 'package:app_socio_test/helpers/myscreenutils.dart';
-import 'package:app_socio_test/screens/login/login.dart';
 import 'package:app_socio_test/styles/theme.dart';
 import 'package:flutter/material.dart';
+
+import 'screens/profile/presentation/widgets/my_profile.dart';
 
 void main() {
   runApp(const MyApp());
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
         title: 'App Empleados',
         debugShowCheckedModeBanner: false,
         theme: appThemeData,
-        home: const Material(child: Login()),
+        home: const Material(child: MyProfile()),
       ),
     );
   }
