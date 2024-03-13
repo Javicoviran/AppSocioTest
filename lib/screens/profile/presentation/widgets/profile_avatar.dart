@@ -5,10 +5,10 @@ import 'package:app_socio_test/widgets/loading_shimmer.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
-class MyProfileAvatar extends StatelessWidget {
+class ProfileAvatar extends StatelessWidget {
   final String userImage;
 
-  const MyProfileAvatar({
+  const ProfileAvatar({
     super.key,
     required this.userImage,
   });
@@ -40,6 +40,7 @@ class MyProfileAvatar extends StatelessWidget {
   }
 }
 
+// TODO: personaldataimageview
 // GestureDetector(
 //       onTap: () {
 //         // if (Navigator.canPop(context)) {

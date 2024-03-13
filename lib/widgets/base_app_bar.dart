@@ -22,10 +22,13 @@ class BaseAppBar extends StatelessWidget {
       height: CommonTheme.appBarHeight,
       child: Row(
         children: [
-          Icon(
-            Icons.arrow_back_ios_new_outlined,
-            color: CommonTheme.statusBarColor,
-            size: hJM(3.5),
+          Padding(
+            padding: EdgeInsets.all(wJM(2)),
+            child: Icon(
+              Icons.arrow_back_ios_new_outlined,
+              color: CommonTheme.statusBarColor,
+              size: hJM(3.5),
+            ),
           ),
           SizedBox(width: wJM(2)),
           Expanded(
@@ -34,7 +37,7 @@ class BaseAppBar extends StatelessWidget {
               child: Text(
                 title,
                 style: CommonTheme.appBarTextStyle,
-                textAlign: TextAlign.center,
+                // textAlign: TextAlign.center,
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
               ),
