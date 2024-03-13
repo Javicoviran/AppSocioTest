@@ -2,12 +2,12 @@ import 'package:app_socio_test/helpers/screen_functions.dart';
 import 'package:app_socio_test/styles/colors.dart';
 import 'package:flutter/material.dart';
 
-class ProfileListItem extends StatelessWidget {
+class ProfileActionListItem extends StatelessWidget {
   final String text;
   final IconData icon;
   final void Function() onTap;
 
-  const ProfileListItem({
+  const ProfileActionListItem({
     super.key,
     required this.text,
     required this.icon,

@@ -18,24 +18,37 @@ class ProfileContact extends StatelessWidget {
           child: Padding(
             padding: EdgeInsets.all(wJM(4)),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Image.asset(errorNetwork, height: hJM(30)),
                 SizedBox(height: hJM(2)),
-                const ProfileContactField(
-                  title: 'CASC',
-                  schedule: 'Horario de lunes a viernes de 8 a 21 horas y sábados de 8 a 20',
-                  phoneNumber: '958 80 83 00',
-                  email: 'atencionalcliente@coviran.es',
+                Container(
+                  height: hJM(33),
+                  padding: EdgeInsets.all(wJM(3)),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10.0),
+                    border: Border.all(color: CommonTheme.primaryColor),
+                  ),
+                  child: const ProfileContactField(
+                    title: 'CASC',
+                    schedule: 'Horario de lunes a viernes de 8 a 21 horas y sábados de 8 a 20',
+                    phoneNumber: '958 80 83 00',
+                    email: 'atencionalcliente@coviran.es',
+                  ),
                 ),
-                SizedBox(height: hJM(2)),
-                const Divider(height: 0, color: CommonTheme.dividerColor),
-                SizedBox(height: hJM(2)),
-                const ProfileContactField(
-                  title: 'HELPDESK',
-                  schedule: 'Horario de lunes a viernes de 8 a 20 horas y sábados de 8 a 20 horas',
-                  phoneNumber: '958 80 83 17',
-                  email: 'consultacoviges@coviges.es',
+                SizedBox(height: hJM(3)),
+                Container(
+                  height: hJM(33),
+                  padding: EdgeInsets.all(wJM(3)),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10.0),
+                    border: Border.all(color: CommonTheme.primaryColor),
+                  ),
+                  child: const ProfileContactField(
+                    title: 'HELPDESK',
+                    schedule: 'Horario de lunes a viernes de 8 a 20 horas y sábados de 8 a 20 horas',
+                    phoneNumber: '958 80 83 17',
+                    email: 'consultacoviges@coviges.es',
+                  ),
                 ),
               ],
             ),

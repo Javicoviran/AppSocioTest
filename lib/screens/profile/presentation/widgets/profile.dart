@@ -4,7 +4,8 @@ import 'package:app_socio_test/screens/profile/presentation/helpers/utils.dart';
 import 'package:app_socio_test/screens/profile/presentation/widgets/personal_data.dart';
 import 'package:app_socio_test/screens/profile/presentation/widgets/profile_avatar.dart';
 import 'package:app_socio_test/screens/profile/presentation/widgets/profile_contact.dart';
-import 'package:app_socio_test/screens/profile/presentation/widgets/profile_list_item.dart';
+import 'package:app_socio_test/screens/profile/presentation/widgets/profile_action_list_item.dart';
+import 'package:app_socio_test/screens/profile/presentation/widgets/profile_shop_info.dart';
 import 'package:app_socio_test/styles/colors.dart';
 import 'package:app_socio_test/styles/theme.dart';
 import 'package:app_socio_test/widgets/base_app_bar.dart';
@@ -115,11 +116,15 @@ class _ProfileShopsList extends StatelessWidget {
                         ),
                         SizedBox(width: wJM(2)),
                         BaseButton(
+                          width: wJM(36),
                           text: 'Información',
                           buttonTextColor: AppColors.green800,
                           backgroundColor: CommonTheme.backgroundColor,
                           borderStyle: AppColors.green800,
-                          width: wJM(36),
+                          onClick: () => Navigator.push(
+                            context,
+                            fadeTransitionRoute(const ProfileShopInfo()),
+                          ),
                         ),
                       ],
                     ),
@@ -142,9 +147,9 @@ class _ProfileActionsList extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        ProfileListItem(text: 'Portal del socio', icon: Icons.web_rounded, onTap: () => {}),
-        ProfileListItem(text: 'e-Factura', icon: Icons.blinds_closed_sharp, onTap: () => {}),
-        ProfileListItem(
+        ProfileActionListItem(text: 'Portal del socio', icon: Icons.web_rounded, onTap: () => {}),
+        ProfileActionListItem(text: 'e-Factura', icon: Icons.blinds_closed_sharp, onTap: () => {}),
+        ProfileActionListItem(
           text: 'Contacto Covirán',
           icon: Icons.phone_rounded,
           onTap: () => Navigator.push(
@@ -153,7 +158,7 @@ class _ProfileActionsList extends StatelessWidget {
           ),
         ),
         // TODO: configuración too long?
-        ProfileListItem(text: 'Ajustes', icon: Icons.settings_rounded, onTap: () => {}),
+        ProfileActionListItem(text: 'Ajustes', icon: Icons.settings_rounded, onTap: () => {}),
       ],
     );
   }
