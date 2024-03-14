@@ -1,11 +1,6 @@
-import 'package:app_socio_test/helpers/screen_functions.dart';
-import 'package:app_socio_test/styles/colors.dart';
 import 'package:app_socio_test/styles/theme.dart';
 import 'package:app_socio_test/widgets/base_app_bar.dart';
-import 'package:app_socio_test/widgets/base_button.dart';
 import 'package:app_socio_test/widgets/covi_bar.dart';
-import 'package:app_socio_test/widgets/input.dart';
-import 'package:app_socio_test/widgets/input_pass.dart';
 import 'package:flutter/material.dart';
 
 class PurchasesMenu extends StatelessWidget {

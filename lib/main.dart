@@ -1,10 +1,6 @@
 import 'package:app_socio_test/helpers/extensions.dart';
 import 'package:app_socio_test/helpers/myscreenutils.dart';
-import 'package:app_socio_test/screens/login/log_out.dart';
-import 'package:app_socio_test/screens/login/login.dart';
-import 'package:app_socio_test/screens/login/sig_in.dart';
 import 'package:app_socio_test/screens/mailbox/widgets/mailbox.dart';
-import 'package:app_socio_test/screens/purchases/purchases_menu.dart';
 import 'package:app_socio_test/styles/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -30,7 +26,7 @@ class MyApp extends StatelessWidget {
         title: 'App Empleados',
         debugShowCheckedModeBanner: false,
         theme: appThemeData,
-        home: const Material(child: PurchasesMenu()),
+        home: const Material(child: MailBox()),
       ),
     );
   }

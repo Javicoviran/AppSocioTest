@@ -1,6 +1,5 @@
 import 'package:app_socio_test/helpers/size_extenseion.dart';
 import 'package:app_socio_test/styles/colors.dart';
-import 'package:app_socio_test/styles/theme.dart';
 import 'package:flutter/material.dart';
 
 class MailboxTabsItem extends StatelessWidget {

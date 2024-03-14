@@ -1,7 +1,6 @@
 import 'package:app_socio_test/screens/mailbox/helpers/constant.dart';
 import 'package:app_socio_test/screens/mailbox/providers/mailbox_controller_provider.dart';
 import 'package:app_socio_test/screens/mailbox/widgets/mailbox_tabs_item.dart';
-import 'package:app_socio_test/styles/colors.dart';
 import 'package:app_socio_test/styles/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';

@@ -1,5 +1,4 @@
 import 'package:app_socio_test/helpers/screen_functions.dart';
-import 'package:app_socio_test/styles/colors.dart';
 import 'package:app_socio_test/styles/theme.dart';
 import 'package:flutter/material.dart';
 
