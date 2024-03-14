@@ -54,7 +54,7 @@ class BaseButton extends StatelessWidget {
         ),
         foregroundDecoration: BoxDecoration(
           borderRadius: BorderRadius.circular(50),
-          border: Border.all(color: borderStyle),
+          border: Border.all(color: borderStyle)
         ),
         child: Visibility(
           visible: loading,

@@ -1,9 +1,10 @@
 import 'package:app_socio_test/helpers/extensions.dart';
 import 'package:app_socio_test/helpers/myscreenutils.dart';
-import 'package:app_socio_test/screens/mailbox/widgets/mailbox.dart';
 import 'package:app_socio_test/styles/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+import 'screens/profile/presentation/widgets/profile.dart';
 
 void main() {
   runApp(const ProviderScope(child: MyApp()));
@@ -23,10 +24,10 @@ class MyApp extends StatelessWidget {
             child: widget!,
           );
         },
-        title: 'App Empleados',
+        title: 'App Socios Prueba',
         debugShowCheckedModeBanner: false,
         theme: appThemeData,
-        home: const Material(child: MailBox()),
+        home: const Material(child: Profile()),
       ),
     );
   }

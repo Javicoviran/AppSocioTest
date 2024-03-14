@@ -16,21 +16,28 @@ class BaseAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        border: Border.all(
-          width: 0,
-          color: Colors.transparent,
-        ),
+        color: CommonTheme.backgroundColor,
+        border: Border.all(width: 0, color: Colors.transparent),
       ),
       height: CommonTheme.appBarHeight,
       child: Row(
         children: [
+          Padding(
+            padding: EdgeInsets.all(wJM(2)),
+            child: Icon(
+              Icons.arrow_back_ios_new_outlined,
+              color: CommonTheme.statusBarColor,
+              size: hJM(3.5),
+            ),
+          ),
           SizedBox(width: wJM(2)),
           Expanded(
             child: Padding(
               padding: EdgeInsets.only(left: back ? 0 : wJM(3)),
               child: Text(
                 title,
-                style: CommonTheme.appBarTextStyle.copyWith(color: CommonTheme.statusBarColor),
+                style: CommonTheme.appBarTextStyle,
+                // textAlign: TextAlign.center,
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
               ),
