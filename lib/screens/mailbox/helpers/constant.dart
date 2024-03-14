@@ -7,13 +7,13 @@ import 'package:flutter/material.dart';
 const mailboxPages = [News(), Mails(), Notifications()];
 
 final mailboxItems = [
-  MailBoxItem(iconData: Icons.newspaper),
+  MailBoxItem(iconData: Icons.auto_stories),
   MailBoxItem(iconData: Icons.mail),
   MailBoxItem(iconData: Icons.notifications),
 ];
 
 final mailboxItemsSelected = [
-  MailBoxItem(iconData: Icons.newspaper_outlined),
+  MailBoxItem(iconData: Icons.auto_stories_outlined),
   MailBoxItem(iconData: Icons.mail_outlined),
   MailBoxItem(iconData: Icons.notifications_none),
 ];
