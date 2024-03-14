@@ -20,7 +20,7 @@ class ProfileActionListItem extends StatelessWidget {
       onTap: onTap,
       child: SizedBox(
         height: hJM(19),
-        width: wJM(23),
+        width: wJM(22),
         child: Column(
           children: [
             Container(

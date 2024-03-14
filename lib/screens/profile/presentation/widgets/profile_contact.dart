@@ -1,5 +1,5 @@
 import 'package:app_socio_test/helpers/screen_functions.dart';
-import 'package:app_socio_test/screens/profile/presentation/helpers/constants.dart';
+import 'package:app_socio_test/helpers/constants.dart';
 import 'package:app_socio_test/screens/profile/presentation/widgets/profile_contact_field.dart';
 import 'package:app_socio_test/styles/theme.dart';
 import 'package:app_socio_test/widgets/base_app_bar.dart';

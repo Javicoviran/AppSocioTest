@@ -1,5 +1,5 @@
 import 'package:app_socio_test/helpers/screen_functions.dart';
-import 'package:app_socio_test/screens/profile/presentation/helpers/constants.dart';
+import 'package:app_socio_test/helpers/constants.dart';
 import 'package:app_socio_test/screens/profile/presentation/widgets/profile_base_field.dart';
 import 'package:app_socio_test/screens/profile/presentation/widgets/profile_contact_field.dart';
 import 'package:app_socio_test/styles/theme.dart';
@@ -8,6 +8,8 @@ import 'package:app_socio_test/widgets/body.dart';
 import 'package:flutter/material.dart';
 
 class ProfileShopInfo extends StatelessWidget {
+  // final ProfileShopInfoModel shopInfo;
+
   const ProfileShopInfo({super.key});
 
   @override
@@ -15,7 +17,7 @@ class ProfileShopInfo extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         body: Body(
-          appBar: const BaseAppBar(title: 'Mis tiendas', back: true),
+          appBar: const BaseAppBar(title: 'Mi tienda', back: true),
           child: SingleChildScrollView(
             physics: const ClampingScrollPhysics(),
             child: Column(
@@ -54,9 +56,6 @@ class ProfileShopInfo extends StatelessWidget {
                         title: 'Plataforma',
                         specialContent: _ShopInfoPlatformWidget(),
                       ),
-                      const Divider(height: 0, color: CommonTheme.dividerColor),
-                      SizedBox(height: hJM(2)),
-                      const ProfileBaseField(title: 'Fecha de incorporación', content: '08/01/1988 12:00:00'),
                       const Divider(height: 0, color: CommonTheme.dividerColor),
                       SizedBox(height: hJM(2)),
                       Row(
@@ -161,6 +160,8 @@ class ProfileShopInfo extends StatelessWidget {
 }
 
 class _ShopInfoPlatformWidget extends StatelessWidget {
+  // final InventLocationModel platform;
+
   const _ShopInfoPlatformWidget();
 
   @override

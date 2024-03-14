@@ -1,11 +1,12 @@
 import 'package:app_socio_test/helpers/screen_functions.dart';
-import 'package:app_socio_test/screens/profile/presentation/helpers/constants.dart';
+import 'package:app_socio_test/helpers/constants.dart';
 import 'package:app_socio_test/screens/profile/presentation/helpers/utils.dart';
 import 'package:app_socio_test/screens/profile/presentation/widgets/personal_data.dart';
 import 'package:app_socio_test/screens/profile/presentation/widgets/profile_avatar.dart';
 import 'package:app_socio_test/screens/profile/presentation/widgets/profile_contact.dart';
 import 'package:app_socio_test/screens/profile/presentation/widgets/profile_action_list_item.dart';
 import 'package:app_socio_test/screens/profile/presentation/widgets/profile_shop_info.dart';
+import 'package:app_socio_test/screens/settings/presentation/widgets/settings.dart';
 import 'package:app_socio_test/styles/colors.dart';
 import 'package:app_socio_test/styles/theme.dart';
 import 'package:app_socio_test/widgets/base_app_bar.dart';
@@ -21,11 +22,11 @@ class Profile extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         body: Body(
-          appBar: const BaseAppBar(title: 'My perfil'),
+          appBar: const BaseAppBar(title: 'Mi perfil'),
           child: SingleChildScrollView(
             physics: const ClampingScrollPhysics(),
             child: Padding(
-              padding: EdgeInsets.all(wJM(4)),
+              padding: EdgeInsets.all(wJM(5)),
               child: Column(
                 children: [
                   const _ProfilePersonalDataPreview(),
@@ -46,7 +47,9 @@ class Profile extends StatelessWidget {
 }
 
 class _ProfileShopsList extends StatelessWidget {
-  const _ProfileShopsList();
+  // final ProfileShopCardModel shopCardModel;
+
+  const _ProfileShopsList(/*{required this.shopCardModel}*/);
 
   @override
   Widget build(BuildContext context) {
@@ -158,24 +161,33 @@ class _ProfileActionsList extends StatelessWidget {
           ),
         ),
         // TODO: configuración too long?
-        ProfileActionListItem(text: 'Ajustes', icon: Icons.settings_rounded, onTap: () => {}),
+        ProfileActionListItem(
+          text: 'Ajustes',
+          icon: Icons.settings_rounded,
+          onTap: () => Navigator.push(
+            context,
+            fadeTransitionRoute(const Settings()),
+          ),
+        ),
       ],
     );
   }
 }
 
 class _ProfilePersonalDataPreview extends StatelessWidget {
-  const _ProfilePersonalDataPreview();
+  // final PersonalDataPreviewModel previewModel;
+
+  const _ProfilePersonalDataPreview(/*{required this.previewModel}*/);
 
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         const ProfileAvatar(userImage: profileAvatarImage),
-        SizedBox(width: wJM(2)),
         SizedBox(
-          height: wJM(18) * 2,
+          height: wJM(17) * 2,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
