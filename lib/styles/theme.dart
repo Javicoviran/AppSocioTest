@@ -28,7 +28,7 @@ class CommonTheme {
   static const secondaryColor = AppColors.antracit;
   static const statusBarColor = AppColors.black;
   static const systemNavigationBarColor = AppColors.black;
-  static const backgroundColor = AppColors.grey100;
+  static const backgroundColor = AppColors.whitesmoke;
   static const textColor = AppColors.antracit;
   static const secondaryTextColor = AppColors.gray;
   static const darkButtonTextColor = AppColors.white;

@@ -41,7 +41,6 @@ class BaseAppBar extends StatelessWidget {
               child: Text(
                 title,
                 style: CommonTheme.appBarTextStyle,
-                // textAlign: TextAlign.center,
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
               ),
