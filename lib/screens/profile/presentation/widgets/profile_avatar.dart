@@ -39,16 +39,3 @@ class ProfileAvatar extends StatelessWidget {
     );
   }
 }
-
-// TODO: personaldataimageview
-// GestureDetector(
-//       onTap: () {
-//         // if (Navigator.canPop(context)) {
-//         //   Navigator.push(
-//         //     context,
-//         //     fadeTransitionRoute(
-//         //       PersonalDataImageView(userImage: userImage),
-//         //     ),
-//         //   );
-//         // }
-//       },

@@ -110,7 +110,6 @@ class ProfileShopInfo extends StatelessWidget {
                       const ProfileBaseField(title: 'Contacto Covirán', content: 'ROSA MILAN RUIZ'),
                       const Divider(height: 0, color: CommonTheme.dividerColor),
                       SizedBox(height: hJM(2)),
-                      // const _ShopInfoActions(),
                     ],
                   ),
                 )
@@ -118,46 +117,6 @@ class ProfileShopInfo extends StatelessWidget {
             ),
           ),
         ),
-      ),
-    );
-  }
-}
-
-class _ShopInfoActions extends StatelessWidget {
-  const _ShopInfoActions();
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: hJM(30),
-      color: Colors.blueAccent,
-      child: GridView.count(
-        shrinkWrap: true,
-        crossAxisCount: 2,
-        mainAxisSpacing: wJM(2),
-        crossAxisSpacing: wJM(2),
-        children: const [
-          _ShopInfoActionItem(),
-          _ShopInfoActionItem(),
-        ],
-      ),
-    );
-  }
-}
-
-class _ShopInfoActionItem extends StatelessWidget {
-  const _ShopInfoActionItem();
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: hJM(30),
-      color: Colors.amberAccent,
-      child: const Column(
-        children: [
-          Icon(Icons.person_rounded),
-          Text('Mi gestor'),
-        ],
       ),
     );
   }

@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
             child: widget!,
           );
         },
-        title: 'App Empleados',
+        title: 'App Socios Prueba',
         debugShowCheckedModeBanner: false,
         theme: appThemeData,
         home: const Material(child: Profile()),

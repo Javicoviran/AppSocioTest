@@ -69,7 +69,6 @@ class PersonalData extends StatelessWidget {
                       text: 'Solicitar modificación',
                       width: wJM(60),
                       backgroundColor: AppColors.green800,
-                      onClick: () => {},
                     ),
                   ),
                 ],

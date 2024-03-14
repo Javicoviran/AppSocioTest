@@ -3,6 +3,7 @@ import 'package:app_socio_test/helpers/size_extenseion.dart';
 import 'package:app_socio_test/styles/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class CommonTheme {
   static const primaryValue = 0xff61A60E;
@@ -128,6 +129,7 @@ class CommonTheme {
 
 final appThemeData = ThemeData(
   useMaterial3: true,
+  fontFamily: GoogleFonts.mavenPro().fontFamily,
   textTheme: TextTheme(
     labelSmall: CommonTheme.labelSmall,
     labelMedium: CommonTheme.labelMedium,
