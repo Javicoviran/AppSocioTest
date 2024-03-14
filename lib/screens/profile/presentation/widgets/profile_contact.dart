@@ -16,14 +16,14 @@ class ProfileContact extends StatelessWidget {
         body: Body(
           appBar: const BaseAppBar(title: 'Contacto Covirán', back: true),
           child: Padding(
-            padding: EdgeInsets.all(wJM(4)),
+            padding: EdgeInsets.all(wJM(5)),
             child: Column(
               children: [
                 Image.asset(errorNetwork, height: hJM(30)),
                 SizedBox(height: hJM(2)),
                 Container(
                   height: hJM(33),
-                  padding: EdgeInsets.all(wJM(3)),
+                  padding: EdgeInsets.all(wJM(5)),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10.0),
                     border: Border.all(color: CommonTheme.primaryColor),
@@ -38,7 +38,7 @@ class ProfileContact extends StatelessWidget {
                 SizedBox(height: hJM(3)),
                 Container(
                   height: hJM(33),
-                  padding: EdgeInsets.all(wJM(3)),
+                  padding: EdgeInsets.all(wJM(5)),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10.0),
                     border: Border.all(color: CommonTheme.primaryColor),

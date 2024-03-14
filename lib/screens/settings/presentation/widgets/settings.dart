@@ -20,14 +20,14 @@ class Settings extends StatelessWidget {
             child: Column(
               children: [
                 Padding(
-                  padding: EdgeInsets.all(wJM(4)),
+                  padding: EdgeInsets.all(wJM(5)),
                   child: Column(
                     children: [
                       Text(
                         'Configure sus preferencias de idioma y las notificaciones que desea recibir en su dispositivo.',
                         style: CommonTheme.bodyMedium,
                       ),
-                      SizedBox(height: hJM(4)),
+                      SizedBox(height: wJM(5)),
                       const _SettingsItem(text: 'Noticias'),
                       const _SettingsItem(text: 'Consejos Territoriales'),
                       const _SettingsItem(text: 'Reuniones Socios'),
@@ -40,7 +40,7 @@ class Settings extends StatelessWidget {
                     ],
                   ),
                 ),
-                SizedBox(height: hJM(4)),
+                SizedBox(height: wJM(5)),
                 BaseButton(
                   width: wJM(65),
                   text: 'Aplicar cambios',

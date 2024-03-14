@@ -1,5 +1,6 @@
 import 'package:app_socio_test/helpers/screen_functions.dart';
 import 'package:app_socio_test/helpers/constants.dart';
+import 'package:app_socio_test/screens/profile/presentation/models/shop_service_item.dart';
 import 'package:app_socio_test/screens/profile/presentation/widgets/profile_base_field.dart';
 import 'package:app_socio_test/screens/profile/presentation/widgets/profile_contact_field.dart';
 import 'package:app_socio_test/styles/theme.dart';
@@ -28,7 +29,7 @@ class ProfileShopInfo extends StatelessWidget {
                   child: Image.network(defaultShopImage, fit: BoxFit.cover),
                 ),
                 Padding(
-                  padding: EdgeInsets.all(wJM(4)),
+                  padding: EdgeInsets.all(wJM(5)),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -111,7 +112,12 @@ class ProfileShopInfo extends StatelessWidget {
                         specialContent: Row(
                           crossAxisAlignment: CrossAxisAlignment.end,
                           children: [
-                            const Text('ROSA MILAN RUIZ', maxLines: 1, overflow: TextOverflow.ellipsis),
+                            Text(
+                              'ROSA MILAN RUIZ',
+                              style: CommonTheme.bodyMedium,
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                            ),
                             const Spacer(),
                             Icon(Icons.email_rounded, color: CommonTheme.primaryColor, size: hJM(3.5)),
                             SizedBox(width: wJM(2)),
@@ -124,7 +130,12 @@ class ProfileShopInfo extends StatelessWidget {
                         specialContent: Row(
                           crossAxisAlignment: CrossAxisAlignment.end,
                           children: [
-                            const Text('Bienvenido Lopez Gijon', maxLines: 1, overflow: TextOverflow.ellipsis),
+                            Text(
+                              'Bienvenido Lopez Gijon',
+                              style: CommonTheme.bodyMedium,
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                            ),
                             const Spacer(),
                             Icon(Icons.email_rounded, color: CommonTheme.primaryColor, size: hJM(3.5)),
                             SizedBox(width: wJM(2)),
@@ -137,7 +148,12 @@ class ProfileShopInfo extends StatelessWidget {
                         specialContent: Row(
                           crossAxisAlignment: CrossAxisAlignment.end,
                           children: [
-                            const Text('Concepcion Poyatos Alcaide', maxLines: 1, overflow: TextOverflow.ellipsis),
+                            Text(
+                              'Concepcion Poyatos Alcaide',
+                              style: CommonTheme.bodyMedium,
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                            ),
                             const Spacer(),
                             Icon(Icons.email_rounded, color: CommonTheme.primaryColor, size: hJM(3.5)),
                             SizedBox(width: wJM(2)),
@@ -147,6 +163,28 @@ class ProfileShopInfo extends StatelessWidget {
                       ),
                       const Divider(height: 0, color: CommonTheme.dividerColor),
                       SizedBox(height: hJM(2)),
+                      Text(
+                        'Mis servicios',
+                        style: CommonTheme.titleMedium.copyWith(color: CommonTheme.primaryColorDark),
+                      ),
+                      SizedBox(height: hJM(2)),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          _ShopInfoServicesItem(
+                            shopService: ShopServiceItem(name: 'Buzoneo', icon: Icons.mail_rounded),
+                          ),
+                          _ShopInfoServicesItem(
+                            shopService: ShopServiceItem(name: 'Club Familia', icon: Icons.family_restroom_rounded),
+                          ),
+                          _ShopInfoServicesItem(
+                            shopService:
+                                ShopServiceItem(name: 'Servicio prevención mancomunado', icon: Icons.groups_3_rounded),
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: hJM(2)),
                     ],
                   ),
                 )
@@ -154,6 +192,33 @@ class ProfileShopInfo extends StatelessWidget {
             ),
           ),
         ),
+      ),
+    );
+  }
+}
+
+class _ShopInfoServicesItem extends StatelessWidget {
+  final ShopServiceItem shopService;
+
+  const _ShopInfoServicesItem({required this.shopService});
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      // TODO: tener en cuenta el número de servicios
+      width: wJM(25),
+      child: Column(
+        children: [
+          Icon(shopService.icon, color: CommonTheme.primaryColor, size: hJM(7)),
+          SizedBox(height: hJM(1)),
+          Text(
+            shopService.name,
+            style: CommonTheme.bodySmall.copyWith(fontWeight: FontWeight.bold),
+            overflow: TextOverflow.fade,
+            maxLines: 3,
+            textAlign: TextAlign.center,
+          ),
+        ],
       ),
     );
   }

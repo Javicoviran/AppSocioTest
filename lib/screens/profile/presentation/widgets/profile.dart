@@ -1,7 +1,8 @@
 import 'package:app_socio_test/helpers/screen_functions.dart';
 import 'package:app_socio_test/helpers/constants.dart';
 import 'package:app_socio_test/screens/profile/presentation/helpers/utils.dart';
-import 'package:app_socio_test/screens/profile/presentation/widgets/personal_data.dart';
+import 'package:app_socio_test/screens/profile/presentation/models/profile_action_item.dart';
+import 'package:app_socio_test/screens/profile/presentation/widgets/profile_personal_data.dart';
 import 'package:app_socio_test/screens/profile/presentation/widgets/profile_avatar.dart';
 import 'package:app_socio_test/screens/profile/presentation/widgets/profile_contact.dart';
 import 'package:app_socio_test/screens/profile/presentation/widgets/profile_action_list_item.dart';
@@ -29,13 +30,13 @@ class Profile extends StatelessWidget {
               padding: EdgeInsets.all(wJM(5)),
               child: Column(
                 children: [
-                  const _ProfilePersonalDataPreview(),
+                  const _ProfilePersonalDataPreview(/*previewModel*/),
                   SizedBox(height: hJM(4)),
                   const Divider(height: 0, color: CommonTheme.dividerColor),
                   SizedBox(height: hJM(4)),
                   const _ProfileActionsList(),
                   SizedBox(height: hJM(4)),
-                  const _ProfileShopsList(),
+                  const _ProfileShopsList(/*shopCardModel*/),
                 ],
               ),
             ),
@@ -48,6 +49,7 @@ class Profile extends StatelessWidget {
 
 class _ProfileShopsList extends StatelessWidget {
   // final ProfileShopCardModel shopCardModel;
+  // final ProfileShopInfoModel shopInfo;
 
   const _ProfileShopsList(/*{required this.shopCardModel}*/);
 
@@ -67,7 +69,7 @@ class _ProfileShopsList extends StatelessWidget {
           child: Column(
             children: [
               Padding(
-                padding: EdgeInsets.all(wJM(4)),
+                padding: EdgeInsets.all(wJM(5)),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -126,7 +128,7 @@ class _ProfileShopsList extends StatelessWidget {
                           borderStyle: AppColors.green800,
                           onClick: () => Navigator.push(
                             context,
-                            fadeTransitionRoute(const ProfileShopInfo()),
+                            fadeTransitionRoute(const ProfileShopInfo(/*shopInfo*/)),
                           ),
                         ),
                       ],
@@ -150,23 +152,39 @@ class _ProfileActionsList extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        ProfileActionListItem(text: 'Portal del socio', icon: Icons.web_rounded, onTap: () => {}),
-        ProfileActionListItem(text: 'e-Factura', icon: Icons.blinds_closed_sharp, onTap: () => {}),
         ProfileActionListItem(
-          text: 'Contacto Covirán',
-          icon: Icons.phone_rounded,
-          onTap: () => Navigator.push(
-            context,
-            fadeTransitionRoute(const ProfileContact()),
+          actionItem: ProfileActionItem(
+            text: 'Portal del socio',
+            icon: Icons.web_rounded,
+            onTap: () => {},
+          ),
+        ),
+        ProfileActionListItem(
+          actionItem: ProfileActionItem(
+            text: 'e-Factura',
+            icon: Icons.blinds_closed_sharp,
+            onTap: () => {},
+          ),
+        ),
+        ProfileActionListItem(
+          actionItem: ProfileActionItem(
+            text: 'Contacto Covirán',
+            icon: Icons.phone_rounded,
+            onTap: () => Navigator.push(
+              context,
+              fadeTransitionRoute(const ProfileContact()),
+            ),
           ),
         ),
         // TODO: configuración too long?
         ProfileActionListItem(
-          text: 'Ajustes',
-          icon: Icons.settings_rounded,
-          onTap: () => Navigator.push(
-            context,
-            fadeTransitionRoute(const Settings()),
+          actionItem: ProfileActionItem(
+            text: 'Ajustes',
+            icon: Icons.settings_rounded,
+            onTap: () => Navigator.push(
+              context,
+              fadeTransitionRoute(const Settings()),
+            ),
           ),
         ),
       ],
@@ -182,7 +200,7 @@ class _ProfilePersonalDataPreview extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         const ProfileAvatar(userImage: profileAvatarImage),
@@ -197,9 +215,9 @@ class _ProfilePersonalDataPreview extends StatelessWidget {
               Row(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
-                  Icon(Icons.location_on_rounded, color: AppColors.green800, size: hJM(4)),
+                  Icon(Icons.location_on_rounded, color: AppColors.green800, size: wJM(6)),
                   SizedBox(
-                    width: wJM(45),
+                    width: wJM(40),
                     child: const Text(
                       'CL VIRGEN DEL MONTE 0 18015 GRANADA Granada',
                       maxLines: 1,
@@ -210,11 +228,11 @@ class _ProfilePersonalDataPreview extends StatelessWidget {
               ),
               BaseButton(
                 text: 'Mis datos',
-                width: wJM(35),
+                width: wJM(46),
                 backgroundColor: AppColors.green800,
                 onClick: () => Navigator.push(
                   context,
-                  fadeTransitionRoute(const PersonalData()),
+                  fadeTransitionRoute(const ProfilePersonalData(/*personalData*/)),
                 ),
               ),
             ],

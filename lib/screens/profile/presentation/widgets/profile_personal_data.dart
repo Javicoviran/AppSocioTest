@@ -9,8 +9,9 @@ import 'package:app_socio_test/widgets/base_button.dart';
 import 'package:app_socio_test/widgets/body.dart';
 import 'package:flutter/material.dart';
 
-class PersonalData extends StatelessWidget {
-  const PersonalData({super.key});
+class ProfilePersonalData extends StatelessWidget {
+  // final PersonalDataModel personalData;
+  const ProfilePersonalData({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +22,7 @@ class PersonalData extends StatelessWidget {
           child: SingleChildScrollView(
             physics: const ClampingScrollPhysics(),
             child: Container(
-              padding: EdgeInsets.all(wJM(4)),
+              padding: EdgeInsets.all(wJM(5)),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -29,12 +30,14 @@ class PersonalData extends StatelessWidget {
                     child: Column(
                       children: [
                         const ProfileAvatar(userImage: profileAvatarImage),
+                        SizedBox(height: hJM(2)),
                         Text(
                           'COVIRAN, S.C.A.',
                           style: CommonTheme.titleMedium,
                           maxLines: 2,
                           overflow: TextOverflow.ellipsis,
                         ),
+                        SizedBox(height: hJM(1)),
                         const Text('cschana@coviges.es'),
                       ],
                     ),
@@ -55,7 +58,24 @@ class PersonalData extends StatelessWidget {
                   const ProfileBaseField(title: 'Correo Electrónico', content: 'cschana@coviges.es'),
                   const Divider(height: 0, color: CommonTheme.dividerColor),
                   SizedBox(height: hJM(2)),
-                  const ProfileBaseField(title: 'Contacto Covirán', content: 'ROSA MILAN RUIZ'),
+                  ProfileBaseField(
+                    title: 'Contacto Covirán',
+                    specialContent: Row(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        Text(
+                          'ROSA MILAN RUIZ',
+                          style: CommonTheme.bodyMedium,
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                        const Spacer(),
+                        Icon(Icons.email_rounded, color: CommonTheme.primaryColor, size: hJM(3.5)),
+                        SizedBox(width: wJM(2)),
+                        Icon(Icons.phone_rounded, color: CommonTheme.primaryColor, size: hJM(3.5)),
+                      ],
+                    ),
+                  ),
                   const Divider(height: 0, color: CommonTheme.dividerColor),
                   SizedBox(height: hJM(2)),
                   const ProfileBaseField(title: 'Nif/Cif', content: 'A18080796'),
