@@ -14,7 +14,7 @@ class ProfileContact extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         body: Body(
-          appBar: const BaseAppBar(title: 'Contacto Covirán'),
+          appBar: const BaseAppBar(title: 'Contacto Covirán', back: true),
           child: Padding(
             padding: EdgeInsets.all(wJM(4)),
             child: Column(

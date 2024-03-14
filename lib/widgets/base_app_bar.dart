@@ -1,5 +1,6 @@
 import 'package:app_socio_test/helpers/screen_functions.dart';
 import 'package:app_socio_test/styles/theme.dart';
+import 'package:app_socio_test/widgets/app_bar_back_button.dart';
 import 'package:flutter/material.dart';
 
 class BaseAppBar extends StatelessWidget {
@@ -17,18 +18,17 @@ class BaseAppBar extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         color: CommonTheme.backgroundColor,
-        border: Border.all(width: 0, color: Colors.transparent),
+        border: Border.all(
+          width: 0,
+          color: Colors.transparent,
+        ),
       ),
       height: CommonTheme.appBarHeight,
       child: Row(
         children: [
-          Padding(
-            padding: EdgeInsets.all(wJM(2)),
-            child: Icon(
-              Icons.arrow_back_ios_new_outlined,
-              color: CommonTheme.statusBarColor,
-              size: hJM(3.5),
-            ),
+          Visibility(
+            visible: back,
+            child: const AppBarBackButton(),
           ),
           SizedBox(width: wJM(2)),
           Expanded(
@@ -37,7 +37,6 @@ class BaseAppBar extends StatelessWidget {
               child: Text(
                 title,
                 style: CommonTheme.appBarTextStyle,
-                // textAlign: TextAlign.center,
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
               ),

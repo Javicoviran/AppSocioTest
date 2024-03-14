@@ -1,34 +1,45 @@
-import 'package:app_socio_test/helpers/extensions.dart';
-import 'package:app_socio_test/helpers/myscreenutils.dart';
+import 'dart:async';
+
+import 'package:app_socio_test/app.dart';
 import 'package:app_socio_test/styles/theme.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'screens/profile/presentation/widgets/profile.dart';
-
 void main() {
-  runApp(const ProviderScope(child: MyApp()));
-}
+  runZonedGuarded(
+    () async {
+      WidgetsFlutterBinding.ensureInitialized();
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+      await Future.microtask(
+        () => SystemChrome.setSystemUIOverlayStyle(
+          CommonTheme.systemUiOverlayStyle,
+        ),
+      );
 
-  @override
-  Widget build(BuildContext context) {
-    MyScreenUtil.init(context);
-    return SafeArea(
-      child: MaterialApp(
-        builder: (context, widget) {
-          return MediaQuery(
-            data: context.media.copyWith(textScaler: const TextScaler.linear(1)),
-            child: widget!,
-          );
-        },
-        title: 'App Socios Prueba',
-        debugShowCheckedModeBanner: false,
-        theme: appThemeData,
-        home: const Material(child: Profile()),
-      ),
-    );
-  }
+      await SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: [
+        SystemUiOverlay.top,
+        SystemUiOverlay.bottom,
+      ]);
+
+      FlutterError.onError = (errorDetails) {
+        FlutterError.presentError(errorDetails);
+      };
+      runApp(
+        const ProviderScope(
+          child: MyApp(),
+        ),
+      );
+    },
+    (error, stack) {
+      if (kDebugMode) {
+        print("\n----------------------------ERROR-----------------------------\n");
+        print(error);
+        print("\n\n");
+        print(stack);
+        print("\n--------------------------FIN ERROR---------------------------\n");
+      }
+    },
+  );
 }

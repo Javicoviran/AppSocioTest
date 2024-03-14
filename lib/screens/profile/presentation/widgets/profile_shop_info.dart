@@ -15,7 +15,7 @@ class ProfileShopInfo extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         body: Body(
-          appBar: const BaseAppBar(title: 'Mis tiendas'),
+          appBar: const BaseAppBar(title: 'Mis tiendas', back: true),
           child: SingleChildScrollView(
             physics: const ClampingScrollPhysics(),
             child: Column(
@@ -37,7 +37,7 @@ class ProfileShopInfo extends StatelessWidget {
                         overflow: TextOverflow.ellipsis,
                         textAlign: TextAlign.center,
                       ),
-                      SizedBox(height: hJM(2)),
+                      SizedBox(height: hJM(1.5)),
                       const ProfileBaseField(title: 'Código', content: '383'),
                       const Divider(height: 0, color: CommonTheme.dividerColor),
                       SizedBox(height: hJM(2)),
@@ -61,11 +61,11 @@ class ProfileShopInfo extends StatelessWidget {
                       SizedBox(height: hJM(2)),
                       Row(
                         children: [
-                          Container(
+                          SizedBox(
                             width: wJM(46),
                             child: const ProfileBaseField(title: 'Tipo de software', content: 'Coviges'),
                           ),
-                          const ProfileBaseField(title: 'Versión de software', content: '3.0'),
+                          const ProfileBaseField(title: 'Versión de software', content: ''),
                         ],
                       ),
                       const Divider(height: 0, color: CommonTheme.dividerColor),
@@ -107,7 +107,45 @@ class ProfileShopInfo extends StatelessWidget {
                       const ProfileBaseField(title: 'PVPR', content: 'PVPR3'),
                       const Divider(height: 0, color: CommonTheme.dividerColor),
                       SizedBox(height: hJM(2)),
-                      const ProfileBaseField(title: 'Contacto Covirán', content: 'ROSA MILAN RUIZ'),
+                      ProfileBaseField(
+                        title: 'Contacto Covirán',
+                        specialContent: Row(
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          children: [
+                            const Text('ROSA MILAN RUIZ', maxLines: 1, overflow: TextOverflow.ellipsis),
+                            const Spacer(),
+                            Icon(Icons.email_rounded, color: CommonTheme.primaryColor, size: hJM(3.5)),
+                            SizedBox(width: wJM(2)),
+                            Icon(Icons.phone_rounded, color: CommonTheme.primaryColor, size: hJM(3.5)),
+                          ],
+                        ),
+                      ),
+                      ProfileBaseField(
+                        title: 'Mi gestor',
+                        specialContent: Row(
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          children: [
+                            const Text('Bienvenido Lopez Gijon', maxLines: 1, overflow: TextOverflow.ellipsis),
+                            const Spacer(),
+                            Icon(Icons.email_rounded, color: CommonTheme.primaryColor, size: hJM(3.5)),
+                            SizedBox(width: wJM(2)),
+                            Icon(Icons.phone_rounded, color: CommonTheme.primaryColor, size: hJM(3.5)),
+                          ],
+                        ),
+                      ),
+                      ProfileBaseField(
+                        title: 'Contacto CASC',
+                        specialContent: Row(
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          children: [
+                            const Text('Concepcion Poyatos Alcaide', maxLines: 1, overflow: TextOverflow.ellipsis),
+                            const Spacer(),
+                            Icon(Icons.email_rounded, color: CommonTheme.primaryColor, size: hJM(3.5)),
+                            SizedBox(width: wJM(2)),
+                            Icon(Icons.phone_rounded, color: CommonTheme.primaryColor, size: hJM(3.5)),
+                          ],
+                        ),
+                      ),
                       const Divider(height: 0, color: CommonTheme.dividerColor),
                       SizedBox(height: hJM(2)),
                     ],

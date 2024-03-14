@@ -60,9 +60,6 @@ class PersonalData extends StatelessWidget {
                   SizedBox(height: hJM(2)),
                   const ProfileBaseField(title: 'Nif/Cif', content: 'A18080796'),
                   const Divider(height: 0, color: CommonTheme.dividerColor),
-                  SizedBox(height: hJM(2)),
-                  const ProfileBaseField(title: 'Razón Social', content: 'COVIRAN SUPERMERCADOS S.A.U. (CHANA) (383)'),
-                  const Divider(height: 0, color: CommonTheme.dividerColor),
                   SizedBox(height: hJM(4)),
                   Center(
                     child: BaseButton(

@@ -21,7 +21,7 @@ class Profile extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         body: Body(
-          appBar: const BaseAppBar(title: 'My perfil', back: true),
+          appBar: const BaseAppBar(title: 'My perfil'),
           child: SingleChildScrollView(
             physics: const ClampingScrollPhysics(),
             child: Padding(
