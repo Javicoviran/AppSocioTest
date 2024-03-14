@@ -1,4 +1,5 @@
 import 'package:app_socio_test/helpers/screen_functions.dart';
+import 'package:app_socio_test/screens/login/sig_in.dart';
 import 'package:app_socio_test/styles/colors.dart';
 import 'package:app_socio_test/styles/theme.dart';
 import 'package:app_socio_test/widgets/base_app_bar.dart';
@@ -13,7 +14,7 @@ class Login extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         body: Body(
-          appBar: const BaseAppBar(title: "Área Pública"),
+          appBar: const BaseAppBar(title: "Área Pública", back: false,),
           child: Column(
             children: [
               Container(
@@ -33,6 +34,7 @@ class Login extends StatelessWidget {
               ),
               const LoginBanner(
                 text: "ÁREA PRIVADA",
+                goTo: SignIn(),
               ),
               Expanded(
                 child: Container(
@@ -75,38 +77,44 @@ class Login extends StatelessWidget {
 
 class LoginBanner extends StatelessWidget {
   final String text;
+  final Widget? goTo;
 
-  const LoginBanner({super.key, required this.text});
+  const LoginBanner({super.key, required this.text, this.goTo});
 
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      child: Container(
-        width: double.infinity,
-        margin: EdgeInsets.all(wJM(4)),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10),
-          gradient: const LinearGradient(
-            begin: Alignment.centerLeft,
-            end: Alignment.centerRight,
-            colors: [
-              AppColors.lightGreen500,
-              AppColors.lightGreen800,
+      child: GestureDetector(
+        onTap: () {
+          if (goTo != null) Navigator.push(context, MaterialPageRoute(builder: (context) => goTo!));
+        },
+        child: Container(
+          width: double.infinity,
+          margin: EdgeInsets.all(wJM(4)),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10),
+            gradient: const LinearGradient(
+              begin: Alignment.centerLeft,
+              end: Alignment.centerRight,
+              colors: [
+                AppColors.lightGreen500,
+                AppColors.lightGreen800,
+              ],
+            ),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withOpacity(0.2),
+                spreadRadius: 5,
+                blurRadius: 5,
+                offset: const Offset(0, 0),
+              ),
             ],
           ),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withOpacity(0.2),
-              spreadRadius: 5,
-              blurRadius: 5,
-              offset: const Offset(0, 0),
+          child: Center(
+            child: Text(
+              text,
+              style: CommonTheme.titleLarge.copyWith(fontWeight: FontWeight.normal, color: CommonTheme.darkButtonTextColor),
             ),
-          ],
-        ),
-        child: Center(
-          child: Text(
-            text,
-            style: CommonTheme.titleLarge.copyWith(fontWeight: FontWeight.normal, color: CommonTheme.darkButtonTextColor),
           ),
         ),
       ),

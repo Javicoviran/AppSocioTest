@@ -16,7 +16,7 @@ class SignIn extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         body: Body(
-          appBar: const BaseAppBar(title: "Acceso"),
+          appBar: const BaseAppBar(title: "Acceso", back: true,),
           child: Column(
             children: [
               SizedBox(

@@ -22,15 +22,19 @@ class BaseAppBar extends StatelessWidget {
       height: CommonTheme.appBarHeight,
       child: Row(
         children: [
-          Padding(
-            padding: EdgeInsets.all(wJM(2)),
-            child: Icon(
-              Icons.arrow_back_ios_new_outlined,
-              color: CommonTheme.statusBarColor,
-              size: hJM(3.5),
-            ),
-          ),
-          SizedBox(width: wJM(2)),
+          back
+              ? GestureDetector(
+                onTap: () => Navigator.pop(context),
+                child: Padding(
+                    padding: EdgeInsets.all(wJM(2)),
+                    child: Icon(
+                      Icons.arrow_back_ios_new_outlined,
+                      color: CommonTheme.statusBarColor,
+                      size: hJM(3.5),
+                    ),
+                  ),
+              )
+              : SizedBox(width: wJM(2)),
           Expanded(
             child: Padding(
               padding: EdgeInsets.only(left: back ? 0 : wJM(3)),
