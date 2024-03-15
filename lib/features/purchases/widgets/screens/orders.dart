@@ -45,38 +45,13 @@ class _OrdersDatatable extends StatelessWidget {
         border: const TableBorder(bottom: BorderSide(color: AppColors.green900), top: BorderSide(color: AppColors.green900)),
         columnSpacing: wJM(2),
         dataTextStyle: CommonTheme.bodySmall.copyWith(fontWeight: FontWeight.bold),
-        columns: <DataColumn>[
-          DataColumn(
+        columns: orderColumns.map((title) {
+          return DataColumn(
             label: Expanded(
-              child: Text('Tienda', style: CommonTheme.bodyMedium.copyWith(color: AppColors.green900)),
+              child: Text(title, style: CommonTheme.bodyMedium.copyWith(color: AppColors.green900)),
             ),
-          ),
-          DataColumn(
-            label: Expanded(
-              child: Text('Fecha', style: CommonTheme.bodyMedium.copyWith(color: AppColors.green900)),
-            ),
-          ),
-          DataColumn(
-            label: Expanded(
-              child: Text('Estado', style: CommonTheme.bodyMedium.copyWith(color: AppColors.green900)),
-            ),
-          ),
-          DataColumn(
-            label: Expanded(
-              child: Text('Pedido', style: CommonTheme.bodyMedium.copyWith(color: AppColors.green900)),
-            ),
-          ),
-          DataColumn(
-            label: Expanded(
-              child: Text('IN', style: CommonTheme.bodyMedium.copyWith(color: AppColors.green900)),
-            ),
-          ),
-          DataColumn(
-            label: Expanded(
-              child: Text('NS', style: CommonTheme.bodyMedium.copyWith(color: AppColors.green900)),
-            ),
-          ),
-        ],
+          );
+        }).toList(),
         rows: listData.map((order) {
           return DataRow(
             cells: <DataCell>[
