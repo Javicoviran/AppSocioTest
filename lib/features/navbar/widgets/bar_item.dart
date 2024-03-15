@@ -33,6 +33,8 @@ class BarItem extends StatelessWidget {
             color: isSelected ? AppColors.green100 : Colors.transparent,
           ),
           child: IconButton(
+            splashColor: Colors.transparent,
+            highlightColor: Colors.transparent,
             onPressed: onPressed,
             icon: Icon(iconData, size: 0.033.sh, color: isSelected ? AppColors.green900 : CommonTheme.textColor),
           ),
