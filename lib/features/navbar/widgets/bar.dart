@@ -1,8 +1,8 @@
 import 'package:app_socio_test/features/navbar/helpers/constant.dart';
 import 'package:app_socio_test/features/navbar/providers/nav_bar_controller_provider.dart';
 import 'package:app_socio_test/features/navbar/widgets/bar_item.dart';
-import 'package:app_socio_test/styles/colors.dart';
-import 'package:app_socio_test/styles/theme.dart';
+import 'package:app_socio_test/presentation/styles/colors.dart';
+import 'package:app_socio_test/presentation/styles/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 

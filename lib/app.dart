@@ -1,7 +1,7 @@
-import 'package:app_socio_test/helpers/extensions.dart';
-import 'package:app_socio_test/helpers/myscreenutils.dart';
-import 'package:app_socio_test/screens/login/sig_in.dart';
-import 'package:app_socio_test/styles/theme.dart';
+import 'package:app_socio_test/presentation/helpers/extensions.dart';
+import 'package:app_socio_test/presentation/helpers/myscreenutils.dart';
+import 'package:app_socio_test/features/auth/login/sig_in.dart';
+import 'package:app_socio_test/presentation/styles/theme.dart';
 import 'package:flutter/material.dart';
 
 class MyApp extends StatelessWidget {

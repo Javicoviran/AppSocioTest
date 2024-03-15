@@ -1,7 +1,7 @@
-import 'package:app_socio_test/helpers/screen_functions.dart';
-import 'package:app_socio_test/helpers/size_extenseion.dart';
-import 'package:app_socio_test/styles/colors.dart';
-import 'package:app_socio_test/styles/theme.dart';
+import 'package:app_socio_test/presentation/helpers/screen_functions.dart';
+import 'package:app_socio_test/presentation/helpers/size_extenseion.dart';
+import 'package:app_socio_test/presentation/styles/colors.dart';
+import 'package:app_socio_test/presentation/styles/theme.dart';
 import 'package:flutter/material.dart';
 
 class BarItem extends StatelessWidget {

@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:app_socio_test/app.dart';
-import 'package:app_socio_test/styles/theme.dart';
+import 'package:app_socio_test/presentation/styles/theme.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
