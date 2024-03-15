@@ -91,10 +91,10 @@ class CommonTheme {
 
   static const inputDecoration = InputDecoration(
     enabledBorder: UnderlineInputBorder(
-      borderSide: BorderSide(color: primaryColor, width: 1),
+      borderSide: BorderSide(color: AppColors.green900, width: 1),
     ),
     focusedBorder: UnderlineInputBorder(
-      borderSide: BorderSide(color: primaryColor, width: 2),
+      borderSide: BorderSide(color: AppColors.green900, width: 2),
     ),
     border: UnderlineInputBorder(
       borderSide: BorderSide(color: primaryColor, width: 1),
@@ -125,7 +125,7 @@ class CommonTheme {
 
   static final coviBarHeight = 0.04.sh;
   static final appBarHeight = 0.07.sh;
-  static final baseBarHeight = 0.07.sh;
+  static final baseBarHeight = 0.1.sh;
 }
 
 final appThemeData = ThemeData(
