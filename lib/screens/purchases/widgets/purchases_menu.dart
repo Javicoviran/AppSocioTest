@@ -18,7 +18,7 @@ class PurchasesMenu extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         body: Body(
-          appBar: const BaseAppBar(title: "Área privada", back: true),
+          appBar: const BaseAppBar(title: "Área privada"),
           child: Column(
             children: [
               const _PurchasesMenuTitle(),
