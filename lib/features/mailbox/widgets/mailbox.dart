@@ -35,8 +35,8 @@ class MailBox extends ConsumerWidget {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            const Icon(Icons.mail, color: AppColors.lightGreen800),
-                            Text("Mi buzón", style: CommonTheme.headlineSmall.copyWith(color: AppColors.lightGreen800)),
+                            const Icon(Icons.mail, color: AppColors.green800),
+                            Text("Mi buzón", style: CommonTheme.headlineSmall.copyWith(color: AppColors.green800)),
                           ],
                         )),
                     const Material(elevation: 5, child: MailboxTabs()),

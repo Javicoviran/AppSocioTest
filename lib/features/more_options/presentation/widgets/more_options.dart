@@ -1,6 +1,6 @@
+import 'package:app_socio_test/features/settings/presentation/widgets/settings.dart';
 import 'package:app_socio_test/presentation/helpers/utils.dart';
 import 'package:app_socio_test/features/home/presentation/widgets/help_contact.dart';
-import 'package:app_socio_test/features/home/presentation/widgets/home.dart';
 import 'package:app_socio_test/features/profile/presentation/widgets/profile.dart';
 import 'package:app_socio_test/presentation/styles/theme.dart';
 import 'package:app_socio_test/presentation/widgets/base_app_bar.dart';
@@ -16,61 +16,51 @@ class MoreOptions extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Body(
       appBar: const BaseAppBar(title: 'Más opciones'),
-      child: Padding(
-        padding: CommonTheme.defaultBodyPadding,
-        child: ListView(
-          physics: const ClampingScrollPhysics(),
-          children: [
-            BaseListItem(
-              text: 'Home',
-              icon: Icons.home_rounded,
-              onTap: () {
-                Navigator.push(
-                  context,
-                  fadeTransitionRoute(const Home()),
-                );
-              },
-            ),
-            BaseListItem(
-              text: 'Mi perfil',
-              icon: Icons.person_rounded,
-              onTap: () {
-                Navigator.push(
-                  context,
-                  fadeTransitionRoute(const Profile()),
-                );
-              },
-            ),
-            BaseListItem(
-              text: 'Configuración',
-              icon: Icons.settings_applications_outlined,
-              iconColor: CommonTheme.primaryColor,
-              onTap: () => {},
-            ),
-            BaseListItem(
-              text: "Noticias",
-              icon: Icons.newspaper_rounded,
-              onTap: () {},
-            ),
-            BaseListItem(
-              text: 'Ayuda y soporte',
-              icon: Icons.help_rounded,
-              iconColor: CommonTheme.primaryColor,
-              onTap: () {
-                Navigator.push(
-                  context,
-                  fadeTransitionRoute(const HelpContact()),
-                );
-              },
-            ),
-            BaseListItem(
-              text: 'Cerrar sesión',
-              icon: Icons.power_settings_new_rounded,
-              iconColor: CommonTheme.errorColor,
-              onTap: () => {},
-            ),
-          ],
-        ),
+      child: ListView(
+        physics: const ClampingScrollPhysics(),
+        children: [
+          BaseListItem(
+            text: 'Mi perfil',
+            icon: Icons.person_rounded,
+            onTap: () {
+              Navigator.push(
+                context,
+                fadeTransitionRoute(const Profile()),
+              );
+            },
+          ),
+          BaseListItem(
+            text: 'Configuración',
+            icon: Icons.settings_applications_outlined,
+            onTap: () => {
+              Navigator.push(
+                context,
+                fadeTransitionRoute(const Settings()),
+              ),
+            },
+          ),
+          BaseListItem(
+            text: "Noticias",
+            icon: Icons.newspaper_rounded,
+            onTap: () {},
+          ),
+          BaseListItem(
+            text: 'Ayuda y soporte',
+            icon: Icons.help_rounded,
+            onTap: () {
+              Navigator.push(
+                context,
+                fadeTransitionRoute(const HelpContact()),
+              );
+            },
+          ),
+          BaseListItem(
+            text: 'Cerrar sesión',
+            icon: Icons.power_settings_new_rounded,
+            iconColor: CommonTheme.errorColor,
+            onTap: () => {},
+          ),
+        ],
       ),
     );
   }

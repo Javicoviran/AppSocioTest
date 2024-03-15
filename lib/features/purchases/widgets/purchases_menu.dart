@@ -80,7 +80,7 @@ class _PurchasesMenuItem extends StatelessWidget {
             Container(
               width: wJM(10) * 2,
               height: wJM(10) * 2,
-              decoration: const BoxDecoration(shape: BoxShape.circle, color: AppColors.green100),
+              decoration: const BoxDecoration(shape: BoxShape.circle, color: AppColors.lightGreen100),
               child: Icon(purchasesMenuItem.icon, color: AppColors.green900),
             ),
             SizedBox(width: wJM(2)),

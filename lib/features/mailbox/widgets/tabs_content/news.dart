@@ -49,7 +49,7 @@ class NewsItem extends StatelessWidget {
       margin:  EdgeInsets.symmetric(vertical: wJM(2), horizontal: wJM(2)),
       padding:  EdgeInsets.all(wJM(2)),
       decoration: BoxDecoration(
-        color: AppColors.green50,
+        color: AppColors.lightGreen100,
         borderRadius: BorderRadius.circular(8.0),
         boxShadow: [
           BoxShadow(

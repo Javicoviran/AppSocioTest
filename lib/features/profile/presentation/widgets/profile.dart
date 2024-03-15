@@ -1,11 +1,9 @@
 import 'package:app_socio_test/presentation/helpers/constants.dart';
 import 'package:app_socio_test/presentation/helpers/screen_functions.dart';
-import 'package:app_socio_test/features/profile/presentation/models/profile_action_item_model.dart';
 import 'package:app_socio_test/features/profile/presentation/models/profile_shop_list_item_model.dart';
 import 'package:app_socio_test/features/profile/presentation/widgets/profile_shop_list_item.dart';
 import 'package:app_socio_test/presentation/widgets/profile_avatar.dart';
 import 'package:app_socio_test/features/profile/presentation/widgets/profile_base_field.dart';
-import 'package:app_socio_test/features/profile/presentation/widgets/profile_action_list_item.dart';
 import 'package:app_socio_test/presentation/styles/theme.dart';
 import 'package:app_socio_test/presentation/widgets/base_app_bar.dart';
 import 'package:app_socio_test/presentation/widgets/body.dart';
@@ -30,8 +28,6 @@ class Profile extends StatelessWidget {
                   SizedBox(height: hJM(4)),
                   const _ProfilePersonalData(),
                   const Divider(height: 0, color: CommonTheme.dividerColor),
-                  SizedBox(height: hJM(4)),
-                  const _ProfileActionsList(),
                   SizedBox(height: hJM(4)),
                   const _ProfileShopList(),
                   SizedBox(height: hJM(2)),
@@ -141,29 +137,4 @@ class _ProfileSummary extends StatelessWidget {
   }
 }
 
-class _ProfileActionsList extends StatelessWidget {
-  const _ProfileActionsList();
 
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: [
-        ProfileActionListItem(
-          actionItem: ProfileActionItemModel(
-            text: 'Portal del socio',
-            icon: Icons.web_rounded,
-            onTap: () => {},
-          ),
-        ),
-        ProfileActionListItem(
-          actionItem: ProfileActionItemModel(
-            text: 'e-Factura',
-            icon: Icons.blinds_closed_sharp,
-            onTap: () => {},
-          ),
-        ),
-      ],
-    );
-  }
-}

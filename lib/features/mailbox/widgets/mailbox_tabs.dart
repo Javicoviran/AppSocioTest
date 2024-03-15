@@ -11,7 +11,6 @@ class MailboxTabs extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return SizedBox(
-      // color: AppColors.lightGreen400,
       height: CommonTheme.baseBarHeight,
       child: Row(
         children: List.generate(

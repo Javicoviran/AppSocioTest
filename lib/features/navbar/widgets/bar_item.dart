@@ -30,9 +30,11 @@ class BarItem extends StatelessWidget {
           decoration: BoxDecoration(
             shape: BoxShape.rectangle,
             borderRadius: BorderRadius.circular(30),
-            color: isSelected ? AppColors.green100 : Colors.transparent,
+            color: isSelected ? AppColors.lightGreen100 : Colors.transparent,
           ),
           child: IconButton(
+            splashColor: Colors.transparent,
+            highlightColor: Colors.transparent,
             onPressed: onPressed,
             icon: Icon(iconData, size: 0.033.sh, color: isSelected ? AppColors.green900 : CommonTheme.textColor),
           ),

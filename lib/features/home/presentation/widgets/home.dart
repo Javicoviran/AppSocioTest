@@ -1,3 +1,4 @@
+import 'package:app_socio_test/features/home/presentation/widgets/home_actions_list.dart';
 import 'package:app_socio_test/presentation/helpers/screen_functions.dart';
 import 'package:app_socio_test/features/home/presentation/widgets/profile_preview.dart';
 import 'package:app_socio_test/features/home/presentation/widgets/shops_list.dart';
@@ -29,7 +30,10 @@ class Home extends StatelessWidget {
                   SizedBox(height: hJM(4)),
                   const ProfilePreview(),
                   SizedBox(height: hJM(4)),
+                  const HomeActionsList(),
+                  SizedBox(height: hJM(4)),
                   const ShopsList(),
+                  SizedBox(height: hJM(4)),
                 ],
               ),
             ),

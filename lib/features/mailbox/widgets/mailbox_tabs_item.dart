@@ -21,7 +21,7 @@ class MailboxTabsItem extends StatelessWidget {
         border: isSelected
             ? const Border(
                 bottom: BorderSide(
-                  color: AppColors.accent,
+                  color: AppColors.green800,
                   width: 4,
                 ),
               )
@@ -29,7 +29,7 @@ class MailboxTabsItem extends StatelessWidget {
       ),
       child: IconButton(
         onPressed: onPressed,
-        icon: Icon(iconData, size: 0.033.sh, color: AppColors.lightGreen800),
+        icon: Icon(iconData, size: 0.033.sh, color: AppColors.green800),
       ),
     );
   }

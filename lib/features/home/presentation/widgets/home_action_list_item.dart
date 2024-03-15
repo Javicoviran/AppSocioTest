@@ -1,13 +1,13 @@
 import 'package:app_socio_test/presentation/helpers/screen_functions.dart';
-import 'package:app_socio_test/features/profile/presentation/models/profile_action_item_model.dart';
+import 'package:app_socio_test/features/home/presentation/models/action_item_model.dart';
 import 'package:app_socio_test/presentation/styles/colors.dart';
 import 'package:app_socio_test/presentation/styles/theme.dart';
 import 'package:flutter/material.dart';
 
-class ProfileActionListItem extends StatelessWidget {
-  final ProfileActionItemModel actionItem;
+class HomeActionListItem extends StatelessWidget {
+  final ActionItemModel actionItem;
 
-  const ProfileActionListItem({
+  const HomeActionListItem({
     super.key,
     required this.actionItem,
   });

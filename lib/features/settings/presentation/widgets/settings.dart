@@ -14,7 +14,7 @@ class Settings extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         body: Body(
-          appBar: const BaseAppBar(title: 'Ajustes', back: true),
+          appBar: const BaseAppBar(title: 'Configuración', back: true),
           child: SingleChildScrollView(
             physics: const ClampingScrollPhysics(),
             child: Column(
@@ -42,9 +42,10 @@ class Settings extends StatelessWidget {
                 ),
                 SizedBox(height: wJM(5)),
                 BaseButton(
+                  height: hJM(7.5),
                   width: wJM(65),
                   text: 'Aplicar cambios',
-                  backgroundColor: CommonTheme.primaryColor,
+                  backgroundColor: AppColors.green800,
                 ),
               ],
             ),
