@@ -124,7 +124,7 @@ class CommonTheme {
 
   static final coviBarHeight = 0.04.sh;
   static final appBarHeight = 0.07.sh;
-  static final baseBarHeight = 0.07.sh;
+  static final baseBarHeight = 0.1.sh;
 }
 
 final appThemeData = ThemeData(

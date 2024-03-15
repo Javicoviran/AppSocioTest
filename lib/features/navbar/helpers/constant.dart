@@ -19,3 +19,9 @@ final navBarItemsSelected = [
   NavBarItem(iconData: Icons.shopping_bag),
   NavBarItem(iconData: Icons.home),
 ];
+
+final labels = [
+  "Demo",
+  "Pedidos",
+  "Inicio",
+];

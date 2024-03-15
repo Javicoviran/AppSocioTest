@@ -1,4 +1,3 @@
-
 import 'package:app_socio_test/features/navbar/helpers/constant.dart';
 import 'package:app_socio_test/features/navbar/providers/nav_bar_controller_provider.dart';
 import 'package:app_socio_test/features/navbar/widgets/bar_item.dart';
@@ -21,11 +20,10 @@ class Bar extends ConsumerWidget {
           (index) => Expanded(
             child: Center(
               child: BarItem(
-                iconData: ref.watch(navBarControllerProvider) == index
-                    ? navBarItemsSelected.elementAt(index).iconData
-                    : navBarItems.elementAt(index).iconData,
+                iconData: ref.watch(navBarControllerProvider) == index ? navBarItemsSelected.elementAt(index).iconData : navBarItems.elementAt(index).iconData,
                 isSelected: ref.watch(navBarControllerProvider) == index,
                 onPressed: () => ref.read(navBarControllerProvider.notifier).changeTab(index),
+                label: labels.elementAt(index),
               ),
             ),
           ),
