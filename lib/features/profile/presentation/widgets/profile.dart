@@ -30,7 +30,6 @@ class Profile extends StatelessWidget {
                   const Divider(height: 0, color: CommonTheme.dividerColor),
                   SizedBox(height: hJM(4)),
                   const _ProfileShopList(),
-                  SizedBox(height: hJM(2)),
                 ],
               ),
             ),

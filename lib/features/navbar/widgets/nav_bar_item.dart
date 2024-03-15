@@ -4,13 +4,13 @@ import 'package:app_socio_test/presentation/styles/colors.dart';
 import 'package:app_socio_test/presentation/styles/theme.dart';
 import 'package:flutter/material.dart';
 
-class BarItem extends StatelessWidget {
+class NavBarItem extends StatelessWidget {
   final IconData iconData;
   final bool isSelected;
   final void Function() onPressed;
   final String label;
 
-  const BarItem({
+  const NavBarItem({
     super.key,
     required this.iconData,
     required this.isSelected,

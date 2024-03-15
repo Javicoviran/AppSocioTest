@@ -1,12 +1,12 @@
-import 'package:app_socio_test/features/more_options/presentation/widgets/more_options.dart';
+import 'package:app_socio_test/features/member_portal/presentation/widgets/member_portal.dart';
+import 'package:app_socio_test/features/more/more_options/presentation/widgets/more_options.dart';
 import 'package:app_socio_test/features/navbar/models/nav_bar_item.dart';
 import 'package:app_socio_test/features/home/presentation/widgets/home.dart';
-import 'package:app_socio_test/features/auth/login/sig_in.dart';
 import 'package:app_socio_test/features/mailbox/widgets/mailbox.dart';
 import 'package:app_socio_test/features/purchases/widgets/purchases_menu.dart';
 import 'package:flutter/material.dart';
 
-final navBarPages = [const SignIn(), PurchasesMenu(), const Home(), const MailBox(), const MoreOptions()];
+final navBarPages = [const MemberPortal(), PurchasesMenu(), const Home(), const MailBox(), const MoreOptions()];
 
 const defaultTab = 2;
 
@@ -26,4 +26,4 @@ final navBarItemsSelected = [
   NavBarItem(iconData: Icons.more_horiz),
 ];
 
-final labels = ["Demo", "Pedidos", "Inicio", 'Buzón', 'Más'];
+final labels = ["Portal", "Pedidos", "Inicio", 'Buzón', 'Más'];

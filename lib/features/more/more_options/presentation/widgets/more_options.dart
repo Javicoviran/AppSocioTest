@@ -1,4 +1,5 @@
-import 'package:app_socio_test/features/settings/presentation/widgets/settings.dart';
+import 'package:app_socio_test/features/more/more_options/presentation/helpers/utils.dart';
+import 'package:app_socio_test/features/more/settings/presentation/widgets/settings.dart';
 import 'package:app_socio_test/presentation/helpers/utils.dart';
 import 'package:app_socio_test/features/home/presentation/widgets/help_contact.dart';
 import 'package:app_socio_test/features/profile/presentation/widgets/profile.dart';
@@ -58,7 +59,7 @@ class MoreOptions extends ConsumerWidget {
             text: 'Cerrar sesión',
             icon: Icons.power_settings_new_rounded,
             iconColor: CommonTheme.errorColor,
-            onTap: () => {},
+            onTap: () => showSignOutDialog(context),
           ),
         ],
       ),

@@ -1,6 +1,6 @@
 import 'package:app_socio_test/features/navbar/helpers/constant.dart';
 import 'package:app_socio_test/features/navbar/providers/nav_bar_controller_provider.dart';
-import 'package:app_socio_test/features/navbar/widgets/bar.dart';
+import 'package:app_socio_test/features/navbar/widgets/bottom_nav_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -20,7 +20,7 @@ class NavBar extends ConsumerWidget {
         child: Scaffold(
           extendBody: true,
           body: navBarPages.elementAt(ref.watch(navBarControllerProvider)),
-          bottomNavigationBar: const Bar(),
+          bottomNavigationBar: const BottomNavBar(),
         ),
       ),
     );

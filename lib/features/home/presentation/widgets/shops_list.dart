@@ -44,12 +44,12 @@ class ShopsList extends StatelessWidget {
                     Text(
                       '383',
                       style: CommonTheme.bodySmall.copyWith(color: CommonTheme.secondaryTextColor),
-                      maxLines: 2,
+                      maxLines: 1,
                       overflow: TextOverflow.ellipsis,
                     ),
                     SizedBox(height: hJM(1.5)),
                     SizedBox(
-                      height: hJM(24),
+                      height: hJM(20),
                       width: double.infinity,
                       child: ClipRRect(
                         borderRadius: const BorderRadius.all(Radius.circular(10.0)),
