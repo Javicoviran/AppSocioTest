@@ -22,7 +22,7 @@ class ProfileShopListItem extends StatelessWidget {
         );
       },
       child: Container(
-        height: hJM(24),
+        height: hJM(25),
         padding: EdgeInsets.all(wJM(3)),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10.0),
@@ -73,6 +73,7 @@ class ProfileShopListItem extends StatelessWidget {
             ),
             SizedBox(
               width: wJM(47),
+              height: hJM(25),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,

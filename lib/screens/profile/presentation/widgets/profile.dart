@@ -57,19 +57,19 @@ class _ProfileShopList extends StatelessWidget {
         SizedBox(height: hJM(2)),
         ProfileShopListItem(
           shop: ProfileShopListItemModel(
-            address: 'CL VIRGEN DEL MONTE 0 18015 GRANADA Granada',
-            imageUrl: defaultShopImage,
             name: 'COVIRAN SUPERMERCADOS S.A.U. (CHANA) (383)',
+            address: 'CL VIRGEN DEL MONTE 0 18015 GRANADA Granada',
             phoneNumber: '958281160',
+            imageUrl: defaultShopImage,
           ),
         ),
         SizedBox(height: hJM(2)),
         ProfileShopListItem(
           shop: ProfileShopListItemModel(
-            address: 'Dirección tienda 2',
-            imageUrl: defaultShopImage,
-            name: 'Nombre tienda ',
+            name: 'coviran supermercados Nombre tienda ',
+            address: 'Dirección tienda 2, granada granada',
             phoneNumber: '999 999 999',
+            imageUrl: defaultShopImage,
           ),
         ),
       ],

@@ -21,11 +21,12 @@ class BarItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         Container(
-          width: wJM(17),
-          height: wJM(12),
+          width: wJM(15),
+          height: wJM(10),
+          alignment: Alignment.center,
           decoration: BoxDecoration(
             shape: BoxShape.rectangle,
             borderRadius: BorderRadius.circular(30),
@@ -39,7 +40,7 @@ class BarItem extends StatelessWidget {
         Text(
           label,
           style: CommonTheme.labelMedium.copyWith(fontWeight: FontWeight.bold),
-        )
+        ),
       ],
     );
   }
