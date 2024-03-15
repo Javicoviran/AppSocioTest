@@ -1,7 +1,7 @@
+import 'package:app_socio_test/features/navbar/widgets/nav_bar.dart';
 import 'package:app_socio_test/helpers/extensions.dart';
 import 'package:app_socio_test/helpers/myscreenutils.dart';
 import 'package:app_socio_test/screens/login/log_out.dart';
-import 'package:app_socio_test/screens/login/login.dart';
 import 'package:app_socio_test/screens/login/sig_in.dart';
 import 'package:app_socio_test/screens/profile/presentation/widgets/profile.dart';
 import 'package:app_socio_test/screens/purchases/widgets/purchases_menu.dart';
@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
         title: 'App Socios Prueba',
         debugShowCheckedModeBanner: false,
         theme: appThemeData,
-        home: Material(child: PurchasesMenu()),
+        home: const Material(child: NavBar()),
       ),
     );
   }
