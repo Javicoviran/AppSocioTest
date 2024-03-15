@@ -1,6 +1,8 @@
 import 'package:app_socio_test/helpers/screen_functions.dart';
 import 'package:app_socio_test/screens/purchases/models/purchases_menu_model.dart';
+import 'package:app_socio_test/screens/purchases/widgets/screens/meat.dart';
 import 'package:app_socio_test/screens/purchases/widgets/screens/orders.dart';
+import 'package:app_socio_test/screens/purchases/widgets/screens/transport.dart';
 import 'package:app_socio_test/styles/colors.dart';
 import 'package:app_socio_test/styles/theme.dart';
 import 'package:app_socio_test/widgets/base_app_bar.dart';
@@ -9,8 +11,8 @@ import 'package:flutter/material.dart';
 
 class PurchasesMenu extends StatelessWidget {
   final purchases = PurchasesMenuItem(text: "Compras", icon: Icons.assignment, goTo: Orders());
-  final transport = PurchasesMenuItem(text: "Transporte", icon: Icons.local_shipping, goTo: const Text("data"));
-  final meat = PurchasesMenuItem(text: "Solicitar Pedido de Carnes", icon: Icons.store, goTo: const Text("data"));
+  final transport = PurchasesMenuItem(text: "Transporte", icon: Icons.local_shipping, goTo: const Transport());
+  final meat = PurchasesMenuItem(text: "Solicitar Pedido de Carnes", icon: Icons.store, goTo: const Meat());
   PurchasesMenu({super.key});
 
   @override
@@ -52,7 +54,7 @@ class _PurchasesMenuTitle extends StatelessWidget {
       children: [
         const Icon(Icons.assignment_outlined),
         Text(
-          "Compras",
+          "Pedidos",
           style: CommonTheme.headlineSmall,
         )
       ],

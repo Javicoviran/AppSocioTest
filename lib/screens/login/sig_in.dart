@@ -1,3 +1,4 @@
+import 'package:app_socio_test/features/navbar/widgets/nav_bar.dart';
 import 'package:app_socio_test/helpers/screen_functions.dart';
 import 'package:app_socio_test/styles/colors.dart';
 import 'package:app_socio_test/styles/theme.dart';
@@ -30,13 +31,15 @@ class SignIn extends StatelessWidget {
                       textAlign: TextAlign.center,
                     ),
                     SizedBox(height: hJM(4)),
-                    const Input(label: "Usuario"),
+                    const Input(label: "Usuario", icon: Icons.person,),
                     SizedBox(height: hJM(4)),
-                    const InputPass(label: "Contraseña"),
+                    const InputPass(label: "Contraseña",icon: Icons.lock,),
                     SizedBox(height: hJM(4)),
-                    const BaseButton(
+                    BaseButton(
+                      height: hJM(8),
+                      onClick: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const NavBar())),
                       text: "Acceder",
-                      backgroundColor: AppColors.lightGreen600,
+                      backgroundColor: AppColors.green900,
                     ),
                     BaseButton(
                       width: wJM(60),

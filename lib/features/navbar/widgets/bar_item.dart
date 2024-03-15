@@ -29,11 +29,11 @@ class BarItem extends StatelessWidget {
           decoration: BoxDecoration(
             shape: BoxShape.rectangle,
             borderRadius: BorderRadius.circular(30),
-            color: isSelected ? AppColors.grey400 : Colors.transparent,
+            color: isSelected ? AppColors.green100 : Colors.transparent,
           ),
           child: IconButton(
             onPressed: onPressed,
-            icon: Icon(iconData, size: 0.033.sh, color: isSelected ? CommonTheme.backgroundColor : CommonTheme.textColor),
+            icon: Icon(iconData, size: 0.033.sh, color: isSelected ? AppColors.green900 : CommonTheme.textColor),
           ),
         ),
         Text(

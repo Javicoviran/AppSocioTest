@@ -1,4 +1,5 @@
 import 'package:app_socio_test/helpers/screen_functions.dart';
+import 'package:app_socio_test/styles/colors.dart';
 import 'package:app_socio_test/styles/theme.dart';
 import 'package:flutter/material.dart';
 
@@ -72,7 +73,7 @@ class _InputPassState extends State<InputPass> {
             child: Row(
               children: [
                 if (widget.icon != null) ...[
-                  Icon(widget.icon, color: CommonTheme.primaryColor, size: hJM(4)),
+                  Icon(widget.icon, color: AppColors.green900, size: hJM(4)),
                   SizedBox(width: wJM(1.5)),
                 ],
                 if (widget.label != null) Text(widget.label!, style: CommonTheme.titleSmall),
@@ -96,7 +97,7 @@ class _InputPassState extends State<InputPass> {
           keyboardType: widget.textInputType,
           maxLines: 1,
           maxLength: widget.maxLength,
-          cursorColor: CommonTheme.primaryColor,
+          cursorColor: AppColors.green900,
           textAlignVertical: TextAlignVertical.center,
           decoration: CommonTheme.inputDecoration.copyWith(
             label: Text(

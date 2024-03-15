@@ -5,9 +5,7 @@ import 'package:app_socio_test/styles/colors.dart';
 import 'package:app_socio_test/styles/theme.dart';
 import 'package:app_socio_test/widgets/base_app_bar.dart';
 import 'package:app_socio_test/widgets/body.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class Orders extends StatelessWidget {
   final List<Order> listData = data;
