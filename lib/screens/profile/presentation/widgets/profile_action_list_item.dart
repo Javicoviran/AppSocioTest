@@ -1,11 +1,11 @@
 import 'package:app_socio_test/helpers/screen_functions.dart';
-import 'package:app_socio_test/screens/profile/presentation/models/profile_action_item.dart';
+import 'package:app_socio_test/screens/profile/presentation/models/profile_action_item_model.dart';
 import 'package:app_socio_test/styles/colors.dart';
 import 'package:app_socio_test/styles/theme.dart';
 import 'package:flutter/material.dart';
 
 class ProfileActionListItem extends StatelessWidget {
-  final ProfileActionItem actionItem;
+  final ProfileActionItemModel actionItem;
 
   const ProfileActionListItem({
     super.key,
@@ -22,8 +22,8 @@ class ProfileActionListItem extends StatelessWidget {
         child: Column(
           children: [
             Container(
-              width: wJM(9) * 2,
-              height: wJM(9) * 2,
+              width: wJM(8.5) * 2,
+              height: wJM(8.5) * 2,
               decoration: const BoxDecoration(shape: BoxShape.circle, color: AppColors.lightGreen100),
               child: Icon(actionItem.icon, color: AppColors.green900),
             ),

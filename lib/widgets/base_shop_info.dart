@@ -1,17 +1,19 @@
 import 'package:app_socio_test/helpers/screen_functions.dart';
 import 'package:app_socio_test/helpers/constants.dart';
-import 'package:app_socio_test/screens/profile/presentation/models/shop_service_item.dart';
+import 'package:app_socio_test/screens/profile/presentation/models/shop_service_item_model.dart';
 import 'package:app_socio_test/screens/profile/presentation/widgets/profile_base_field.dart';
-import 'package:app_socio_test/screens/profile/presentation/widgets/profile_contact_field.dart';
 import 'package:app_socio_test/styles/theme.dart';
 import 'package:app_socio_test/widgets/base_app_bar.dart';
+import 'package:app_socio_test/widgets/base_contact_field.dart';
 import 'package:app_socio_test/widgets/body.dart';
 import 'package:flutter/material.dart';
 
-class ProfileShopInfo extends StatelessWidget {
-  // final ProfileShopInfoModel shopInfo;
+// TODO: used in home AND in profil... view models in presentation general?
 
-  const ProfileShopInfo({super.key});
+class BaseShopInfo extends StatelessWidget {
+  // final ShopInfoModel shopInfo;
+
+  const BaseShopInfo({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +31,7 @@ class ProfileShopInfo extends StatelessWidget {
                   child: Image.network(defaultShopImage, fit: BoxFit.cover),
                 ),
                 Padding(
-                  padding: EdgeInsets.all(wJM(5)),
+                  padding: CommonTheme.defaultBodyPadding,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -173,14 +175,15 @@ class ProfileShopInfo extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           _ShopInfoServicesItem(
-                            shopService: ShopServiceItem(name: 'Buzoneo', icon: Icons.mail_rounded),
-                          ),
-                          _ShopInfoServicesItem(
-                            shopService: ShopServiceItem(name: 'Club Familia', icon: Icons.family_restroom_rounded),
+                            shopService: ShopServiceItemModel(name: 'Buzoneo', icon: Icons.mail_rounded),
                           ),
                           _ShopInfoServicesItem(
                             shopService:
-                                ShopServiceItem(name: 'Servicio prevención mancomunado', icon: Icons.groups_3_rounded),
+                                ShopServiceItemModel(name: 'Club Familia', icon: Icons.family_restroom_rounded),
+                          ),
+                          _ShopInfoServicesItem(
+                            shopService: ShopServiceItemModel(
+                                name: 'Servicio prevención mancomunado', icon: Icons.groups_3_rounded),
                           ),
                         ],
                       ),
@@ -198,7 +201,7 @@ class ProfileShopInfo extends StatelessWidget {
 }
 
 class _ShopInfoServicesItem extends StatelessWidget {
-  final ShopServiceItem shopService;
+  final ShopServiceItemModel shopService;
 
   const _ShopInfoServicesItem({required this.shopService});
 
@@ -241,7 +244,7 @@ class _ShopInfoPlatformWidget extends StatelessWidget {
           const ProfileBaseField(title: 'Responsable plataforma', content: 'Jose Manuel Suarez Perez'),
           const ProfileBaseField(
             title: 'Dirección de la plataforma',
-            specialContent: ProfileContactField(
+            specialContent: BaseContactField(
               phoneNumber: '958 808 300',
               location: 'CR NACIONAL 432 BADAJOZ GRANADA KM 431 18230 - ATARFE Granada',
             ),

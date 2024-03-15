@@ -2,14 +2,14 @@ import 'package:app_socio_test/helpers/screen_functions.dart';
 import 'package:app_socio_test/styles/theme.dart';
 import 'package:flutter/material.dart';
 
-class ProfileContactField extends StatelessWidget {
+class BaseContactField extends StatelessWidget {
   final String phoneNumber;
   final String? title;
   final String? schedule;
   final String? email;
   final String? location;
 
-  const ProfileContactField({
+  const BaseContactField({
     super.key,
     required this.phoneNumber,
     this.title,

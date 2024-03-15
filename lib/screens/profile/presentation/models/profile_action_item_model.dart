@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class ProfileActionItem {
+class ProfileActionItemModel {
   final String text;
   final IconData icon;
   final void Function() onTap;
 
-  ProfileActionItem({
+  ProfileActionItemModel({
     required this.text,
     required this.icon,
     required this.onTap,

@@ -82,7 +82,7 @@ class LoginBanner extends StatelessWidget {
         width: double.infinity,
         margin: EdgeInsets.all(wJM(4)),
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: CommonTheme.defaultImageRadius,
           gradient: const LinearGradient(
             begin: Alignment.centerLeft,
             end: Alignment.centerRight,
@@ -103,7 +103,8 @@ class LoginBanner extends StatelessWidget {
         child: Center(
           child: Text(
             text,
-            style: CommonTheme.titleLarge.copyWith(fontWeight: FontWeight.normal, color: CommonTheme.darkButtonTextColor),
+            style:
+                CommonTheme.titleLarge.copyWith(fontWeight: FontWeight.normal, color: CommonTheme.darkButtonTextColor),
           ),
         ),
       ),

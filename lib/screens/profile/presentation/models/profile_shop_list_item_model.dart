@@ -1,13 +1,13 @@
-class ProfileShopCardModel {
+class ProfileShopListItemModel {
   final String name;
-  final String accountNumber;
   final String address;
   final String phoneNumber;
+  final String imageUrl;
 
-  ProfileShopCardModel({
+  ProfileShopListItemModel({
     required this.name,
-    required this.accountNumber,
     required this.address,
     required this.phoneNumber,
+    required this.imageUrl,
   });
 }

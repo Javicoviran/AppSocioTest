@@ -26,7 +26,7 @@ class ProfileAvatar extends StatelessWidget {
           placeholder: (_, __) => LoadingShimmer(
             width: wJM(17) * 2,
             height: wJM(17) * 2,
-            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+            shape: RoundedRectangleBorder(borderRadius: CommonTheme.defaultImageRadius),
           ),
           errorWidget: (_, __, ___) => Image.asset(
             noImagePlaceHolder,

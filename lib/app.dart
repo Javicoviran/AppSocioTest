@@ -1,6 +1,6 @@
 import 'package:app_socio_test/helpers/extensions.dart';
 import 'package:app_socio_test/helpers/myscreenutils.dart';
-import 'package:app_socio_test/screens/profile/presentation/widgets/profile.dart';
+import 'package:app_socio_test/screens/more_options/presentation/widgets/more_options.dart';
 import 'package:app_socio_test/styles/theme.dart';
 import 'package:flutter/material.dart';
 
@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
         title: 'App Socios Prueba',
         debugShowCheckedModeBanner: false,
         theme: appThemeData,
-        home: const Material(child: Profile()),
+        home: const Material(child: MoreOptions()),
       ),
     );
   }

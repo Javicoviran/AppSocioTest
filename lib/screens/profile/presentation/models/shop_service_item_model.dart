@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class ShopServiceItem {
+class ShopServiceItemModel {
   final String name;
   final IconData icon;
 
-  ShopServiceItem({
+  ShopServiceItemModel({
     required this.name,
     required this.icon,
   });
