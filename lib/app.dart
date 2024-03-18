@@ -1,4 +1,5 @@
 import 'package:app_socio_test/features/navbar/widgets/nav_bar.dart';
+import 'package:app_socio_test/features/qr_scanner/presentation/widgets/qr_scanner.dart';
 import 'package:app_socio_test/presentation/helpers/extensions.dart';
 import 'package:app_socio_test/presentation/helpers/myscreenutils.dart';
 import 'package:app_socio_test/features/auth/login/sig_in.dart';

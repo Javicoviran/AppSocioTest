@@ -33,12 +33,7 @@ List<String> meatColumns = [
 ];
 
 List<TransportOrder> data2 = [
-  TransportOrder(
-    shopId: "383",
-    date: 1000198005,
-    trans: 5661,
-    detail: "Hora apróximada de llegada 0:75 a 383",
-  ),
+  TransportOrder(shopId: "383", date: 1000198005, trans: 5661, detail: "Hora apróximada de llegada 0:75 a 383"),
 ];
 
 List<String> transportColumns = [
