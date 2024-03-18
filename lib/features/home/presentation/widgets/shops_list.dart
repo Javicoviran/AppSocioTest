@@ -98,16 +98,16 @@ class ShopsList extends StatelessWidget {
                       children: [
                         BaseButton(
                           text: 'Modificar',
-                          backgroundColor: AppColors.green800,
+                          backgroundColor: CommonTheme.green800,
                           width: wJM(36),
                         ),
                         SizedBox(width: wJM(2)),
                         BaseButton(
                           width: wJM(36),
                           text: 'Información',
-                          buttonTextColor: AppColors.green800,
+                          buttonTextColor: CommonTheme.green800,
                           backgroundColor: CommonTheme.backgroundColor,
-                          borderStyle: AppColors.green800,
+                          borderStyle: CommonTheme.green800,
                           onClick: () => Navigator.push(
                             context,
                             fadeTransitionRoute(const BaseShopInfo(/*shopInfo*/)),

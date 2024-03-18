@@ -1,5 +1,4 @@
 import 'package:app_socio_test/presentation/helpers/screen_functions.dart';
-import 'package:app_socio_test/presentation/styles/colors.dart';
 import 'package:app_socio_test/presentation/styles/theme.dart';
 import 'package:flutter/material.dart';
 
@@ -31,7 +30,7 @@ class BaseListItem extends StatelessWidget {
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Icon(icon, size: hJM(4.5), color: iconColor ?? AppColors.green800),
+                Icon(icon, size: hJM(4.5), color: iconColor ?? CommonTheme.green800),
                 SizedBox(width: wJM(4)),
                 Text(
                   text,

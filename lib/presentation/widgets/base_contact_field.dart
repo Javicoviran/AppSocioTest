@@ -24,12 +24,12 @@ class BaseContactField extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        if (title != null) Text(title!, style: CommonTheme.titleLarge.copyWith(color: CommonTheme.primaryColorDark)),
+        if (title != null) Text(title!, style: CommonTheme.titleLarge.copyWith(color: CommonTheme.green800)),
         if (schedule != null)
           Text(schedule!, style: CommonTheme.bodyLarge, maxLines: 3, overflow: TextOverflow.ellipsis),
         Row(
           children: [
-            Icon(Icons.phone_rounded, size: hJM(3.5), color: CommonTheme.primaryColorDark),
+            Icon(Icons.phone_rounded, size: hJM(3.5), color: CommonTheme.green800),
             SizedBox(width: wJM(2)),
             Text(phoneNumber, style: CommonTheme.bodyLarge.copyWith(fontWeight: FontWeight.bold)),
           ],
@@ -37,7 +37,7 @@ class BaseContactField extends StatelessWidget {
         if (email != null)
           Row(
             children: [
-              Icon(Icons.email_rounded, size: hJM(3.5), color: CommonTheme.primaryColorDark),
+              Icon(Icons.email_rounded, size: hJM(3.5), color: CommonTheme.green800),
               SizedBox(width: wJM(2)),
               Text(
                 email!,
@@ -51,7 +51,7 @@ class BaseContactField extends StatelessWidget {
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Icon(Icons.location_on_rounded, size: hJM(3.5), color: CommonTheme.primaryColorDark),
+              Icon(Icons.location_on_rounded, size: hJM(3.5), color: CommonTheme.green800),
               SizedBox(width: wJM(2)),
               SizedBox(
                 width: wJM(60),

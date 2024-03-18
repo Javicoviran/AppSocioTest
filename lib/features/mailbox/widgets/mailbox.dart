@@ -2,7 +2,6 @@ import 'package:app_socio_test/presentation/helpers/screen_functions.dart';
 import 'package:app_socio_test/features/mailbox/helpers/constant.dart';
 import 'package:app_socio_test/features/mailbox/providers/mailbox_controller_provider.dart';
 import 'package:app_socio_test/features/mailbox/widgets/mailbox_tabs.dart';
-import 'package:app_socio_test/presentation/styles/colors.dart';
 import 'package:app_socio_test/presentation/styles/theme.dart';
 import 'package:app_socio_test/presentation/widgets/base_app_bar.dart';
 import 'package:app_socio_test/presentation/widgets/covi_bar.dart';
@@ -35,8 +34,8 @@ class MailBox extends ConsumerWidget {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            const Icon(Icons.mail, color: AppColors.green800),
-                            Text("Mi buzón", style: CommonTheme.headlineSmall.copyWith(color: AppColors.green800)),
+                            const Icon(Icons.mail, color: CommonTheme.green800),
+                            Text("Mi buzón", style: CommonTheme.headlineSmall.copyWith(color: CommonTheme.green800)),
                           ],
                         )),
                     const Material(elevation: 5, child: MailboxTabs()),

@@ -1,5 +1,5 @@
 import 'package:app_socio_test/presentation/helpers/size_extenseion.dart';
-import 'package:app_socio_test/presentation/styles/colors.dart';
+import 'package:app_socio_test/presentation/styles/theme.dart';
 import 'package:flutter/material.dart';
 
 class MailboxTabsItem extends StatelessWidget {
@@ -21,7 +21,7 @@ class MailboxTabsItem extends StatelessWidget {
         border: isSelected
             ? const Border(
                 bottom: BorderSide(
-                  color: AppColors.green800,
+                  color: CommonTheme.green800,
                   width: 4,
                 ),
               )
@@ -29,7 +29,7 @@ class MailboxTabsItem extends StatelessWidget {
       ),
       child: IconButton(
         onPressed: onPressed,
-        icon: Icon(iconData, size: 0.033.sh, color: AppColors.green800),
+        icon: Icon(iconData, size: 0.033.sh, color: CommonTheme.green800),
       ),
     );
   }

@@ -47,6 +47,7 @@ class CommonTheme {
   static const selectedButtonIndicator = AppColors.olive;
   static const orangeButtonBackground = AppColors.orange300;
   static const green500 = AppColors.green500;
+  static const green800 = AppColors.green800;
 
   static TextStyle bodySmall = TextStyle(fontSize: 12.sp);
   static TextStyle bodyMedium = TextStyle(fontSize: 14.sp);

@@ -3,7 +3,6 @@ import 'package:app_socio_test/presentation/helpers/screen_functions.dart';
 import 'package:app_socio_test/presentation/helpers/utils.dart';
 import 'package:app_socio_test/features/profile/presentation/widgets/profile.dart';
 import 'package:app_socio_test/presentation/widgets/profile_avatar.dart';
-import 'package:app_socio_test/presentation/styles/colors.dart';
 import 'package:app_socio_test/presentation/styles/theme.dart';
 import 'package:app_socio_test/presentation/widgets/base_button.dart';
 import 'package:flutter/material.dart';
@@ -11,7 +10,7 @@ import 'package:flutter/material.dart';
 class ProfilePreview extends StatelessWidget {
   // final PersonalDataPreviewModel previewModel;
 
-  const ProfilePreview({super.key}/*{required this.previewModel}*/);
+  const ProfilePreview({super.key} /*{required this.previewModel}*/);
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +30,7 @@ class ProfilePreview extends StatelessWidget {
               Row(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
-                  Icon(Icons.location_on_rounded, color: AppColors.green800, size: wJM(6)),
+                  Icon(Icons.location_on_rounded, color: CommonTheme.green800, size: wJM(6)),
                   SizedBox(
                     width: wJM(40),
                     child: const Text(
@@ -45,7 +44,7 @@ class ProfilePreview extends StatelessWidget {
               BaseButton(
                 text: 'Mis datos',
                 width: wJM(46),
-                backgroundColor: AppColors.green800,
+                backgroundColor: CommonTheme.green800,
                 onClick: () => Navigator.push(
                   context,
                   fadeTransitionRoute(const Profile()),
