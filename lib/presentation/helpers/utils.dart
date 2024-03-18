@@ -1,3 +1,4 @@
+import 'package:app_socio_test/presentation/widgets/exit_dialog.dart';
 import 'package:flutter/material.dart';
 
 Route fadeTransitionRoute(Widget destination) {
@@ -9,3 +10,11 @@ Route fadeTransitionRoute(Widget destination) {
     ),
   );
 }
+
+Future<bool> showExitDialog(BuildContext context) async =>
+    await showDialog(
+      context: context,
+      builder: (context) => const ExitDialog(),
+      barrierDismissible: false,
+    ) ??
+    false;
