@@ -1,4 +1,5 @@
 import 'package:app_socio_test/features/purchases/models/meat.dart';
+import 'package:app_socio_test/helpers/utils.dart';
 import 'package:app_socio_test/presentation/helpers/screen_functions.dart';
 import 'package:app_socio_test/features/purchases/helpers/constant.dart';
 import 'package:app_socio_test/presentation/styles/colors.dart';
@@ -48,17 +49,17 @@ class _MeatDatatable extends StatelessWidget {
         columns: meatColumns.map((title) {
           return DataColumn(
             label: Expanded(
-              child: Text(title, style: CommonTheme.bodyMedium.copyWith(color: AppColors.green900)),
+              child: Center(child: Text(title, style: CommonTheme.bodyMedium.copyWith(color: AppColors.green900))),
             ),
           );
         }).toList(),
         rows: listData.map((order) {
           return DataRow(
             cells: <DataCell>[
-              DataCell(Text(order.meatOrderId.toString())),
-              DataCell(Text(order.date.toString())),
-              DataCell(Text(order.state ? 'Correcto' : 'Incorrecto')),
-              DataCell(Text(order.shopId)),
+              DataCell(Center(child: Text(order.meatOrderId.toString()))),
+              DataCell(Center(child: Text(formatDate(order.date)))),
+              DataCell(Center(child: Text(order.state ? 'Correcto' : 'Incorrecto'))),
+              DataCell(Center(child: Text(order.shopId))),
             ],
           );
         }).toList(),

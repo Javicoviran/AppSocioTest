@@ -11,7 +11,7 @@ import 'package:flutter/material.dart';
 
 class PurchasesMenu extends StatelessWidget {
   final purchases = PurchasesMenuItem(text: "Compras", icon: Icons.assignment, goTo: Orders());
-  final transport = PurchasesMenuItem(text: "Transporte", icon: Icons.local_shipping, goTo: const Transport());
+  final transport = PurchasesMenuItem(text: "Transporte", icon: Icons.local_shipping, goTo:  Transport());
   final meat = PurchasesMenuItem(text: "Solicitar Pedido de Carnes", icon: Icons.store, goTo:  Meat());
   PurchasesMenu({super.key});
 

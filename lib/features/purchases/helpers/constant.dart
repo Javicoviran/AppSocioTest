@@ -1,5 +1,6 @@
 import 'package:app_socio_test/features/purchases/models/meat.dart';
 import 'package:app_socio_test/features/purchases/models/order.dart';
+import 'package:app_socio_test/features/purchases/models/transport.dart';
 
 List<Order> data = [
   Order(shopId: "383", date: 1000198005, state: true, orderId: 8798798, issue: 0, ns: 0.0),
@@ -29,4 +30,20 @@ List<String> meatColumns = [
   "Fecha",
   "Estado",
   "Tienda",
+];
+
+List<TransportOrder> data2 = [
+  TransportOrder(
+    shopId: "383",
+    date: 1000198005,
+    trans: 5661,
+    detail: "Hora apróximada de llegada 0:75 a 383",
+  ),
+];
+
+List<String> transportColumns = [
+  "Trans",
+  "Fecha",
+  "Tienda",
+  "Detalle",
 ];
