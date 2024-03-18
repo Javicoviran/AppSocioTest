@@ -1,3 +1,4 @@
+import 'package:app_socio_test/features/article/presentation/models/article_bar_code_model.dart';
 import 'package:app_socio_test/presentation/widgets/base_table.dart';
 import 'package:app_socio_test/presentation/widgets/base_table_cell.dart';
 import 'package:app_socio_test/presentation/helpers/screen_functions.dart';
@@ -7,7 +8,12 @@ import 'package:barcode_widget/barcode_widget.dart';
 import 'package:flutter/material.dart';
 
 class ArticleBarCodes extends StatelessWidget {
-  const ArticleBarCodes({super.key});
+  final List<ArticleBarCodeModel> barcodes;
+
+  const ArticleBarCodes({
+    super.key,
+    required this.barcodes,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -33,26 +39,26 @@ class ArticleBarCodes extends StatelessWidget {
             baseRows: [
               BaseTableRow(
                 rowChildren: [
-                  BaseTableCell(content: 'EAN13', textStyle: CommonTheme.tableColumnHeaderStyle),
-                  const BaseTableCell(content: '5449000171795'),
-                  const BaseTableCell(content: '1'),
-                  const BaseTableCell(content: 'Ud'),
+                  BaseTableCell(content: barcodes.first.type, textStyle: CommonTheme.tableColumnHeaderStyle),
+                  BaseTableCell(content: barcodes.first.code),
+                  BaseTableCell(content: barcodes.first.amount),
+                  BaseTableCell(content: barcodes.first.format),
                 ],
               ),
               BaseTableRow(
                 rowChildren: [
-                  BaseTableCell(content: 'EAN13', textStyle: CommonTheme.tableColumnHeaderStyle),
-                  const BaseTableCell(content: '5449000172365'),
-                  const BaseTableCell(content: '6'),
-                  const BaseTableCell(content: 'caj'),
+                  BaseTableCell(content: barcodes.elementAt(1).type, textStyle: CommonTheme.tableColumnHeaderStyle),
+                  BaseTableCell(content: barcodes.elementAt(1).code),
+                  BaseTableCell(content: barcodes.elementAt(1).amount),
+                  BaseTableCell(content: barcodes.elementAt(1).format),
                 ],
               ),
               BaseTableRow(
                 rowChildren: [
-                  BaseTableCell(content: 'DUN14', textStyle: CommonTheme.tableColumnHeaderStyle),
-                  const BaseTableCell(content: '05449000172365'),
-                  const BaseTableCell(content: '6'),
-                  const BaseTableCell(content: 'caj'),
+                  BaseTableCell(content: barcodes.elementAt(2).type, textStyle: CommonTheme.tableColumnHeaderStyle),
+                  BaseTableCell(content: barcodes.elementAt(2).code),
+                  BaseTableCell(content: barcodes.elementAt(2).amount),
+                  BaseTableCell(content: barcodes.elementAt(2).format),
                 ],
               ),
             ],

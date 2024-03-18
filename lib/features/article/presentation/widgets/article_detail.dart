@@ -1,7 +1,7 @@
+import 'package:app_socio_test/features/article/presentation/models/article_model.dart';
 import 'package:app_socio_test/features/article/presentation/widgets/article_bar_codes.dart';
 import 'package:app_socio_test/presentation/widgets/base_table.dart';
 import 'package:app_socio_test/presentation/widgets/base_table_cell.dart';
-import 'package:app_socio_test/presentation/helpers/constants.dart';
 import 'package:app_socio_test/presentation/helpers/screen_functions.dart';
 import 'package:app_socio_test/presentation/styles/theme.dart';
 import 'package:app_socio_test/presentation/widgets/base_app_bar.dart';
@@ -11,7 +11,12 @@ import 'package:app_socio_test/presentation/widgets/loading_shimmer.dart';
 import 'package:flutter/material.dart';
 
 class ArticleDetail extends StatelessWidget {
-  const ArticleDetail({super.key});
+  final ArticleModel article;
+
+  const ArticleDetail({
+    super.key,
+    required this.article,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +36,7 @@ class ArticleDetail extends StatelessWidget {
                     child: ClipRRect(
                       borderRadius: CommonTheme.defaultImageRadius,
                       child: Image.network(
-                        articleTestImage,
+                        article.imageUrl,
                         fit: BoxFit.contain,
                         loadingBuilder: (BuildContext _, Widget child, ImageChunkEvent? loadingProgress) {
                           if (loadingProgress == null) {
@@ -56,7 +61,7 @@ class ArticleDetail extends StatelessWidget {
                   ),
                   SizedBox(height: hJM(4)),
                   Text(
-                    'BEBIDA ISOTÓNICA ZERO NAR AQUARIUS 1,5 L',
+                    article.name,
                     style: CommonTheme.titleLarge,
                     maxLines: 3,
                     overflow: TextOverflow.ellipsis,
@@ -65,34 +70,34 @@ class ArticleDetail extends StatelessWidget {
                   _BaseArticleField(
                     fieldName: 'COD',
                     textStyle: CommonTheme.bodyLarge.copyWith(fontWeight: FontWeight.bold),
-                    fieldValue: '11103',
+                    fieldValue: article.code,
                   ),
                   _BaseArticleField(
                     fieldName: 'Precio',
                     textStyle: CommonTheme.titleLarge,
-                    fieldValue: '1.265 €/Ud.',
+                    fieldValue: article.price,
                   ),
                   _BaseArticleField(
                     fieldName: 'Min. pedido',
-                    fieldValue: '1 Caja, 6 Ud.',
+                    fieldValue: article.minOrder,
                     textStyle: CommonTheme.titleMedium,
                   ),
                   _BaseArticleField(
                     fieldName: 'Disponible',
-                    fieldValue: 'Plataforma',
+                    fieldValue: article.available,
                     textStyle: CommonTheme.bodyMedium,
                   ),
                   _BaseArticleField(
                     fieldName: 'Categoría Impuestos',
-                    fieldValue: '21 APLICA RECARGO',
+                    fieldValue: article.taxCategory,
                     textStyle: CommonTheme.bodyMedium,
                   ),
                   SizedBox(height: hJM(4)),
-                  const _ClasificationsTable(),
+                  _ClasificationsTable(taxCategory: article.taxCategory),
                   SizedBox(height: hJM(2)),
                   const _UnitsConversionTable(),
                   SizedBox(height: hJM(2)),
-                  const ArticleBarCodes(),
+                  ArticleBarCodes(barcodes: article.barCodes),
                 ],
               ),
             ),
@@ -142,7 +147,9 @@ class _UnitsConversionTable extends StatelessWidget {
 }
 
 class _ClasificationsTable extends StatelessWidget {
-  const _ClasificationsTable();
+  final String taxCategory;
+
+  const _ClasificationsTable({required this.taxCategory});
 
   @override
   Widget build(BuildContext context) {
@@ -155,7 +162,7 @@ class _ClasificationsTable extends StatelessWidget {
         BaseTableRow(
           rowChildren: [
             BaseTableCell(content: 'CATEGORÍA AECOC', textStyle: CommonTheme.tableColumnHeaderStyle),
-            const BaseTableCell(content: '0104021001')
+            BaseTableCell(content: taxCategory),
           ],
         ),
       ],

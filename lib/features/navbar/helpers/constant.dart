@@ -1,3 +1,4 @@
+import 'package:app_socio_test/features/article/presentation/helpers/constants.dart';
 import 'package:app_socio_test/features/article/presentation/widgets/article_detail.dart';
 import 'package:app_socio_test/features/more/more_options/presentation/widgets/more_options.dart';
 import 'package:app_socio_test/features/navbar/models/nav_bar_item.dart';
@@ -6,7 +7,13 @@ import 'package:app_socio_test/features/mailbox/widgets/mailbox.dart';
 import 'package:app_socio_test/features/purchases/widgets/purchases_menu.dart';
 import 'package:flutter/material.dart';
 
-final navBarPages = [const ArticleDetail(), PurchasesMenu(), const Home(), const MailBox(), const MoreOptions()];
+final navBarPages = [
+  ArticleDetail(article: testAquarius),
+  PurchasesMenu(),
+  const Home(),
+  const MailBox(),
+  const MoreOptions()
+];
 
 const defaultTab = 2;
 
