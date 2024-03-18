@@ -1,6 +1,6 @@
 import 'package:app_socio_test/presentation/helpers/extensions.dart';
 import 'package:app_socio_test/presentation/helpers/myscreenutils.dart';
-import 'package:app_socio_test/features/auth/login/sig_in.dart';
+import 'package:app_socio_test/features/auth/sign_in/sig_in.dart';
 import 'package:app_socio_test/presentation/styles/theme.dart';
 import 'package:flutter/material.dart';
 

@@ -42,7 +42,7 @@ class ProfileShopListItem extends StatelessWidget {
                   width: wJM(33),
                   height: hJM(11),
                   child: ClipRRect(
-                    borderRadius: const BorderRadius.all(Radius.circular(10.0)),
+                    borderRadius: CommonTheme.defaultImageRadius,
                     child: Image.network(
                       shop.imageUrl,
                       fit: BoxFit.cover,

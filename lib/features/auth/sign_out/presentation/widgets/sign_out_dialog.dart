@@ -1,4 +1,4 @@
-import 'package:app_socio_test/features/auth/login/sig_in.dart';
+import 'package:app_socio_test/features/auth/sign_in/sig_in.dart';
 import 'package:app_socio_test/presentation/helpers/screen_functions.dart';
 import 'package:app_socio_test/presentation/helpers/utils.dart';
 import 'package:app_socio_test/presentation/styles/theme.dart';

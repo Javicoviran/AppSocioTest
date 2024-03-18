@@ -46,6 +46,7 @@ class CommonTheme {
   static const shadowColorLight = AppColors.gray;
   static const selectedButtonIndicator = AppColors.olive;
   static const orangeButtonBackground = AppColors.orange300;
+  static const green500 = AppColors.green500;
 
   static TextStyle bodySmall = TextStyle(fontSize: 12.sp);
   static TextStyle bodyMedium = TextStyle(fontSize: 14.sp);
@@ -68,6 +69,7 @@ class CommonTheme {
   static TextStyle displayLarge = TextStyle(fontSize: 57.sp);
 
   static final appBarTextStyle = titleLarge.copyWith(color: statusBarColor);
+  // TODO: change name
   static final searchMapAppBarTextStyle = bodyLarge.copyWith(color: darkButtonTextColor);
 
   static final cardBodyTextStyle = bodyMedium.copyWith(fontWeight: FontWeight.bold, color: textColor);
@@ -88,6 +90,9 @@ class CommonTheme {
     color: AppColors.middleGray,
     fontSize: 12.sp,
   );
+
+  static final tableRowHeaderStyle = searchMapAppBarTextStyle.copyWith(fontWeight: FontWeight.bold);
+  static final tableColumnHeaderStyle = bodyMedium.copyWith(fontWeight: FontWeight.bold);
 
   static const inputDecoration = InputDecoration(
     enabledBorder: UnderlineInputBorder(
@@ -122,6 +127,10 @@ class CommonTheme {
   static final defaultBodyPadding = EdgeInsets.all(wJM(5));
 
   static final defaultImageRadius = BorderRadius.circular(10);
+  static const tableHeaderRowBoxDecoration = BoxDecoration(
+    color: green500,
+    borderRadius: BorderRadius.only(topRight: Radius.circular(10), topLeft: Radius.circular(10)),
+  );
 
   static final coviBarHeight = 0.04.sh;
   static final appBarHeight = 0.07.sh;

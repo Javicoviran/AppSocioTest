@@ -52,7 +52,7 @@ class ShopsList extends StatelessWidget {
                       height: hJM(20),
                       width: double.infinity,
                       child: ClipRRect(
-                        borderRadius: const BorderRadius.all(Radius.circular(10.0)),
+                        borderRadius: CommonTheme.defaultImageRadius,
                         child: Image.network(
                           defaultShopImage,
                           fit: BoxFit.cover,
