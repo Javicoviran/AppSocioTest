@@ -40,9 +40,11 @@ class _OrdersDatatable extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
+      physics: const ClampingScrollPhysics(),
       scrollDirection: Axis.horizontal,
       child: DataTable(
-        border: const TableBorder(bottom: BorderSide(color: AppColors.green900), top: BorderSide(color: AppColors.green900)),
+        border: const TableBorder(
+            bottom: BorderSide(color: AppColors.green900), top: BorderSide(color: AppColors.green900)),
         columnSpacing: wJM(2),
         dataTextStyle: CommonTheme.bodySmall.copyWith(fontWeight: FontWeight.bold),
         columns: <DataColumn>[

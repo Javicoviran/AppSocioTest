@@ -40,11 +40,7 @@ class BaseListItem extends StatelessWidget {
               ],
             ),
           ),
-          if (divider)
-            const Divider(
-              height: 0,
-              color: CommonTheme.dividerColor,
-            ),
+          if (divider) const Divider(height: 0, color: CommonTheme.dividerColor),
         ],
       ),
     );

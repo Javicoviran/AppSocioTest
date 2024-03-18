@@ -34,9 +34,7 @@ class LogOut extends StatelessWidget {
                   ],
                 ),
               ),
-              const Divider(
-                color: CommonTheme.dividerColor,
-              ),
+              const Divider(color: CommonTheme.dividerColor),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: wJM(5), vertical: wJM(5)),
                 child: Column(

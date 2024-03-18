@@ -17,6 +17,7 @@ class MailBox extends ConsumerWidget {
       child: Scaffold(
         extendBody: true,
         body: SingleChildScrollView(
+          physics: const ClampingScrollPhysics(),
           child: Column(
             children: [
               const CoviBar(),

@@ -20,48 +20,51 @@ class ArticleBarCodes extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        SingleChildScrollView(
-          scrollDirection: Axis.horizontal,
-          clipBehavior: Clip.none,
-          child: BaseTable(
-            baseColumnsWidths: const {
-              0: FixedColumnWidth(100.0),
-              1: FixedColumnWidth(140.0),
-              2: FixedColumnWidth(100.0),
-              3: FixedColumnWidth(100.0),
-            },
-            headerRows: [
-              BaseTableCell(content: 'TIPO', textStyle: CommonTheme.tableRowHeaderStyle),
-              BaseTableCell(content: 'CÓDIGO', textStyle: CommonTheme.tableRowHeaderStyle),
-              BaseTableCell(content: 'CANTIDAD', textStyle: CommonTheme.tableRowHeaderStyle),
-              BaseTableCell(content: 'FORMATO', textStyle: CommonTheme.tableRowHeaderStyle),
-            ],
-            baseRows: [
-              BaseTableRow(
-                rowChildren: [
-                  BaseTableCell(content: barcodes.first.type, textStyle: CommonTheme.tableColumnHeaderStyle),
-                  BaseTableCell(content: barcodes.first.code),
-                  BaseTableCell(content: barcodes.first.amount),
-                  BaseTableCell(content: barcodes.first.format),
-                ],
-              ),
-              BaseTableRow(
-                rowChildren: [
-                  BaseTableCell(content: barcodes.elementAt(1).type, textStyle: CommonTheme.tableColumnHeaderStyle),
-                  BaseTableCell(content: barcodes.elementAt(1).code),
-                  BaseTableCell(content: barcodes.elementAt(1).amount),
-                  BaseTableCell(content: barcodes.elementAt(1).format),
-                ],
-              ),
-              BaseTableRow(
-                rowChildren: [
-                  BaseTableCell(content: barcodes.elementAt(2).type, textStyle: CommonTheme.tableColumnHeaderStyle),
-                  BaseTableCell(content: barcodes.elementAt(2).code),
-                  BaseTableCell(content: barcodes.elementAt(2).amount),
-                  BaseTableCell(content: barcodes.elementAt(2).format),
-                ],
-              ),
-            ],
+        Scrollbar(
+          child: SingleChildScrollView(
+            physics: const ClampingScrollPhysics(),
+            scrollDirection: Axis.horizontal,
+            clipBehavior: Clip.none,
+            child: BaseTable(
+              baseColumnsWidths: const {
+                0: FixedColumnWidth(100.0),
+                1: FixedColumnWidth(140.0),
+                2: FixedColumnWidth(100.0),
+                3: FixedColumnWidth(100.0),
+              },
+              headerRows: [
+                BaseTableCell(content: 'TIPO', textStyle: CommonTheme.tableRowHeaderStyle),
+                BaseTableCell(content: 'CÓDIGO', textStyle: CommonTheme.tableRowHeaderStyle),
+                BaseTableCell(content: 'CANTIDAD', textStyle: CommonTheme.tableRowHeaderStyle),
+                BaseTableCell(content: 'FORMATO', textStyle: CommonTheme.tableRowHeaderStyle),
+              ],
+              baseRows: [
+                BaseTableRow(
+                  rowChildren: [
+                    BaseTableCell(content: barcodes.first.type, textStyle: CommonTheme.tableColumnHeaderStyle),
+                    BaseTableCell(content: barcodes.first.code),
+                    BaseTableCell(content: barcodes.first.amount),
+                    BaseTableCell(content: barcodes.first.format),
+                  ],
+                ),
+                BaseTableRow(
+                  rowChildren: [
+                    BaseTableCell(content: barcodes.elementAt(1).type, textStyle: CommonTheme.tableColumnHeaderStyle),
+                    BaseTableCell(content: barcodes.elementAt(1).code),
+                    BaseTableCell(content: barcodes.elementAt(1).amount),
+                    BaseTableCell(content: barcodes.elementAt(1).format),
+                  ],
+                ),
+                BaseTableRow(
+                  rowChildren: [
+                    BaseTableCell(content: barcodes.elementAt(2).type, textStyle: CommonTheme.tableColumnHeaderStyle),
+                    BaseTableCell(content: barcodes.elementAt(2).code),
+                    BaseTableCell(content: barcodes.elementAt(2).amount),
+                    BaseTableCell(content: barcodes.elementAt(2).format),
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
         SizedBox(height: hJM(4)),
@@ -78,11 +81,14 @@ class ArticleBarCodes extends StatelessWidget {
           ),
         ),
         SizedBox(height: hJM(2)),
-        BarcodeWidget(
-          data: '5449000171795',
-          barcode: Barcode.code128(),
-          height: hJM(12.5),
-          style: CommonTheme.ticketTextStyle.copyWith(letterSpacing: 8),
+        Center(
+          child: BarcodeWidget(
+            data: '5449000171795',
+            barcode: Barcode.code128(),
+            height: hJM(12.5),
+            width: wJM(80),
+            style: CommonTheme.ticketTextStyle.copyWith(letterSpacing: 8),
+          ),
         ),
         SizedBox(height: hJM(4)),
       ],
