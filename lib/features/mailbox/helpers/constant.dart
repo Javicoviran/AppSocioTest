@@ -17,3 +17,9 @@ final mailboxItemsSelected = [
   MailBoxItem(iconData: Icons.mail_outlined),
   MailBoxItem(iconData: Icons.notifications_none),
 ];
+
+final mailBoxTexts = [
+  "Noticias",
+  "Correo",
+  "Notificaciones",
+];

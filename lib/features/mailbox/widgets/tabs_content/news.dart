@@ -46,20 +46,7 @@ class NewsItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin:  EdgeInsets.symmetric(vertical: wJM(2), horizontal: wJM(2)),
-      padding:  EdgeInsets.all(wJM(2)),
-      decoration: BoxDecoration(
-        color: AppColors.green50,
-        borderRadius: BorderRadius.circular(8.0),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.grey.withOpacity(0.3),
-            spreadRadius: 2,
-            blurRadius: 4,
-            offset: const Offset(0, 2),
-          ),
-        ],
-      ),
+      padding: EdgeInsets.all(wJM(2)),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -68,7 +55,6 @@ class NewsItem extends StatelessWidget {
             child: Text(
               title,
               style: const TextStyle(
-                fontSize: 18.0,
                 fontWeight: FontWeight.bold,
                 color: Colors.black,
               ),
@@ -80,7 +66,6 @@ class NewsItem extends StatelessWidget {
             child: Text(
               body,
               style: TextStyle(
-                fontSize: 16.0,
                 color: Colors.grey[800],
               ),
             ),
@@ -89,7 +74,6 @@ class NewsItem extends StatelessWidget {
           Text(
             'Date: $date', // Assuming date is in a readable format
             style: TextStyle(
-              fontSize: 14.0,
               color: Colors.grey[600],
             ),
           ),
