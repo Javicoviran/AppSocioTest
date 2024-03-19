@@ -62,7 +62,7 @@ class Notifications extends StatelessWidget {
       child: ListView.separated(
         itemCount: newsList.length,
         scrollDirection: Axis.vertical,
-        separatorBuilder: (_, __) => Divider(height: hJM(2), color: CommonTheme.dividerColor),
+        separatorBuilder: (_, __) => Divider(height: hJM(0), color: CommonTheme.dividerColor),
         itemBuilder: (BuildContext context, int index) {
           return Material(
             child: newsList.elementAt(index),
