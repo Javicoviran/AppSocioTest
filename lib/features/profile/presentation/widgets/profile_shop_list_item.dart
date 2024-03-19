@@ -42,7 +42,7 @@ class ProfileShopListItem extends StatelessWidget {
                   width: wJM(33),
                   height: hJM(11),
                   child: ClipRRect(
-                    borderRadius: const BorderRadius.all(Radius.circular(10.0)),
+                    borderRadius: CommonTheme.defaultImageRadius,
                     child: Image.network(
                       shop.imageUrl,
                       fit: BoxFit.cover,
@@ -68,7 +68,7 @@ class ProfileShopListItem extends StatelessWidget {
                   ),
                 ),
                 // SizedBox(height: hJM(3)),
-                Icon(Icons.open_in_new_rounded, size: hJM(3.5), color: AppColors.green800),
+                Icon(Icons.open_in_new_rounded, size: hJM(3.5), color: CommonTheme.green800),
               ],
             ),
             SizedBox(

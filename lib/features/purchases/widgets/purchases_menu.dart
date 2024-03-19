@@ -20,10 +20,9 @@ class PurchasesMenu extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         body: Body(
-          appBar: const BaseAppBar(title: "Área privada"),
+          appBar: const BaseAppBar(title: "Pedidos"),
           child: Column(
             children: [
-              const _PurchasesMenuTitle(),
               SizedBox(
                 child: Wrap(
                   spacing: wJM(2),
@@ -40,24 +39,6 @@ class PurchasesMenu extends StatelessWidget {
           ),
         ),
       ),
-    );
-  }
-}
-
-class _PurchasesMenuTitle extends StatelessWidget {
-  const _PurchasesMenuTitle();
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        const Icon(Icons.assignment_outlined),
-        Text(
-          "Pedidos",
-          style: CommonTheme.headlineSmall,
-        )
-      ],
     );
   }
 }
@@ -80,7 +61,7 @@ class _PurchasesMenuItem extends StatelessWidget {
             Container(
               width: wJM(10) * 2,
               height: wJM(10) * 2,
-              decoration: const BoxDecoration(shape: BoxShape.circle, color: AppColors.green100),
+              decoration: const BoxDecoration(shape: BoxShape.circle, color: AppColors.lightGreen100),
               child: Icon(purchasesMenuItem.icon, color: AppColors.green900),
             ),
             SizedBox(width: wJM(2)),

@@ -1,4 +1,4 @@
-import 'package:app_socio_test/features/more_options/presentation/widgets/more_options.dart';
+import 'package:app_socio_test/features/more/more_options/presentation/widgets/more_options.dart';
 import 'package:app_socio_test/features/navbar/models/nav_bar_item.dart';
 import 'package:app_socio_test/features/home/presentation/widgets/home.dart';
 import 'package:app_socio_test/features/mailbox/widgets/mailbox.dart';
@@ -26,4 +26,4 @@ final navBarItemsSelected = [
   NavBarItem(iconData: Icons.more_horiz),
 ];
 
-final labels = ["Demo", "Pedidos", "Inicio", 'Buzón', 'Más'];
+final labels = ["Qr", "Pedidos", "Inicio", 'Buzón', 'Más'];

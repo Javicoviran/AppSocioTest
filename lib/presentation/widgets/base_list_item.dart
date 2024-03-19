@@ -26,11 +26,11 @@ class BaseListItem extends StatelessWidget {
       child: Column(
         children: [
           Container(
-            padding: EdgeInsetsDirectional.symmetric(vertical: hJM(3), horizontal: wJM(4)),
+            padding: CommonTheme.defaultBodyPadding,
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Icon(icon, size: hJM(4.5), color: iconColor ?? CommonTheme.primaryColor),
+                Icon(icon, size: hJM(4.5), color: iconColor ?? CommonTheme.green800),
                 SizedBox(width: wJM(4)),
                 Text(
                   text,
@@ -40,11 +40,7 @@ class BaseListItem extends StatelessWidget {
               ],
             ),
           ),
-          if (divider)
-            const Divider(
-              height: 0,
-              color: CommonTheme.dividerColor,
-            ),
+          if (divider) const Divider(height: 0, color: CommonTheme.dividerColor),
         ],
       ),
     );

@@ -2,13 +2,11 @@ import 'dart:developer';
 import 'dart:io';
 
 import 'package:app_socio_test/presentation/helpers/screen_functions.dart';
-import 'package:app_socio_test/presentation/helpers/size_extenseion.dart';
 import 'package:app_socio_test/presentation/styles/colors.dart';
 import 'package:app_socio_test/presentation/styles/theme.dart';
 import 'package:app_socio_test/presentation/widgets/base_button.dart';
 import 'package:flutter/material.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class QRScanner extends StatefulWidget {
   const QRScanner({super.key});
@@ -91,11 +89,13 @@ class _QRScannerState extends State<QRScanner> {
   }
 
   Widget _buildQrView(BuildContext context) {
-    var scanArea = (MediaQuery.of(context).size.width < 400 || MediaQuery.of(context).size.height < 400) ? 150.0 : 300.0;
+    var scanArea =
+        (MediaQuery.of(context).size.width < 400 || MediaQuery.of(context).size.height < 400) ? 150.0 : 300.0;
     return QRView(
       key: qrKey,
       onQRViewCreated: _onQRViewCreated,
-      overlay: QrScannerOverlayShape(borderColor: Colors.red, borderRadius: 10, borderLength: 30, borderWidth: 10, cutOutSize: scanArea),
+      overlay: QrScannerOverlayShape(
+          borderColor: Colors.red, borderRadius: 10, borderLength: 30, borderWidth: 10, cutOutSize: scanArea),
       onPermissionSet: (ctrl, p) => _onPermissionSet(context, ctrl, p),
     );
   }

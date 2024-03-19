@@ -44,15 +44,15 @@ class ShopsList extends StatelessWidget {
                     Text(
                       '383',
                       style: CommonTheme.bodySmall.copyWith(color: CommonTheme.secondaryTextColor),
-                      maxLines: 2,
+                      maxLines: 1,
                       overflow: TextOverflow.ellipsis,
                     ),
                     SizedBox(height: hJM(1.5)),
                     SizedBox(
-                      height: hJM(24),
+                      height: hJM(20),
                       width: double.infinity,
                       child: ClipRRect(
-                        borderRadius: const BorderRadius.all(Radius.circular(10.0)),
+                        borderRadius: CommonTheme.defaultImageRadius,
                         child: Image.network(
                           defaultShopImage,
                           fit: BoxFit.cover,
@@ -98,16 +98,16 @@ class ShopsList extends StatelessWidget {
                       children: [
                         BaseButton(
                           text: 'Modificar',
-                          backgroundColor: AppColors.green800,
+                          backgroundColor: CommonTheme.green800,
                           width: wJM(36),
                         ),
                         SizedBox(width: wJM(2)),
                         BaseButton(
                           width: wJM(36),
                           text: 'Información',
-                          buttonTextColor: AppColors.green800,
+                          buttonTextColor: CommonTheme.green800,
                           backgroundColor: CommonTheme.backgroundColor,
-                          borderStyle: AppColors.green800,
+                          borderStyle: CommonTheme.green800,
                           onClick: () => Navigator.push(
                             context,
                             fadeTransitionRoute(const BaseShopInfo(/*shopInfo*/)),

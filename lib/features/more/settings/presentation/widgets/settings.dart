@@ -1,5 +1,4 @@
 import 'package:app_socio_test/presentation/helpers/screen_functions.dart';
-import 'package:app_socio_test/presentation/styles/colors.dart';
 import 'package:app_socio_test/presentation/styles/theme.dart';
 import 'package:app_socio_test/presentation/widgets/base_app_bar.dart';
 import 'package:app_socio_test/presentation/widgets/base_button.dart';
@@ -14,7 +13,7 @@ class Settings extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         body: Body(
-          appBar: const BaseAppBar(title: 'Ajustes', back: true),
+          appBar: const BaseAppBar(title: 'Configuración', back: true),
           child: SingleChildScrollView(
             physics: const ClampingScrollPhysics(),
             child: Column(
@@ -42,9 +41,10 @@ class Settings extends StatelessWidget {
                 ),
                 SizedBox(height: wJM(5)),
                 BaseButton(
+                  height: hJM(7.5),
                   width: wJM(65),
                   text: 'Aplicar cambios',
-                  backgroundColor: CommonTheme.primaryColor,
+                  backgroundColor: CommonTheme.green800,
                 ),
               ],
             ),
@@ -77,7 +77,7 @@ class _SettingsItemState extends State<_SettingsItem> {
   );
 
   final MaterialStateProperty<Color?> thumbColor = MaterialStateProperty.resolveWith<Color>(
-    (_) => AppColors.green800,
+    (_) => CommonTheme.green800,
   );
 
   @override

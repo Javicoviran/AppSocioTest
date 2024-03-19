@@ -26,7 +26,7 @@ class HelpContact extends StatelessWidget {
                   padding: CommonTheme.defaultBodyPadding,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10.0),
-                    border: Border.all(color: CommonTheme.primaryColor),
+                    border: Border.all(color: CommonTheme.green500),
                   ),
                   child: const BaseContactField(
                     title: 'CASC',
@@ -41,7 +41,7 @@ class HelpContact extends StatelessWidget {
                   padding: CommonTheme.defaultBodyPadding,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10.0),
-                    border: Border.all(color: CommonTheme.primaryColor),
+                    border: Border.all(color: CommonTheme.green500),
                   ),
                   child: const BaseContactField(
                     title: 'HELPDESK',

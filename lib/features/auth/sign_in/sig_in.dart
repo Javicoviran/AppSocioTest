@@ -23,7 +23,6 @@ class SignIn extends StatelessWidget {
               SizedBox(
                 width: wJM(80),
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text(
                       "Utilice las mismas credenciales de acceso que en el portal del socio",
@@ -31,20 +30,30 @@ class SignIn extends StatelessWidget {
                       textAlign: TextAlign.center,
                     ),
                     SizedBox(height: hJM(4)),
-                    const Input(label: "Usuario", icon: Icons.person,),
+                    const Input(
+                      label: "Usuario",
+                      icon: Icons.person,
+                    ),
                     SizedBox(height: hJM(4)),
-                    const InputPass(label: "Contraseña",icon: Icons.lock,),
+                    const InputPass(
+                      label: "Contraseña",
+                      icon: Icons.lock,
+                    ),
+                    SizedBox(height: hJM(2)),
+                    Align(
+                      alignment: Alignment.centerRight,
+                      child: BaseButton(
+                        width: wJM(50),
+                        text: "Recuperar Contraseña",
+                        buttonTextColor: CommonTheme.linkColor,
+                      ),
+                    ),
                     SizedBox(height: hJM(4)),
                     BaseButton(
                       height: hJM(8),
                       onClick: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const NavBar())),
                       text: "Acceder",
                       backgroundColor: AppColors.green900,
-                    ),
-                    BaseButton(
-                      width: wJM(60),
-                      text: "Recuperar Contraseña",
-                      buttonTextColor: CommonTheme.linkColor,
                     ),
                   ],
                 ),
