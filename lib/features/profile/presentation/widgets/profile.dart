@@ -102,7 +102,7 @@ class _ProfileSummary extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const ProfileAvatar(userImage: profileAvatarImage),
+        ProfileAvatar(userImage: profileAvatarImage, size: wJM(17) * 2),
         SizedBox(height: hJM(2)),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -135,5 +135,3 @@ class _ProfileSummary extends StatelessWidget {
     );
   }
 }
-
-

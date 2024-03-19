@@ -54,7 +54,7 @@ class BaseButton extends StatelessWidget {
         ),
         foregroundDecoration: BoxDecoration(
           borderRadius: BorderRadius.circular(50),
-          border: Border.all(color: borderStyle)
+          border: Border.all(color: borderStyle),
         ),
         child: Visibility(
           visible: loading,
@@ -65,10 +65,13 @@ class BaseButton extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                if (icon != null) icon!,
-                SizedBox(
-                  width: wJM(1),
-                ),
+                if (icon != null)
+                  Row(
+                    children: [
+                      icon!,
+                    ],
+                  ),
+                if (icon != null && text != null) SizedBox(width: wJM(1)),
                 if (text != null)
                   FittedBox(
                     fit: BoxFit.contain,

@@ -18,10 +18,7 @@ class BaseAppBar extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         color: CommonTheme.backgroundColor,
-        border: Border.all(
-          width: 0,
-          color: Colors.transparent,
-        ),
+        border: Border.all(width: 0, color: Colors.transparent),
       ),
       height: CommonTheme.appBarHeight,
       child: Row(

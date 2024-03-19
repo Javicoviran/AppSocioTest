@@ -23,7 +23,7 @@ class HelpContact extends StatelessWidget {
                 SizedBox(height: hJM(2)),
                 Container(
                   height: hJM(33),
-                  padding: CommonTheme.defaultBodyPadding,
+                  padding: EdgeInsets.all(wJM(5)),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10.0),
                     border: Border.all(color: CommonTheme.green500),
