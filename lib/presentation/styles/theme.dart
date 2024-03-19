@@ -39,6 +39,7 @@ class CommonTheme {
   static const cancelButtonColor = AppColors.gray;
   static const disabledColor = AppColors.lightGray;
   static const disabledTextColor = AppColors.white;
+  static const navBarColor = AppColors.white;
   static const dividerColor = AppColors.lightGray;
   static const linkColor = AppColors.blue600;
   static const darkLinkColor = AppColors.blue900;

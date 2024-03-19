@@ -41,24 +41,12 @@ class _HomeAppBarIcons extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return Row(
-      children: [
-        BaseButton(
-          icon: Icon(Icons.notifications_none_rounded, size: hJM(5)),
-          width: CommonTheme.appBarHeight,
-          height: CommonTheme.appBarHeight,
-          backgroundColor: CommonTheme.backgroundColor,
-          onClick: () => ref.read(navBarControllerProvider.notifier).changeTab(mailTab),
-        ),
-        SizedBox(width: wJM(2)),
-        BaseButton(
-          icon: Icon(Icons.shopping_cart_outlined, size: hJM(5)),
-          width: CommonTheme.appBarHeight,
-          height: CommonTheme.appBarHeight,
-          backgroundColor: CommonTheme.backgroundColor,
-          onClick: () {},
-        ),
-      ],
+    return BaseButton(
+      icon: Icon(Icons.notifications_none_rounded, size: hJM(5)),
+      width: CommonTheme.appBarHeight,
+      height: CommonTheme.appBarHeight,
+      backgroundColor: CommonTheme.backgroundColor,
+      onClick: () => ref.read(navBarControllerProvider.notifier).changeTab(mailTab),
     );
   }
 }

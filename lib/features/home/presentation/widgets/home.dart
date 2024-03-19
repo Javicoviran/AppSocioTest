@@ -11,7 +11,7 @@ import 'package:app_socio_test/presentation/widgets/body.dart';
 import 'package:app_socio_test/presentation/widgets/profile_avatar.dart';
 import 'package:flutter/material.dart';
 
-// TODO: controll focus scope (searchbarr)
+// TODO: control focus scope (searchbarr)
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -94,7 +94,7 @@ class _HomeWelcome extends StatelessWidget {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('Bienveidx,', style: CommonTheme.bodyMedium),
+            Text('Bienveidx,', style: CommonTheme.bodyLarge),
             SizedBox(
               width: wJM(65),
               child: Text(

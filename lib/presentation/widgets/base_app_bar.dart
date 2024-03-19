@@ -6,18 +6,20 @@ import 'package:flutter/material.dart';
 class BaseAppBar extends StatelessWidget {
   final String title;
   final bool back;
+  final Color? backgroundColor;
 
   const BaseAppBar({
     super.key,
     required this.title,
     this.back = false,
+    this.backgroundColor,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: CommonTheme.backgroundColor,
+        color: backgroundColor ?? CommonTheme.backgroundColor,
         border: Border.all(width: 0, color: Colors.transparent),
       ),
       height: CommonTheme.appBarHeight,
