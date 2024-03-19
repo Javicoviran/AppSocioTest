@@ -17,7 +17,7 @@ class HomeActionListItem extends StatelessWidget {
     return GestureDetector(
       onTap: actionItem.onTap,
       child: SizedBox(
-        height: hJM(19),
+        height: hJM(20),
         width: wJM(22),
         child: Column(
           children: [
