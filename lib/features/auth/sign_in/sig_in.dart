@@ -8,7 +8,6 @@ import 'package:app_socio_test/presentation/widgets/body.dart';
 import 'package:app_socio_test/presentation/widgets/input.dart';
 import 'package:app_socio_test/presentation/widgets/input_pass.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class SignIn extends StatelessWidget {
   const SignIn({super.key});

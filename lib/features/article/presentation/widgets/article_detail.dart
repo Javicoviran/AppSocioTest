@@ -98,6 +98,7 @@ class ArticleDetail extends StatelessWidget {
                   const _UnitsConversionTable(),
                   SizedBox(height: hJM(2)),
                   ArticleBarCodes(barcodes: article.barCodes),
+                  SizedBox(height: hJM(2)),
                 ],
               ),
             ),

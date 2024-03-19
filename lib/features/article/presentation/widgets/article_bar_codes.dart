@@ -1,11 +1,13 @@
 import 'package:app_socio_test/features/article/presentation/models/article_bar_code_model.dart';
+import 'package:app_socio_test/features/article/presentation/widgets/article_bar_codes_tabs.dart';
 import 'package:app_socio_test/presentation/widgets/base_table.dart';
 import 'package:app_socio_test/presentation/widgets/base_table_cell.dart';
 import 'package:app_socio_test/presentation/helpers/screen_functions.dart';
 import 'package:app_socio_test/presentation/styles/theme.dart';
 import 'package:app_socio_test/presentation/widgets/base_table_row.dart';
-import 'package:barcode_widget/barcode_widget.dart';
 import 'package:flutter/material.dart';
+
+final tableScrollController = ScrollController();
 
 class ArticleBarCodes extends StatelessWidget {
   final List<ArticleBarCodeModel> barcodes;
@@ -20,8 +22,15 @@ class ArticleBarCodes extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        Text('Códigos de barras', style: CommonTheme.titleLarge),
+        SizedBox(height: hJM(2)),
+        ArticleBarCodesTabs(barcodes: barcodes),
+        SizedBox(height: hJM(4)),
         Scrollbar(
+          controller: tableScrollController,
+          thumbVisibility: true,
           child: SingleChildScrollView(
+            controller: tableScrollController,
             physics: const ClampingScrollPhysics(),
             scrollDirection: Axis.horizontal,
             clipBehavior: Clip.none,
@@ -67,30 +76,6 @@ class ArticleBarCodes extends StatelessWidget {
             ),
           ),
         ),
-        SizedBox(height: hJM(4)),
-        Text('Códigos de barras', style: CommonTheme.titleLarge),
-        SizedBox(height: hJM(2)),
-        const DefaultTabController(
-          length: 3,
-          child: TabBar(
-            tabs: [
-              Tab(text: 'EAN13'),
-              Tab(text: 'EAN13'),
-              Tab(text: 'DUN14'),
-            ],
-          ),
-        ),
-        SizedBox(height: hJM(2)),
-        Center(
-          child: BarcodeWidget(
-            data: '5449000171795',
-            barcode: Barcode.code128(),
-            height: hJM(12.5),
-            width: wJM(80),
-            style: CommonTheme.ticketTextStyle.copyWith(letterSpacing: 8),
-          ),
-        ),
-        SizedBox(height: hJM(4)),
       ],
     );
   }
