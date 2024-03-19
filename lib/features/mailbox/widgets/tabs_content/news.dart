@@ -1,17 +1,54 @@
+import 'package:app_socio_test/helpers/utils.dart';
 import 'package:app_socio_test/presentation/helpers/screen_functions.dart';
+import 'package:app_socio_test/presentation/styles/colors.dart';
 import 'package:app_socio_test/presentation/styles/theme.dart';
 import 'package:flutter/material.dart';
 
 final List<NewsItem> newsList = [
-  const NewsItem(date: 1, title: "title", body: "body"),
-  const NewsItem(date: 1, title: "title", body: "body"),
-  const NewsItem(date: 1, title: "title", body: "body"),
-  const NewsItem(date: 1, title: "title", body: "body"),
-  const NewsItem(date: 1, title: "title", body: "body"),
-  const NewsItem(date: 1, title: "title", body: "body"),
-  const NewsItem(date: 1, title: "title", body: "body"),
-  const NewsItem(date: 1, title: "title", body: "body"),
-  const NewsItem(date: 1, title: "title", body: "body"),
+  const NewsItem(
+    date: 669375621000,
+    title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec sem nisi. Ut venenatis tempor finibus. Ut vel metus ultrices, rutrum lectus ac, dapibus nisl.",
+    body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec sem nisi. Ut venenatis tempor finibus. Ut vel metus ultrices, rutrum lectus ac, dapibus nisl.",
+  ),
+  const NewsItem(
+    date: 669375621000,
+    title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec sem nisi. Ut venenatis tempor finibus. Ut vel metus ultrices, rutrum lectus ac, dapibus nisl.",
+    body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec sem nisi. Ut venenatis tempor finibus. Ut vel metus ultrices, rutrum lectus ac, dapibus nisl.",
+  ),
+  const NewsItem(
+    date: 669375621000,
+    title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec sem nisi. Ut venenatis tempor finibus. Ut vel metus ultrices, rutrum lectus ac, dapibus nisl.",
+    body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec sem nisi. Ut venenatis tempor finibus. Ut vel metus ultrices, rutrum lectus ac, dapibus nisl.",
+  ),
+  const NewsItem(
+      date: 669375621000,
+      title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec sem nisi. Ut venenatis tempor finibus. Ut vel metus ultrices, rutrum lectus ac, dapibus nisl.",
+      body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec sem nisi. Ut venenatis tempor finibus. Ut vel metus ultrices, rutrum lectus ac, dapibus nisl."),
+  const NewsItem(
+    date: 669375621000,
+    title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec sem nisi. Ut venenatis tempor finibus. Ut vel metus ultrices, rutrum lectus ac, dapibus nisl.",
+    body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec sem nisi. Ut venenatis tempor finibus. Ut vel metus ultrices, rutrum lectus ac, dapibus nisl.",
+  ),
+  const NewsItem(
+    date: 669375621000,
+    title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec sem nisi. Ut venenatis tempor finibus. Ut vel metus ultrices, rutrum lectus ac, dapibus nisl.",
+    body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec sem nisi. Ut venenatis tempor finibus. Ut vel metus ultrices, rutrum lectus ac, dapibus nisl.",
+  ),
+  const NewsItem(
+    date: 669375621000,
+    title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec sem nisi. Ut venenatis tempor finibus. Ut vel metus ultrices, rutrum lectus ac, dapibus nisl.",
+    body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec sem nisi. Ut venenatis tempor finibus. Ut vel metus ultrices, rutrum lectus ac, dapibus nisl.",
+  ),
+  const NewsItem(
+    date: 669375621000,
+    title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec sem nisi. Ut venenatis tempor finibus. Ut vel metus ultrices, rutrum lectus ac, dapibus nisl.",
+    body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec sem nisi. Ut venenatis tempor finibus. Ut vel metus ultrices, rutrum lectus ac, dapibus nisl.",
+  ),
+  const NewsItem(
+    date: 669375621000,
+    title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec sem nisi. Ut venenatis tempor finibus. Ut vel metus ultrices, rutrum lectus ac, dapibus nisl.",
+    body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec sem nisi. Ut venenatis tempor finibus. Ut vel metus ultrices, rutrum lectus ac, dapibus nisl.",
+  ),
 ];
 
 class News extends StatelessWidget {
@@ -20,12 +57,11 @@ class News extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: hJM(100),
+      height: hJM(100) - CommonTheme.baseBarHeight,
       child: ListView.separated(
         itemCount: newsList.length,
-        padding: EdgeInsets.all(wJM(4)),
         scrollDirection: Axis.vertical,
-        separatorBuilder: (_, __) => Divider(height: hJM(2), color: CommonTheme.dividerColor),
+        separatorBuilder: (_, __) => Divider(height: hJM(0), color: CommonTheme.dividerColor),
         itemBuilder: (BuildContext context, int index) {
           return Material(
             child: newsList.elementAt(index),
@@ -40,40 +76,49 @@ class NewsItem extends StatelessWidget {
   final int date;
   final String title;
   final String body;
-  const NewsItem({super.key, required this.date, required this.title, required this.body});
+  const NewsItem({
+    super.key,
+    required this.date,
+    required this.title,
+    required this.body,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.all(wJM(2)),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: wJM(5), vertical: hJM(5)),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Align(
-            alignment: Alignment.centerRight,
+          SizedBox(
+            width: wJM(15),
             child: Text(
-              title,
+              formatDate(date),
               style: const TextStyle(
-                fontWeight: FontWeight.bold,
-                color: Colors.black,
+                color: AppColors.gray,
               ),
             ),
           ),
-          const SizedBox(height: 8.0),
-          Align(
-            alignment: Alignment.centerRight,
-            child: Text(
-              body,
-              style: TextStyle(
-                color: Colors.grey[800],
-              ),
-            ),
-          ),
-          const SizedBox(height: 8.0),
-          Text(
-            'Date: $date', // Assuming date is in a readable format
-            style: TextStyle(
-              color: Colors.grey[600],
+          SizedBox(
+            width: wJM(70),
+            child: Column(
+              children: [
+                Text(
+                  body,
+                  style: CommonTheme.bodyLarge.copyWith(
+                    color: AppColors.green900,
+                    fontWeight: FontWeight.bold,
+                  ),
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                ),
+                Text(
+                  title,
+                  style: CommonTheme.bodyMedium,
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                ),
+              ],
             ),
           ),
         ],

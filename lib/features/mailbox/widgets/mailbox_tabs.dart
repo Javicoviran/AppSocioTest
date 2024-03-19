@@ -24,13 +24,13 @@ class MailboxTabs extends ConsumerWidget {
                 border: actualTab == index
                     ? const Border(
                         bottom: BorderSide(
-                          color: AppColors.accent,
+                          color: AppColors.green900,
                           width: 4,
                         ),
                       )
                     : const Border(
                         bottom: BorderSide(
-                          color: Colors.transparent,
+                          color: AppColors.green200,
                           width: 4,
                         ),
                       ),

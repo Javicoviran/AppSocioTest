@@ -24,8 +24,11 @@ class MailboxTabsItem extends StatelessWidget {
       icon: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon(iconData, size: 0.033.sh, color: AppColors.lightGreen800),
-          Text(text, style: CommonTheme.bodyMedium,),
+          Icon(iconData, size: 0.033.sh, color: isSelected ? AppColors.green900 : AppColors.green200),
+          Text(
+            text,
+            style: CommonTheme.bodyMedium,
+          ),
         ],
       ),
     );

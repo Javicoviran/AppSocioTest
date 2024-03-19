@@ -1,4 +1,3 @@
-import 'package:app_socio_test/presentation/helpers/screen_functions.dart';
 import 'package:app_socio_test/features/mailbox/helpers/constant.dart';
 import 'package:app_socio_test/features/mailbox/providers/mailbox_controller_provider.dart';
 import 'package:app_socio_test/features/mailbox/widgets/mailbox_tabs.dart';
@@ -21,20 +20,17 @@ class MailBox extends ConsumerWidget {
             children: [
               const CoviBar(),
               const BaseAppBar(title: "Mi buzón"),
-              SizedBox(
-                width: wJM(100),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    const Material(elevation: 5, child: MailboxTabs()),
-                    Material(
-                      elevation: 1,
-                      child: SizedBox(
-                        child: mailboxPages.elementAt(ref.watch(mailboxTabsControllerProvider)),
-                      ),
-                    )
-                  ],
-                ),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Material(elevation: 5, child: MailboxTabs()),
+                  Material(
+                    elevation: 1,
+                    child: SizedBox(
+                      child: mailboxPages.elementAt(ref.watch(mailboxTabsControllerProvider)),
+                    ),
+                  )
+                ],
               ),
             ],
           ),

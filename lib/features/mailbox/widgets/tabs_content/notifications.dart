@@ -1,17 +1,55 @@
+import 'package:app_socio_test/helpers/utils.dart';
 import 'package:app_socio_test/presentation/helpers/screen_functions.dart';
+import 'package:app_socio_test/presentation/styles/colors.dart';
 import 'package:app_socio_test/presentation/styles/theme.dart';
 import 'package:flutter/material.dart';
 
 final List<NotificationsItem> newsList = [
-  const NotificationsItem(date: 1, title: "title", body: "body"),
-  const NotificationsItem(date: 1, title: "title", body: "body"),
-  const NotificationsItem(date: 1, title: "title", body: "body"),
-  const NotificationsItem(date: 1, title: "title", body: "body"),
-  const NotificationsItem(date: 1, title: "title", body: "body"),
-  const NotificationsItem(date: 1, title: "title", body: "body"),
-  const NotificationsItem(date: 1, title: "title", body: "body"),
-  const NotificationsItem(date: 1, title: "title", body: "body"),
-  const NotificationsItem(date: 1, title: "title", body: "body"),
+  const NotificationsItem(
+    date: 669375621000,
+    title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec sem nisi. Ut venenatis tempor finibus. Ut vel metus ultrices, rutrum lectus ac, dapibus nisl.",
+    body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec sem nisi. Ut venenatis tempor finibus. Ut vel metus ultrices, rutrum lectus ac, dapibus nisl.",
+  ),
+  const NotificationsItem(
+    date: 669375621000,
+    title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec sem nisi. Ut venenatis tempor finibus. Ut vel metus ultrices, rutrum lectus ac, dapibus nisl.",
+    body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec sem nisi. Ut venenatis tempor finibus. Ut vel metus ultrices, rutrum lectus ac, dapibus nisl.",
+  ),
+  const NotificationsItem(
+    date: 669375621000,
+    title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec sem nisi. Ut venenatis tempor finibus. Ut vel metus ultrices, rutrum lectus ac, dapibus nisl.",
+    body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec sem nisi. Ut venenatis tempor finibus. Ut vel metus ultrices, rutrum lectus ac, dapibus nisl.",
+  ),
+  const NotificationsItem(
+    date: 669375621000,
+    title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec sem nisi. Ut venenatis tempor finibus. Ut vel metus ultrices, rutrum lectus ac, dapibus nisl.",
+    body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec sem nisi. Ut venenatis tempor finibus. Ut vel metus ultrices, rutrum lectus ac, dapibus nisl.",
+  ),
+  const NotificationsItem(
+    date: 669375621000,
+    title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec sem nisi. Ut venenatis tempor finibus. Ut vel metus ultrices, rutrum lectus ac, dapibus nisl.",
+    body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec sem nisi. Ut venenatis tempor finibus. Ut vel metus ultrices, rutrum lectus ac, dapibus nisl.",
+  ),
+  const NotificationsItem(
+    date: 669375621000,
+    title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec sem nisi. Ut venenatis tempor finibus. Ut vel metus ultrices, rutrum lectus ac, dapibus nisl.",
+    body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec sem nisi. Ut venenatis tempor finibus. Ut vel metus ultrices, rutrum lectus ac, dapibus nisl.",
+  ),
+  const NotificationsItem(
+    date: 669375621000,
+    title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec sem nisi. Ut venenatis tempor finibus. Ut vel metus ultrices, rutrum lectus ac, dapibus nisl.",
+    body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec sem nisi. Ut venenatis tempor finibus. Ut vel metus ultrices, rutrum lectus ac, dapibus nisl.",
+  ),
+  const NotificationsItem(
+    date: 669375621000,
+    title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec sem nisi. Ut venenatis tempor finibus. Ut vel metus ultrices, rutrum lectus ac, dapibus nisl.",
+    body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec sem nisi. Ut venenatis tempor finibus. Ut vel metus ultrices, rutrum lectus ac, dapibus nisl.",
+  ),
+  const NotificationsItem(
+    date: 669375621000,
+    title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec sem nisi. Ut venenatis tempor finibus. Ut vel metus ultrices, rutrum lectus ac, dapibus nisl.",
+    body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec sem nisi. Ut venenatis tempor finibus. Ut vel metus ultrices, rutrum lectus ac, dapibus nisl.",
+  ),
 ];
 
 class Notifications extends StatelessWidget {
@@ -20,10 +58,9 @@ class Notifications extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: hJM(100),
+      height: hJM(100) - CommonTheme.baseBarHeight,
       child: ListView.separated(
         itemCount: newsList.length,
-        padding: EdgeInsets.all(wJM(4)),
         scrollDirection: Axis.vertical,
         separatorBuilder: (_, __) => Divider(height: hJM(2), color: CommonTheme.dividerColor),
         itemBuilder: (BuildContext context, int index) {
@@ -44,52 +81,40 @@ class NotificationsItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin:  EdgeInsets.symmetric(vertical: wJM(2), horizontal: wJM(2)),
-      padding:  EdgeInsets.all(wJM(2)),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(8.0),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.grey.withOpacity(0.3),
-            spreadRadius: 2,
-            blurRadius: 4,
-            offset: const Offset(0, 2),
-          ),
-        ],
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: wJM(5), vertical: hJM(5)),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Align(
-            alignment: Alignment.centerRight,
+          SizedBox(
+            width: wJM(15),
             child: Text(
-              title,
+              formatDate(date),
               style: const TextStyle(
-                fontSize: 18.0,
-                fontWeight: FontWeight.bold,
-                color: Colors.black,
+                color: AppColors.gray,
               ),
             ),
           ),
-          const SizedBox(height: 8.0),
-          Align(
-            alignment: Alignment.centerRight,
-            child: Text(
-              body,
-              style: TextStyle(
-                fontSize: 16.0,
-                color: Colors.grey[800],
-              ),
-            ),
-          ),
-          const SizedBox(height: 8.0),
-          Text(
-            'Date: $date', // Assuming date is in a readable format
-            style: TextStyle(
-              fontSize: 14.0,
-              color: Colors.grey[600],
+          SizedBox(
+            width: wJM(70),
+            child: Column(
+              children: [
+                Text(
+                  body,
+                  style: CommonTheme.bodyLarge.copyWith(
+                    color: AppColors.green900,
+                    fontWeight: FontWeight.bold,
+                  ),
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                ),
+                Text(
+                  title,
+                  style: CommonTheme.bodyMedium,
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                ),
+              ],
             ),
           ),
         ],
