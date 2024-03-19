@@ -30,7 +30,7 @@ class MailboxTabs extends ConsumerWidget {
                       )
                     : const Border(
                         bottom: BorderSide(
-                          color: AppColors.green200,
+                          color: CommonTheme.dividerColor,
                           width: 4,
                         ),
                       ),

@@ -20,11 +20,12 @@ class MailboxTabsItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return IconButton(
+      highlightColor: Colors.transparent,
       onPressed: onPressed,
       icon: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon(iconData, size: 0.033.sh, color: isSelected ? AppColors.green900 : AppColors.green200),
+          Icon(iconData, size: 0.033.sh, color: isSelected ? AppColors.green900 : CommonTheme.secondaryColor),
           Text(
             text,
             style: CommonTheme.bodyMedium,
