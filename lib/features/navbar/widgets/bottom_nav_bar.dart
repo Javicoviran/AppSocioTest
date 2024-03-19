@@ -1,7 +1,6 @@
 import 'package:app_socio_test/features/navbar/helpers/constant.dart';
 import 'package:app_socio_test/features/navbar/providers/nav_bar_controller_provider.dart';
 import 'package:app_socio_test/features/navbar/widgets/nav_bar_item.dart';
-import 'package:app_socio_test/presentation/styles/colors.dart';
 import 'package:app_socio_test/presentation/styles/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -12,7 +11,7 @@ class BottomNavBar extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Container(
-      color: AppColors.grey200,
+      color: CommonTheme.backgroundColor,
       height: CommonTheme.baseBarHeight,
       child: Row(
         children: List.generate(
