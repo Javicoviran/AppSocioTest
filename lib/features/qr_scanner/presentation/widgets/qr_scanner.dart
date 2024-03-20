@@ -34,53 +34,66 @@ class _QRScannerState extends State<QRScanner> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: Column(
+        body: Stack(
           children: [
             Expanded(child: _buildQrView(context)),
-            SizedBox(
-              height: hJM(30),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  if (result != null)
-                    //TODO: redirigir a widget de producto
+            Positioned(
+              bottom: 0,
+              width: wJM(100),
+              child: Container(
+                color: Colors.transparent,
+                height: hJM(30),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    if (result != null)
+                      //TODO: redirigir a widget de producto
 
-                    // BaseButton(
-                    //   onClick: () => launchUrl(Uri.parse(result!.code!), mode: LaunchMode.externalApplication),
-                    //   height: 0.05.sh,
-                    //   width: 0.33.sw,
-                    //   text: "Ir al producto",
-                    //   backgroundColor: CommonTheme.primaryColor,
-                    // )
-                    Text('${result!.code}', style: CommonTheme.bodyLarge)
-                  else
-                    Text('Scanea el producto', style: CommonTheme.bodyLarge),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      BaseButton(
-                        height: hJM(7),
-                        width: wJM(25),
-                        backgroundColor: AppColors.green900,
-                        onClick: () async {
-                          await controller?.toggleFlash();
-                          setState(() {});
-                        },
-                        text: "Flash",
-                      ),
-                      BaseButton(
-                        height: hJM(7),
-                        width: wJM(50),
-                        backgroundColor: AppColors.green900,
-                        onClick: () async {
-                          await controller?.flipCamera();
-                          setState(() {});
-                        },
-                        text: "Cambiar Cámara",
-                      ),
-                    ],
-                  )
-                ],
+                      // BaseButton(
+                      //   onClick: () => launchUrl(Uri.parse(result!.code!), mode: LaunchMode.externalApplication),
+                      //   height: 0.05.sh,
+                      //   width: 0.33.sw,
+                      //   text: "Ir al producto",
+                      //   backgroundColor: CommonTheme.primaryColor,
+                      // )
+                      Text('${result!.code}', style: CommonTheme.bodyLarge)
+                    else
+                      Text('Scanea el producto', style: CommonTheme.bodyLarge.copyWith(color: CommonTheme.backgroundColor)),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        BaseButton(
+                          height: wJM(18),
+                          width: wJM(18),
+                          backgroundColor: AppColors.green900,
+                          borderStyle: AppColors.green900,
+                          icon: const Icon(
+                            Icons.flash_on,
+                            color: CommonTheme.backgroundColor,
+                          ),
+                          onClick: () async {
+                            await controller?.toggleFlash();
+                            setState(() {});
+                          },
+                        ),
+                        BaseButton(
+                          height: wJM(18),
+                          width: wJM(18),
+                          backgroundColor: AppColors.green900,
+                          borderStyle: AppColors.green900,
+                          onClick: () async {
+                            await controller?.flipCamera();
+                            setState(() {});
+                          },
+                          icon: const Icon(
+                            Icons.camera_enhance,
+                            color: CommonTheme.backgroundColor,
+                          ),
+                        ),
+                      ],
+                    )
+                  ],
+                ),
               ),
             )
           ],
@@ -90,13 +103,11 @@ class _QRScannerState extends State<QRScanner> {
   }
 
   Widget _buildQrView(BuildContext context) {
-    var scanArea =
-        (MediaQuery.of(context).size.width < 400 || MediaQuery.of(context).size.height < 400) ? 150.0 : 300.0;
+    var scanArea = (MediaQuery.of(context).size.width < 400 || MediaQuery.of(context).size.height < 400) ? 180.0 : 330.0;
     return QRView(
       key: qrKey,
       onQRViewCreated: _onQRViewCreated,
-      overlay: QrScannerOverlayShape(
-          borderColor: Colors.red, borderRadius: 10, borderLength: 30, borderWidth: 10, cutOutSize: scanArea),
+      overlay: QrScannerOverlayShape(borderColor: Colors.red, borderRadius: 10, borderLength: 30, borderWidth: 10, cutOutSize: scanArea),
       onPermissionSet: (ctrl, p) => _onPermissionSet(context, ctrl, p),
     );
   }
