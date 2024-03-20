@@ -15,6 +15,7 @@ class QRScanner extends StatefulWidget {
   State<QRScanner> createState() => _QRScannerState();
 }
 
+// TODO: body with appbar ?
 class _QRScannerState extends State<QRScanner> {
   Barcode? result;
   QRViewController? controller;

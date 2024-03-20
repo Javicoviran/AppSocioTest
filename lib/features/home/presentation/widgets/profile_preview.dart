@@ -7,6 +7,8 @@ import 'package:app_socio_test/presentation/styles/theme.dart';
 import 'package:app_socio_test/presentation/widgets/base_button.dart';
 import 'package:flutter/material.dart';
 
+// TODO: a lo meojr no se usa este widget
+
 class ProfilePreview extends StatelessWidget {
   // final PersonalDataPreviewModel previewModel;
 
@@ -18,7 +20,7 @@ class ProfilePreview extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        const ProfileAvatar(userImage: profileAvatarImage),
+        ProfileAvatar(userImage: profileAvatarImage, size: wJM(17) * 2),
         SizedBox(
           height: wJM(17) * 2,
           child: Column(

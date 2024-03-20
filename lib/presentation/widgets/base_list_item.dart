@@ -26,7 +26,7 @@ class BaseListItem extends StatelessWidget {
       child: Column(
         children: [
           Container(
-            padding: CommonTheme.defaultBodyPadding,
+            padding: EdgeInsets.all(wJM(5)),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [

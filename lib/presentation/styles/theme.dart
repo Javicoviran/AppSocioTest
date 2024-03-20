@@ -39,6 +39,7 @@ class CommonTheme {
   static const cancelButtonColor = AppColors.gray;
   static const disabledColor = AppColors.lightGray;
   static const disabledTextColor = AppColors.white;
+  static const navBarColor = AppColors.white;
   static const dividerColor = AppColors.lightGray;
   static const linkColor = AppColors.blue600;
   static const darkLinkColor = AppColors.blue900;
@@ -48,6 +49,8 @@ class CommonTheme {
   static const orangeButtonBackground = AppColors.orange300;
   static const green500 = AppColors.green500;
   static const green800 = AppColors.green800;
+  static const green50 = AppColors.green50;
+  static const lightGreen = AppColors.lightGreen100;
 
   static TextStyle bodySmall = TextStyle(fontSize: 12.sp);
   static TextStyle bodyMedium = TextStyle(fontSize: 14.sp);
@@ -125,7 +128,7 @@ class CommonTheme {
   static final defaultButtonPadding = EdgeInsets.symmetric(horizontal: wJM(3));
 
   static final defaultPadding = EdgeInsets.symmetric(horizontal: wJM(5), vertical: hJM(1.5));
-  static final defaultBodyPadding = EdgeInsets.all(wJM(5));
+  static final defaultBodyPadding = EdgeInsets.only(left: wJM(5), right: wJM(5), bottom: wJM(5));
 
   static final defaultImageRadius = BorderRadius.circular(10);
   static const tableHeaderRowBoxDecoration = BoxDecoration(

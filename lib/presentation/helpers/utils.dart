@@ -1,5 +1,6 @@
 import 'package:app_socio_test/presentation/widgets/exit_dialog.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 Route fadeTransitionRoute(Widget destination) {
   return PageRouteBuilder(
@@ -18,3 +19,5 @@ Future<bool> showExitDialog(BuildContext context) async =>
       barrierDismissible: false,
     ) ??
     false;
+
+String formatDate(int mils, [bool utc = true]) => DateFormat('dd/MM').format(DateTime.fromMillisecondsSinceEpoch(mils, isUtc: utc));

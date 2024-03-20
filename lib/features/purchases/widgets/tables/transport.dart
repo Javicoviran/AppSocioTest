@@ -1,6 +1,6 @@
-import 'package:app_socio_test/helpers/utils.dart';
 import 'package:app_socio_test/presentation/helpers/screen_functions.dart';
 import 'package:app_socio_test/features/purchases/helpers/constant.dart';
+import 'package:app_socio_test/presentation/helpers/utils.dart';
 import 'package:app_socio_test/presentation/styles/colors.dart';
 import 'package:app_socio_test/presentation/styles/theme.dart';
 import 'package:app_socio_test/presentation/widgets/base_app_bar.dart';

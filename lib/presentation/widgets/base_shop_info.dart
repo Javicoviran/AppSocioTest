@@ -67,7 +67,7 @@ class BaseShopInfo extends StatelessWidget {
                             width: wJM(46),
                             child: const ProfileBaseField(title: 'Tipo de software', content: 'Coviges'),
                           ),
-                          const ProfileBaseField(title: 'Versión de software', content: ''),
+                          const ProfileBaseField(title: 'Versión de software', content: 'RT'),
                         ],
                       ),
                       const Divider(height: 0, color: CommonTheme.dividerColor),

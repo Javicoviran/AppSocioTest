@@ -11,7 +11,7 @@ class BottomNavBar extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Container(
-      color: CommonTheme.backgroundColor,
+      color: CommonTheme.navBarColor,
       height: CommonTheme.baseBarHeight,
       child: Row(
         children: List.generate(

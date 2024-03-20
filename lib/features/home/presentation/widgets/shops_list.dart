@@ -30,7 +30,7 @@ class ShopsList extends StatelessWidget {
           child: Column(
             children: [
               Padding(
-                padding: CommonTheme.defaultBodyPadding,
+                padding: EdgeInsets.all(wJM(5)),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [

@@ -61,9 +61,9 @@ class _ProfileShopList extends StatelessWidget {
         SizedBox(height: hJM(2)),
         ProfileShopListItem(
           shop: ProfileShopListItemModel(
-            name: 'coviran supermercados Nombre tienda ',
-            address: 'Dirección tienda 2, granada granada',
-            phoneNumber: '999 999 999',
+            name: 'SUPERMERCADOS COVIRAN ANCHA DE GRACIA',
+            address: 'Calle Ancha de Gracia 5',
+            phoneNumber: '958 98 30 37',
             imageUrl: defaultShopImage,
           ),
         ),
@@ -102,7 +102,7 @@ class _ProfileSummary extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const ProfileAvatar(userImage: profileAvatarImage),
+        ProfileAvatar(userImage: profileAvatarImage, size: wJM(17) * 2),
         SizedBox(height: hJM(2)),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -135,5 +135,3 @@ class _ProfileSummary extends StatelessWidget {
     );
   }
 }
-
-

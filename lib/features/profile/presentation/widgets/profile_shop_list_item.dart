@@ -1,7 +1,6 @@
 import 'package:app_socio_test/presentation/helpers/screen_functions.dart';
 import 'package:app_socio_test/presentation/helpers/utils.dart';
 import 'package:app_socio_test/features/profile/presentation/models/profile_shop_list_item_model.dart';
-import 'package:app_socio_test/presentation/styles/colors.dart';
 import 'package:app_socio_test/presentation/styles/theme.dart';
 import 'package:app_socio_test/presentation/widgets/base_shop_info.dart';
 import 'package:app_socio_test/presentation/widgets/loading_shimmer.dart';
@@ -22,12 +21,12 @@ class ProfileShopListItem extends StatelessWidget {
         );
       },
       child: Container(
-        height: hJM(25),
+        height: hJM(24.5),
         padding: EdgeInsets.all(wJM(3)),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10.0),
           border: Border.all(color: CommonTheme.primaryColor),
-          color: AppColors.lightGreen100,
+          color: CommonTheme.green50,
         ),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -67,17 +66,14 @@ class ProfileShopListItem extends StatelessWidget {
                     ),
                   ),
                 ),
-                // SizedBox(height: hJM(3)),
                 Icon(Icons.open_in_new_rounded, size: hJM(3.5), color: CommonTheme.green800),
               ],
             ),
             SizedBox(
               width: wJM(47),
-              height: hJM(25),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                mainAxisSize: MainAxisSize.min,
                 children: [
                   Text(
                     shop.name,
