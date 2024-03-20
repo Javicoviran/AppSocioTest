@@ -19,7 +19,7 @@ class Settings extends StatelessWidget {
             child: Column(
               children: [
                 Padding(
-                  padding: CommonTheme.defaultBodyPadding,
+                  padding: EdgeInsets.only(left: wJM(5), right: wJM(5), bottom: wJM(5)),
                   child: Column(
                     children: [
                       Text(

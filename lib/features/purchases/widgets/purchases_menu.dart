@@ -26,7 +26,7 @@ class PurchasesMenu extends StatelessWidget {
           child: Stack(
             children: [
               Container(
-                height: hJM(30),
+                height: hJM(15),
                 decoration: const BoxDecoration(
                   color: CommonTheme.lightGreen,
                   borderRadius: BorderRadius.only(
@@ -38,7 +38,7 @@ class PurchasesMenu extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.symmetric(vertical: hJM(10), horizontal: wJM(8)),
+                padding: EdgeInsets.symmetric(vertical: hJM(5), horizontal: wJM(8)),
                 child: GridView.count(
                   crossAxisCount: 2,
                   shrinkWrap: true,

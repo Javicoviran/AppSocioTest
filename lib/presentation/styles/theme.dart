@@ -128,7 +128,7 @@ class CommonTheme {
   static final defaultButtonPadding = EdgeInsets.symmetric(horizontal: wJM(3));
 
   static final defaultPadding = EdgeInsets.symmetric(horizontal: wJM(5), vertical: hJM(1.5));
-  static final defaultBodyPadding = EdgeInsets.only(left: wJM(5), right: wJM(5), bottom: wJM(5));
+  static final defaultBodyPadding = EdgeInsets.all(wJM(5));
 
   static final defaultImageRadius = BorderRadius.circular(10);
   static const tableHeaderRowBoxDecoration = BoxDecoration(

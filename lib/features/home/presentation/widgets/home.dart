@@ -1,3 +1,5 @@
+import 'package:app_socio_test/features/article/presentation/helpers/constants.dart';
+import 'package:app_socio_test/features/article/presentation/widgets/article_detail.dart';
 import 'package:app_socio_test/features/home/presentation/widgets/home_actions_list.dart';
 import 'package:app_socio_test/features/home/presentation/widgets/home_app_bar.dart';
 import 'package:app_socio_test/features/qr_scanner/presentation/widgets/qr_scanner.dart';
@@ -10,6 +12,7 @@ import 'package:app_socio_test/presentation/widgets/base_button.dart';
 import 'package:app_socio_test/presentation/widgets/body.dart';
 import 'package:app_socio_test/presentation/widgets/profile_avatar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 // TODO: control focus scope (searchbarr)
 
@@ -55,21 +58,23 @@ class _HomeSearchBar extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Container(
-          padding: EdgeInsets.symmetric(horizontal: wJM(4)),
-          decoration: BoxDecoration(borderRadius: BorderRadius.circular(25), color: CommonTheme.lightGreen),
-          child: Row(
-            children: [
-              const Icon(Icons.search_rounded),
-              SizedBox(width: wJM(2)),
-              SizedBox(
-                width: wJM(55),
-                child: TextFormField(
-                  decoration: const InputDecoration(hintText: 'Búsqueda de artículos', border: InputBorder.none),
-                  onChanged: (_) {},
+        GestureDetector(
+          onTap: () => Navigator.push(context, fadeTransitionRoute(ArticleDetail(article: testAquarius))),
+          child: Container(
+            padding: EdgeInsets.symmetric(horizontal: wJM(4)),
+            decoration: BoxDecoration(borderRadius: BorderRadius.circular(25), color: CommonTheme.lightGreen),
+            child: Row(
+              children: [
+                const Icon(Icons.search_rounded),
+                SizedBox(width: wJM(2)),
+                SizedBox(
+                  width: wJM(55),
+                  child: TextFormField(
+                    decoration: const InputDecoration(hintText: 'Búsqueda de artículos', border: InputBorder.none),
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
         BaseButton(
