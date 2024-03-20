@@ -1,3 +1,4 @@
+import 'package:app_socio_test/features/family_club/presentation/widgets/family_club.dart';
 import 'package:app_socio_test/features/home/presentation/models/action_item_model.dart';
 import 'package:app_socio_test/features/home/presentation/widgets/home_action_list_item.dart';
 import 'package:flutter/material.dart';
@@ -28,7 +29,9 @@ class HomeActionsList extends StatelessWidget {
           actionItem: ActionItemModel(
             text: 'Club Familia',
             icon: Icons.groups_2_outlined,
-            onTap: () {},
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (_) => const FamilyClub()));
+            },
           ),
         ),
       ],

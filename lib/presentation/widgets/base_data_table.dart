@@ -27,16 +27,16 @@ class BaseDatatable extends StatelessWidget {
         child: DataTable(
           headingRowColor: MaterialStateProperty.resolveWith<Color?>(
             (Set<MaterialState> states) {
-              return AppColors.green500;
+              return AppColors.green900;
             },
           ),
           border: const TableBorder(
-            bottom: BorderSide(color: AppColors.green500),
-            top: BorderSide(color: AppColors.green500),
-            left: BorderSide(color: AppColors.green500),
-            right: BorderSide(color: AppColors.green500),
-            horizontalInside: BorderSide(color: AppColors.green500),
-            verticalInside: BorderSide(color: AppColors.green500),
+            bottom: BorderSide(color: AppColors.green900),
+            top: BorderSide(color: AppColors.green900),
+            left: BorderSide(color: AppColors.green900),
+            right: BorderSide(color: AppColors.green900),
+            horizontalInside: BorderSide(color: AppColors.green900),
+            verticalInside: BorderSide(color: AppColors.green900),
           ),
           dataTextStyle: CommonTheme.bodyMedium.copyWith(fontWeight: FontWeight.bold),
           columns: columnTitles,
