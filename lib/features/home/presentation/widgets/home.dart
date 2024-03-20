@@ -94,7 +94,7 @@ class _HomeWelcome extends StatelessWidget {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('Bienveidx,', style: CommonTheme.bodyLarge),
+            Text('Bienvenidx,', style: CommonTheme.bodyLarge),
             SizedBox(
               width: wJM(65),
               child: Text(
