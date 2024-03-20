@@ -1,5 +1,5 @@
-import 'package:app_socio_test/helpers/utils.dart';
 import 'package:app_socio_test/presentation/helpers/screen_functions.dart';
+import 'package:app_socio_test/presentation/helpers/utils.dart';
 import 'package:app_socio_test/presentation/styles/colors.dart';
 import 'package:app_socio_test/presentation/styles/theme.dart';
 import 'package:flutter/material.dart';
