@@ -2,7 +2,6 @@ import 'dart:developer';
 import 'dart:io';
 
 import 'package:app_socio_test/presentation/helpers/screen_functions.dart';
-import 'package:app_socio_test/presentation/styles/colors.dart';
 import 'package:app_socio_test/presentation/styles/theme.dart';
 import 'package:app_socio_test/presentation/widgets/base_button.dart';
 import 'package:flutter/material.dart';
@@ -36,9 +35,18 @@ class _QRScannerState extends State<QRScanner> {
       child: Scaffold(
         body: Stack(
           children: [
-            Expanded(child: _buildQrView(context)),
+            _buildQrView(context),
             Positioned(
-              bottom: 0,
+                top: hJM(5),
+                left: wJM(1),
+                child: BaseButton(
+                  backgroundColor: Colors.transparent,
+                  borderStyle: Colors.transparent,
+                  icon: const Icon(Icons.close, color: CommonTheme.backgroundColor),
+                  onClick: () => Navigator.pop(context),
+                )),
+            Positioned(
+              top: hJM(10),
               width: wJM(100),
               child: Container(
                 color: Colors.transparent,
@@ -48,7 +56,6 @@ class _QRScannerState extends State<QRScanner> {
                   children: [
                     if (result != null)
                       //TODO: redirigir a widget de producto
-
                       // BaseButton(
                       //   onClick: () => launchUrl(Uri.parse(result!.code!), mode: LaunchMode.externalApplication),
                       //   height: 0.05.sh,
@@ -58,40 +65,39 @@ class _QRScannerState extends State<QRScanner> {
                       // )
                       Text('${result!.code}', style: CommonTheme.bodyLarge)
                     else
-                      Text('Scanea el producto', style: CommonTheme.bodyLarge.copyWith(color: CommonTheme.backgroundColor)),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        BaseButton(
-                          height: wJM(18),
-                          width: wJM(18),
-                          backgroundColor: AppColors.green900,
-                          borderStyle: AppColors.green900,
-                          icon: const Icon(
-                            Icons.flash_on,
-                            color: CommonTheme.backgroundColor,
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          BaseButton(
+                            height: wJM(18),
+                            width: wJM(18),
+                            backgroundColor: Colors.transparent,
+                            borderStyle: Colors.transparent,
+                            icon: const Icon(
+                              Icons.flash_on,
+                              color: CommonTheme.backgroundColor,
+                            ),
+                            onClick: () async {
+                              await controller?.toggleFlash();
+                              setState(() {});
+                            },
                           ),
-                          onClick: () async {
-                            await controller?.toggleFlash();
-                            setState(() {});
-                          },
-                        ),
-                        BaseButton(
-                          height: wJM(18),
-                          width: wJM(18),
-                          backgroundColor: AppColors.green900,
-                          borderStyle: AppColors.green900,
-                          onClick: () async {
-                            await controller?.flipCamera();
-                            setState(() {});
-                          },
-                          icon: const Icon(
-                            Icons.camera_enhance,
-                            color: CommonTheme.backgroundColor,
+                          BaseButton(
+                            height: wJM(18),
+                            width: wJM(18),
+                            backgroundColor: Colors.transparent,
+                            borderStyle: Colors.transparent,
+                            onClick: () async {
+                              await controller?.flipCamera();
+                              setState(() {});
+                            },
+                            icon: const Icon(
+                              Icons.camera_enhance,
+                              color: CommonTheme.backgroundColor,
+                            ),
                           ),
-                        ),
-                      ],
-                    )
+                        ],
+                      )
                   ],
                 ),
               ),
