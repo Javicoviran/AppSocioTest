@@ -2,6 +2,7 @@ import 'dart:developer';
 import 'dart:io';
 
 import 'package:app_socio_test/presentation/helpers/screen_functions.dart';
+import 'package:app_socio_test/presentation/styles/colors.dart';
 import 'package:app_socio_test/presentation/styles/theme.dart';
 import 'package:app_socio_test/presentation/widgets/base_button.dart';
 import 'package:flutter/material.dart';
@@ -46,11 +47,15 @@ class _QRScannerState extends State<QRScanner> {
                   onClick: () => Navigator.pop(context),
                 )),
             Positioned(
-              top: hJM(10),
+              top: hJM(15),
               width: wJM(100),
+              height: hJM(12),
               child: Container(
-                color: Colors.transparent,
-                height: hJM(30),
+                margin: EdgeInsets.symmetric(horizontal: wJM(15)),
+                decoration: BoxDecoration(
+                  color: AppColors.green900.withOpacity(0.3),
+                  borderRadius: BorderRadius.circular(100),
+                ),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
