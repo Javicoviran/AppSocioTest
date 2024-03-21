@@ -39,72 +39,81 @@ class _QRScannerState extends State<QRScanner> {
             _buildQrView(context),
             Positioned(
                 top: hJM(5),
-                left: wJM(1),
-                child: BaseButton(
-                  backgroundColor: Colors.transparent,
-                  borderStyle: Colors.transparent,
-                  icon: const Icon(Icons.close, color: CommonTheme.backgroundColor),
-                  onClick: () => Navigator.pop(context),
+                width: wJM(100),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    BaseButton(
+                      backgroundColor: Colors.transparent,
+                      borderStyle: Colors.transparent,
+                      icon: const Icon(Icons.close, color: CommonTheme.backgroundColor),
+                      onClick: () => Navigator.pop(context),
+                    ),
+                    BaseButton(
+                      height: wJM(18),
+                      width: wJM(18),
+                      backgroundColor: Colors.transparent,
+                      borderStyle: Colors.transparent,
+                      icon: const Icon(
+                        Icons.flash_on,
+                        color: CommonTheme.backgroundColor,
+                      ),
+                      onClick: () async {
+                        await controller?.toggleFlash();
+                      },
+                    ),
+                  ],
                 )),
             Positioned(
               top: hJM(15),
               width: wJM(100),
-              height: hJM(12),
               child: Container(
-                margin: EdgeInsets.symmetric(horizontal: wJM(15)),
                 decoration: BoxDecoration(
-                  color: AppColors.green900.withOpacity(0.3),
                   borderRadius: BorderRadius.circular(100),
                 ),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    if (result != null)
-                      //TODO: redirigir a widget de producto
-                      // BaseButton(
-                      //   onClick: () => launchUrl(Uri.parse(result!.code!), mode: LaunchMode.externalApplication),
-                      //   height: 0.05.sh,
-                      //   width: 0.33.sw,
-                      //   text: "Ir al producto",
-                      //   backgroundColor: CommonTheme.primaryColor,
-                      // )
-                      Text('${result!.code}', style: CommonTheme.bodyLarge)
-                    else
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          BaseButton(
-                            height: wJM(18),
-                            width: wJM(18),
-                            backgroundColor: Colors.transparent,
-                            borderStyle: Colors.transparent,
-                            icon: const Icon(
-                              Icons.flash_on,
-                              color: CommonTheme.backgroundColor,
-                            ),
-                            onClick: () async {
-                              await controller?.toggleFlash();
-                            },
-                          ),
-                          BaseButton(
-                            height: wJM(18),
-                            width: wJM(18),
-                            backgroundColor: Colors.transparent,
-                            borderStyle: Colors.transparent,
-                            onClick: () async {
-                              await controller?.flipCamera();
-                            },
-                            icon: const Icon(
-                              Icons.camera_enhance,
-                              color: CommonTheme.backgroundColor,
-                            ),
-                          ),
-                        ],
-                      )
+                    BaseButton(
+                      height: wJM(18),
+                      width: wJM(18),
+                      backgroundColor: AppColors.green900.withOpacity(0.3),
+                      borderStyle: AppColors.green900.withOpacity(0.3),
+                      onClick: () async {
+                        await controller?.flipCamera();
+                      },
+                      icon: const Icon(
+                        Icons.change_circle,
+                        color: CommonTheme.backgroundColor,
+                      ),
+                    )
                   ],
                 ),
               ),
-            )
+            ),
+            Positioned(
+              bottom: hJM(20),
+              width: wJM(100),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  if (result != null)
+                    Container(
+                      margin: EdgeInsets.symmetric(horizontal: wJM(10)),
+                      alignment: Alignment.center,
+                      height: hJM(10),
+                      decoration: BoxDecoration(
+                        color: AppColors.green900.withOpacity(0.3),
+                        borderRadius: BorderRadius.circular(50),
+                      ),
+                      child: Text(
+                        '${result!.code}',
+                        style: CommonTheme.bodyLarge.copyWith(color: CommonTheme.backgroundColor),
+                      ),
+                    ),
+                ],
+              ),
+            ),
           ],
         ),
       ),
@@ -112,7 +121,7 @@ class _QRScannerState extends State<QRScanner> {
   }
 
   Widget _buildQrView(BuildContext context) {
-    var scanArea = (MediaQuery.of(context).size.width < 400 || MediaQuery.of(context).size.height < 400) ? 180.0 : 330.0;
+    var scanArea = (MediaQuery.of(context).size.width < 400 || MediaQuery.of(context).size.height < 400) ? 200.0 : 330.0;
     return QRView(
       key: qrKey,
       onQRViewCreated: _onQRViewCreated,
