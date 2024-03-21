@@ -1,51 +1,52 @@
+import 'package:app_socio_test/features/mailbox/models/notifications_item_view_model.dart';
 import 'package:app_socio_test/presentation/helpers/screen_functions.dart';
 import 'package:app_socio_test/presentation/helpers/utils.dart';
 import 'package:app_socio_test/presentation/styles/colors.dart';
 import 'package:app_socio_test/presentation/styles/theme.dart';
 import 'package:flutter/material.dart';
 
-final List<NotificationsItem> newsList = [
-  const NotificationsItem(
+final List<NotificationsItemViewModel> notificationsList = [
+  NotificationsItemViewModel(
     date: 669375621000,
     title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec sem nisi. Ut venenatis tempor finibus. Ut vel metus ultrices, rutrum lectus ac, dapibus nisl.",
     body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec sem nisi. Ut venenatis tempor finibus. Ut vel metus ultrices, rutrum lectus ac, dapibus nisl.",
   ),
-  const NotificationsItem(
+  NotificationsItemViewModel(
     date: 669375621000,
     title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec sem nisi. Ut venenatis tempor finibus. Ut vel metus ultrices, rutrum lectus ac, dapibus nisl.",
     body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec sem nisi. Ut venenatis tempor finibus. Ut vel metus ultrices, rutrum lectus ac, dapibus nisl.",
   ),
-  const NotificationsItem(
+  NotificationsItemViewModel(
     date: 669375621000,
     title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec sem nisi. Ut venenatis tempor finibus. Ut vel metus ultrices, rutrum lectus ac, dapibus nisl.",
     body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec sem nisi. Ut venenatis tempor finibus. Ut vel metus ultrices, rutrum lectus ac, dapibus nisl.",
   ),
-  const NotificationsItem(
+  NotificationsItemViewModel(
     date: 669375621000,
     title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec sem nisi. Ut venenatis tempor finibus. Ut vel metus ultrices, rutrum lectus ac, dapibus nisl.",
     body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec sem nisi. Ut venenatis tempor finibus. Ut vel metus ultrices, rutrum lectus ac, dapibus nisl.",
   ),
-  const NotificationsItem(
+  NotificationsItemViewModel(
     date: 669375621000,
     title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec sem nisi. Ut venenatis tempor finibus. Ut vel metus ultrices, rutrum lectus ac, dapibus nisl.",
     body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec sem nisi. Ut venenatis tempor finibus. Ut vel metus ultrices, rutrum lectus ac, dapibus nisl.",
   ),
-  const NotificationsItem(
+  NotificationsItemViewModel(
     date: 669375621000,
     title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec sem nisi. Ut venenatis tempor finibus. Ut vel metus ultrices, rutrum lectus ac, dapibus nisl.",
     body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec sem nisi. Ut venenatis tempor finibus. Ut vel metus ultrices, rutrum lectus ac, dapibus nisl.",
   ),
-  const NotificationsItem(
+  NotificationsItemViewModel(
     date: 669375621000,
     title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec sem nisi. Ut venenatis tempor finibus. Ut vel metus ultrices, rutrum lectus ac, dapibus nisl.",
     body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec sem nisi. Ut venenatis tempor finibus. Ut vel metus ultrices, rutrum lectus ac, dapibus nisl.",
   ),
-  const NotificationsItem(
+  NotificationsItemViewModel(
     date: 669375621000,
     title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec sem nisi. Ut venenatis tempor finibus. Ut vel metus ultrices, rutrum lectus ac, dapibus nisl.",
     body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec sem nisi. Ut venenatis tempor finibus. Ut vel metus ultrices, rutrum lectus ac, dapibus nisl.",
   ),
-  const NotificationsItem(
+  NotificationsItemViewModel(
     date: 669375621000,
     title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec sem nisi. Ut venenatis tempor finibus. Ut vel metus ultrices, rutrum lectus ac, dapibus nisl.",
     body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec sem nisi. Ut venenatis tempor finibus. Ut vel metus ultrices, rutrum lectus ac, dapibus nisl.",
@@ -60,12 +61,12 @@ class Notifications extends StatelessWidget {
     return SizedBox(
       height: hJM(100) - CommonTheme.baseBarHeight,
       child: ListView.separated(
-        itemCount: newsList.length,
+        itemCount: notificationsList.length,
         scrollDirection: Axis.vertical,
         separatorBuilder: (_, __) => Divider(height: hJM(0), color: CommonTheme.dividerColor),
         itemBuilder: (BuildContext context, int index) {
           return Material(
-            child: newsList.elementAt(index),
+            child: NotificationsItem(notificationsItemViewModel: notificationsList[index]),
           );
         },
       ),
@@ -74,10 +75,11 @@ class Notifications extends StatelessWidget {
 }
 
 class NotificationsItem extends StatelessWidget {
-  final int date;
-  final String title;
-  final String body;
-  const NotificationsItem({super.key, required this.date, required this.title, required this.body});
+  final NotificationsItemViewModel notificationsItemViewModel;
+  const NotificationsItem({
+    super.key,
+    required this.notificationsItemViewModel,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -89,7 +91,7 @@ class NotificationsItem extends StatelessWidget {
           SizedBox(
             width: wJM(15),
             child: Text(
-              formatDate(date),
+              formatDate(notificationsItemViewModel.date),
               style: const TextStyle(
                 color: AppColors.gray,
               ),
@@ -100,7 +102,7 @@ class NotificationsItem extends StatelessWidget {
             child: Column(
               children: [
                 Text(
-                  body,
+                  notificationsItemViewModel.body,
                   style: CommonTheme.bodyLarge.copyWith(
                     color: CommonTheme.primaryColor,
                     fontWeight: FontWeight.bold,
@@ -109,7 +111,7 @@ class NotificationsItem extends StatelessWidget {
                   overflow: TextOverflow.ellipsis,
                 ),
                 Text(
-                  title,
+                  notificationsItemViewModel.title,
                   style: CommonTheme.bodyMedium,
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
