@@ -70,7 +70,7 @@ class _SettingsItemState extends State<_SettingsItem> {
   final MaterialStateProperty<Icon?> thumbIcon = MaterialStateProperty.resolveWith<Icon?>(
     (Set<MaterialState> states) {
       if (states.contains(MaterialState.selected)) {
-        return const Icon(Icons.check);
+        return const Icon(Icons.check, color: CommonTheme.backgroundColor,);
       }
       return const Icon(Icons.close);
     },
