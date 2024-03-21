@@ -66,7 +66,7 @@ class Mails extends StatelessWidget {
         separatorBuilder: (_, __) => Divider(height: hJM(0), color: CommonTheme.dividerColor),
         itemBuilder: (BuildContext context, int index) {
           return Material(
-            child: MailsItem(mailsItemViewModel: mailsList[index]),
+            child: _MailsItem(mailsItemViewModel: mailsList[index]),
           );
         },
       ),
@@ -74,9 +74,9 @@ class Mails extends StatelessWidget {
   }
 }
 
-class MailsItem extends StatelessWidget {
+class _MailsItem extends StatelessWidget {
   final MailsItemViewModel mailsItemViewModel;
-  const MailsItem({
+  const _MailsItem({
     super.key,
     required this.mailsItemViewModel,
   });

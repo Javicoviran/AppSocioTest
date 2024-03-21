@@ -65,7 +65,7 @@ class News extends StatelessWidget {
         separatorBuilder: (_, __) => Divider(height: hJM(0), color: CommonTheme.dividerColor),
         itemBuilder: (BuildContext context, int index) {
           return Material(
-            child: NewsItem(newsItemViewModel: newsList[index]),
+            child: _NewsItem(newsItemViewModel: newsList[index]),
           );
         },
       ),
@@ -73,10 +73,9 @@ class News extends StatelessWidget {
   }
 }
 
-class NewsItem extends StatelessWidget {
+class _NewsItem extends StatelessWidget {
   final NewsItemViewModel newsItemViewModel;
-  const NewsItem({
-    super.key,
+  const _NewsItem({
     required this.newsItemViewModel,
   });
 

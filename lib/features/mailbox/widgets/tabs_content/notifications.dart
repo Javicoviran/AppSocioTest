@@ -66,7 +66,7 @@ class Notifications extends StatelessWidget {
         separatorBuilder: (_, __) => Divider(height: hJM(0), color: CommonTheme.dividerColor),
         itemBuilder: (BuildContext context, int index) {
           return Material(
-            child: NotificationsItem(notificationsItemViewModel: notificationsList[index]),
+            child: _NotificationsItem(notificationsItemViewModel: notificationsList[index]),
           );
         },
       ),
@@ -74,10 +74,9 @@ class Notifications extends StatelessWidget {
   }
 }
 
-class NotificationsItem extends StatelessWidget {
+class _NotificationsItem extends StatelessWidget {
   final NotificationsItemViewModel notificationsItemViewModel;
-  const NotificationsItem({
-    super.key,
+  const _NotificationsItem({
     required this.notificationsItemViewModel,
   });
 
