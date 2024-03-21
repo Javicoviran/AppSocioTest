@@ -1,51 +1,52 @@
+import 'package:app_socio_test/features/mailbox/models/mails_item_view_model.dart';
 import 'package:app_socio_test/presentation/helpers/screen_functions.dart';
 import 'package:app_socio_test/presentation/helpers/utils.dart';
 import 'package:app_socio_test/presentation/styles/colors.dart';
 import 'package:app_socio_test/presentation/styles/theme.dart';
 import 'package:flutter/material.dart';
 
-final List<MailsItem> newsList = [
-  const MailsItem(
+final List<MailsItemViewModel> mailsList = [
+  MailsItemViewModel(
     date: 669375621000,
     title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec sem nisi. Ut venenatis tempor finibus. Ut vel metus ultrices, rutrum lectus ac, dapibus nisl.",
     body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec sem nisi. Ut venenatis tempor finibus. Ut vel metus ultrices, rutrum lectus ac, dapibus nisl.",
   ),
-  const MailsItem(
+  MailsItemViewModel(
     date: 669375621000,
     title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec sem nisi. Ut venenatis tempor finibus. Ut vel metus ultrices, rutrum lectus ac, dapibus nisl.",
     body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec sem nisi. Ut venenatis tempor finibus. Ut vel metus ultrices, rutrum lectus ac, dapibus nisl.",
   ),
-  const MailsItem(
+  MailsItemViewModel(
     date: 669375621000,
     title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec sem nisi. Ut venenatis tempor finibus. Ut vel metus ultrices, rutrum lectus ac, dapibus nisl.",
     body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec sem nisi. Ut venenatis tempor finibus. Ut vel metus ultrices, rutrum lectus ac, dapibus nisl.",
   ),
-  const MailsItem(
+  MailsItemViewModel(
     date: 669375621000,
     title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec sem nisi. Ut venenatis tempor finibus. Ut vel metus ultrices, rutrum lectus ac, dapibus nisl.",
     body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec sem nisi. Ut venenatis tempor finibus. Ut vel metus ultrices, rutrum lectus ac, dapibus nisl.",
   ),
-  const MailsItem(
+  MailsItemViewModel(
     date: 669375621000,
     title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec sem nisi. Ut venenatis tempor finibus. Ut vel metus ultrices, rutrum lectus ac, dapibus nisl.",
     body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec sem nisi. Ut venenatis tempor finibus. Ut vel metus ultrices, rutrum lectus ac, dapibus nisl.",
   ),
-  const MailsItem(
+  MailsItemViewModel(
     date: 669375621000,
     title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec sem nisi. Ut venenatis tempor finibus. Ut vel metus ultrices, rutrum lectus ac, dapibus nisl.",
     body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec sem nisi. Ut venenatis tempor finibus. Ut vel metus ultrices, rutrum lectus ac, dapibus nisl.",
   ),
-  const MailsItem(
+  MailsItemViewModel(
     date: 669375621000,
     title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec sem nisi. Ut venenatis tempor finibus. Ut vel metus ultrices, rutrum lectus ac, dapibus nisl.",
     body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec sem nisi. Ut venenatis tempor finibus. Ut vel metus ultrices, rutrum lectus ac, dapibus nisl.",
   ),
-  const MailsItem(
+  MailsItemViewModel(
     date: 669375621000,
     title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec sem nisi. Ut venenatis tempor finibus. Ut vel metus ultrices, rutrum lectus ac, dapibus nisl.",
     body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec sem nisi. Ut venenatis tempor finibus. Ut vel metus ultrices, rutrum lectus ac, dapibus nisl.",
   ),
-  const MailsItem(
+  MailsItemViewModel(
     date: 669375621000,
     title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec sem nisi. Ut venenatis tempor finibus. Ut vel metus ultrices, rutrum lectus ac, dapibus nisl.",
     body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec sem nisi. Ut venenatis tempor finibus. Ut vel metus ultrices, rutrum lectus ac, dapibus nisl.",
@@ -60,12 +61,12 @@ class Mails extends StatelessWidget {
     return SizedBox(
       height: hJM(100) - CommonTheme.baseBarHeight,
       child: ListView.separated(
-        itemCount: newsList.length,
+        itemCount: mailsList.length,
         scrollDirection: Axis.vertical,
         separatorBuilder: (_, __) => Divider(height: hJM(0), color: CommonTheme.dividerColor),
         itemBuilder: (BuildContext context, int index) {
           return Material(
-            child: newsList.elementAt(index),
+            child: MailsItem(mailsItemViewModel: mailsList[index]),
           );
         },
       ),
@@ -74,10 +75,11 @@ class Mails extends StatelessWidget {
 }
 
 class MailsItem extends StatelessWidget {
-  final int date;
-  final String title;
-  final String body;
-  const MailsItem({super.key, required this.date, required this.title, required this.body});
+  final MailsItemViewModel mailsItemViewModel;
+  const MailsItem({
+    super.key,
+    required this.mailsItemViewModel,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -89,7 +91,7 @@ class MailsItem extends StatelessWidget {
           SizedBox(
             width: wJM(15),
             child: Text(
-              formatDate(date),
+              formatDate(mailsItemViewModel.date),
               style: const TextStyle(
                 color: AppColors.gray,
               ),
@@ -100,7 +102,7 @@ class MailsItem extends StatelessWidget {
             child: Column(
               children: [
                 Text(
-                  body,
+                  mailsItemViewModel.body,
                   style: CommonTheme.bodyLarge.copyWith(
                     color: CommonTheme.primaryColor,
                     fontWeight: FontWeight.bold,
@@ -109,7 +111,7 @@ class MailsItem extends StatelessWidget {
                   overflow: TextOverflow.ellipsis,
                 ),
                 Text(
-                  title,
+                  mailsItemViewModel.title,
                   style: CommonTheme.bodyMedium,
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
