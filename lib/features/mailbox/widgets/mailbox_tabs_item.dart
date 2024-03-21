@@ -1,33 +1,28 @@
+import 'package:app_socio_test/features/mailbox/models/mailbox_tabs_item_view_model.dart';
 import 'package:app_socio_test/presentation/helpers/size_extenseion.dart';
 import 'package:app_socio_test/presentation/styles/colors.dart';
 import 'package:app_socio_test/presentation/styles/theme.dart';
 import 'package:flutter/material.dart';
 
 class MailboxTabsItem extends StatelessWidget {
-  final IconData iconData;
-  final bool isSelected;
-  final String text;
-  final void Function() onPressed;
+  final MailboxTabsItemViewModel mailboxTabsItemViewModel;
 
   const MailboxTabsItem({
     super.key,
-    required this.iconData,
-    required this.isSelected,
-    required this.onPressed,
-    required this.text,
+    required this.mailboxTabsItemViewModel,
   });
 
   @override
   Widget build(BuildContext context) {
     return IconButton(
       highlightColor: Colors.transparent,
-      onPressed: onPressed,
+      onPressed: mailboxTabsItemViewModel.onPressed,
       icon: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon(iconData, size: 0.033.sh, color: isSelected ? AppColors.green900 : CommonTheme.secondaryColor),
+          Icon(mailboxTabsItemViewModel.iconData, size: 0.033.sh, color: mailboxTabsItemViewModel.isSelected ? AppColors.green900 : CommonTheme.secondaryColor),
           Text(
-            text,
+            mailboxTabsItemViewModel.text,
             style: CommonTheme.bodyMedium,
           ),
         ],
