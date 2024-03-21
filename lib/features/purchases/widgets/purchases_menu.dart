@@ -1,5 +1,5 @@
 import 'package:app_socio_test/presentation/helpers/screen_functions.dart';
-import 'package:app_socio_test/features/purchases/models/purchases_menu_model.dart';
+import 'package:app_socio_test/features/purchases/models/purchases_menu_view_model.dart';
 import 'package:app_socio_test/features/purchases/widgets/tables/meat_table.dart';
 import 'package:app_socio_test/features/purchases/widgets/tables/orders_table.dart';
 import 'package:app_socio_test/features/purchases/widgets/tables/transport_table.dart';
@@ -10,9 +10,9 @@ import 'package:app_socio_test/presentation/widgets/body.dart';
 import 'package:flutter/material.dart';
 
 class PurchasesMenu extends StatelessWidget {
-  final purchases = PurchasesMenuItem(text: "Compras", icon: Icons.assignment, goTo: OrdersTable());
-  final transport = PurchasesMenuItem(text: "Transporte", icon: Icons.local_shipping, goTo: TransportTable());
-  final meat = PurchasesMenuItem(text: "Solicitar Pedido de Carnes", icon: Icons.store, goTo: MeatTable());
+  final purchases = PurchasesMenuViewModel(text: "Compras", icon: Icons.assignment, goTo: OrdersTable());
+  final transport = PurchasesMenuViewModel(text: "Transporte", icon: Icons.local_shipping, goTo: TransportTable());
+  final meat = PurchasesMenuViewModel(text: "Solicitar Pedido de Carnes", icon: Icons.store, goTo: MeatTable());
 
   PurchasesMenu({super.key});
 
@@ -75,7 +75,7 @@ class PurchasesMenu extends StatelessWidget {
 }
 
 class _PurchasesMenuItem extends StatelessWidget {
-  final PurchasesMenuItem purchasesMenuItem;
+  final PurchasesMenuViewModel purchasesMenuItem;
   const _PurchasesMenuItem({required this.purchasesMenuItem});
 
   @override

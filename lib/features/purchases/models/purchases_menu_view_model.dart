@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class PurchasesMenuItem {
+class PurchasesMenuViewModel {
   final IconData icon;
   final String text;
   final Widget goTo;
 
-  PurchasesMenuItem({
+  PurchasesMenuViewModel({
     required this.icon,
     required this.text,
     required this.goTo,
