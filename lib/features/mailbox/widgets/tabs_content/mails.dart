@@ -77,7 +77,6 @@ class Mails extends StatelessWidget {
 class _MailsItem extends StatelessWidget {
   final MailsItemViewModel mailsItemViewModel;
   const _MailsItem({
-    super.key,
     required this.mailsItemViewModel,
   });
 
