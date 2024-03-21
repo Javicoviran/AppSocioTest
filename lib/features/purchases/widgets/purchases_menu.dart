@@ -1,8 +1,8 @@
 import 'package:app_socio_test/presentation/helpers/screen_functions.dart';
 import 'package:app_socio_test/features/purchases/models/purchases_menu_model.dart';
-import 'package:app_socio_test/features/purchases/widgets/tables/meat.dart';
-import 'package:app_socio_test/features/purchases/widgets/tables/orders.dart';
-import 'package:app_socio_test/features/purchases/widgets/tables/transport.dart';
+import 'package:app_socio_test/features/purchases/widgets/tables/meat_table.dart';
+import 'package:app_socio_test/features/purchases/widgets/tables/orders_table.dart';
+import 'package:app_socio_test/features/purchases/widgets/tables/transport_table.dart';
 import 'package:app_socio_test/presentation/styles/colors.dart';
 import 'package:app_socio_test/presentation/styles/theme.dart';
 import 'package:app_socio_test/presentation/widgets/base_app_bar.dart';
@@ -10,9 +10,9 @@ import 'package:app_socio_test/presentation/widgets/body.dart';
 import 'package:flutter/material.dart';
 
 class PurchasesMenu extends StatelessWidget {
-  final purchases = PurchasesMenuItem(text: "Compras", icon: Icons.assignment, goTo: Orders());
-  final transport = PurchasesMenuItem(text: "Transporte", icon: Icons.local_shipping, goTo: Transport());
-  final meat = PurchasesMenuItem(text: "Solicitar Pedido de Carnes", icon: Icons.store, goTo: Meat());
+  final purchases = PurchasesMenuItem(text: "Compras", icon: Icons.assignment, goTo: OrdersTable());
+  final transport = PurchasesMenuItem(text: "Transporte", icon: Icons.local_shipping, goTo: TransportTable());
+  final meat = PurchasesMenuItem(text: "Solicitar Pedido de Carnes", icon: Icons.store, goTo: MeatTable());
 
   PurchasesMenu({super.key});
 
