@@ -84,7 +84,6 @@ class _QRScannerState extends State<QRScanner> {
                             ),
                             onClick: () async {
                               await controller?.toggleFlash();
-                              setState(() {});
                             },
                           ),
                           BaseButton(
@@ -94,7 +93,6 @@ class _QRScannerState extends State<QRScanner> {
                             borderStyle: Colors.transparent,
                             onClick: () async {
                               await controller?.flipCamera();
-                              setState(() {});
                             },
                             icon: const Icon(
                               Icons.camera_enhance,
