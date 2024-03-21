@@ -31,7 +31,7 @@ class BaseShopInfo extends StatelessWidget {
                   child: Image.network(defaultShopImage, fit: BoxFit.cover),
                 ),
                 Padding(
-                  padding: CommonTheme.defaultBodyPadding,
+                  padding: EdgeInsets.all(wJM(5)),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
