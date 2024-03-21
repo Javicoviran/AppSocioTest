@@ -1,50 +1,51 @@
+import 'package:app_socio_test/features/mailbox/models/news_item_view_model.dart';
 import 'package:app_socio_test/presentation/helpers/screen_functions.dart';
 import 'package:app_socio_test/presentation/helpers/utils.dart';
 import 'package:app_socio_test/presentation/styles/colors.dart';
 import 'package:app_socio_test/presentation/styles/theme.dart';
 import 'package:flutter/material.dart';
 
-final List<NewsItem> newsList = [
-  const NewsItem(
+final List<NewsItemViewModel> newsList = [
+  NewsItemViewModel(
     date: 669375621000,
     title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec sem nisi. Ut venenatis tempor finibus. Ut vel metus ultrices, rutrum lectus ac, dapibus nisl.",
     body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec sem nisi. Ut venenatis tempor finibus. Ut vel metus ultrices, rutrum lectus ac, dapibus nisl.",
   ),
-  const NewsItem(
+  NewsItemViewModel(
     date: 669375621000,
     title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec sem nisi. Ut venenatis tempor finibus. Ut vel metus ultrices, rutrum lectus ac, dapibus nisl.",
     body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec sem nisi. Ut venenatis tempor finibus. Ut vel metus ultrices, rutrum lectus ac, dapibus nisl.",
   ),
-  const NewsItem(
+  NewsItemViewModel(
     date: 669375621000,
     title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec sem nisi. Ut venenatis tempor finibus. Ut vel metus ultrices, rutrum lectus ac, dapibus nisl.",
     body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec sem nisi. Ut venenatis tempor finibus. Ut vel metus ultrices, rutrum lectus ac, dapibus nisl.",
   ),
-  const NewsItem(
+  NewsItemViewModel(
       date: 669375621000,
       title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec sem nisi. Ut venenatis tempor finibus. Ut vel metus ultrices, rutrum lectus ac, dapibus nisl.",
       body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec sem nisi. Ut venenatis tempor finibus. Ut vel metus ultrices, rutrum lectus ac, dapibus nisl."),
-  const NewsItem(
+  NewsItemViewModel(
     date: 669375621000,
     title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec sem nisi. Ut venenatis tempor finibus. Ut vel metus ultrices, rutrum lectus ac, dapibus nisl.",
     body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec sem nisi. Ut venenatis tempor finibus. Ut vel metus ultrices, rutrum lectus ac, dapibus nisl.",
   ),
-  const NewsItem(
+  NewsItemViewModel(
     date: 669375621000,
     title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec sem nisi. Ut venenatis tempor finibus. Ut vel metus ultrices, rutrum lectus ac, dapibus nisl.",
     body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec sem nisi. Ut venenatis tempor finibus. Ut vel metus ultrices, rutrum lectus ac, dapibus nisl.",
   ),
-  const NewsItem(
+  NewsItemViewModel(
     date: 669375621000,
     title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec sem nisi. Ut venenatis tempor finibus. Ut vel metus ultrices, rutrum lectus ac, dapibus nisl.",
     body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec sem nisi. Ut venenatis tempor finibus. Ut vel metus ultrices, rutrum lectus ac, dapibus nisl.",
   ),
-  const NewsItem(
+  NewsItemViewModel(
     date: 669375621000,
     title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec sem nisi. Ut venenatis tempor finibus. Ut vel metus ultrices, rutrum lectus ac, dapibus nisl.",
     body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec sem nisi. Ut venenatis tempor finibus. Ut vel metus ultrices, rutrum lectus ac, dapibus nisl.",
   ),
-  const NewsItem(
+  NewsItemViewModel(
     date: 669375621000,
     title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec sem nisi. Ut venenatis tempor finibus. Ut vel metus ultrices, rutrum lectus ac, dapibus nisl.",
     body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec sem nisi. Ut venenatis tempor finibus. Ut vel metus ultrices, rutrum lectus ac, dapibus nisl.",
@@ -64,7 +65,7 @@ class News extends StatelessWidget {
         separatorBuilder: (_, __) => Divider(height: hJM(0), color: CommonTheme.dividerColor),
         itemBuilder: (BuildContext context, int index) {
           return Material(
-            child: newsList.elementAt(index),
+            child: NewsItem(newsItemViewModel: newsList[index]),
           );
         },
       ),
@@ -73,14 +74,10 @@ class News extends StatelessWidget {
 }
 
 class NewsItem extends StatelessWidget {
-  final int date;
-  final String title;
-  final String body;
+  final NewsItemViewModel newsItemViewModel;
   const NewsItem({
     super.key,
-    required this.date,
-    required this.title,
-    required this.body,
+    required this.newsItemViewModel,
   });
 
   @override
@@ -93,7 +90,7 @@ class NewsItem extends StatelessWidget {
           SizedBox(
             width: wJM(15),
             child: Text(
-              formatDate(date),
+              formatDate(newsItemViewModel.date),
               style: const TextStyle(
                 color: AppColors.gray,
               ),
@@ -104,7 +101,7 @@ class NewsItem extends StatelessWidget {
             child: Column(
               children: [
                 Text(
-                  body,
+                  newsItemViewModel.body,
                   style: CommonTheme.bodyLarge.copyWith(
                     color: CommonTheme.primaryColor,
                     fontWeight: FontWeight.bold,
@@ -113,7 +110,7 @@ class NewsItem extends StatelessWidget {
                   overflow: TextOverflow.ellipsis,
                 ),
                 Text(
-                  title,
+                  newsItemViewModel.title,
                   style: CommonTheme.bodyMedium,
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
