@@ -25,7 +25,7 @@ class HomeActionListItem extends StatelessWidget {
               width: wJM(8.5) * 2,
               height: wJM(8.5) * 2,
               decoration: const BoxDecoration(shape: BoxShape.circle, color: AppColors.lightGreen100),
-              child: Icon(actionItem.icon, color: AppColors.green900),
+              child: Icon(actionItem.icon, color: CommonTheme.primaryColor),
             ),
             SizedBox(height: hJM(1)),
             Text(

@@ -36,7 +36,7 @@ class NavBarItem extends StatelessWidget {
             splashColor: Colors.transparent,
             highlightColor: Colors.transparent,
             onPressed: onPressed,
-            icon: Icon(iconData, size: 0.033.sh, color: isSelected ? AppColors.green900 : CommonTheme.textColor),
+            icon: Icon(iconData, size: 0.033.sh, color: isSelected ? CommonTheme.primaryColor : CommonTheme.textColor),
           ),
         ),
         Text(

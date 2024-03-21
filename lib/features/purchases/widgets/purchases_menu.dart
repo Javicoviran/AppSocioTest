@@ -3,7 +3,6 @@ import 'package:app_socio_test/features/purchases/models/purchases_menu_view_mod
 import 'package:app_socio_test/features/purchases/widgets/tables/meat_table.dart';
 import 'package:app_socio_test/features/purchases/widgets/tables/orders_table.dart';
 import 'package:app_socio_test/features/purchases/widgets/tables/transport_table.dart';
-import 'package:app_socio_test/presentation/styles/colors.dart';
 import 'package:app_socio_test/presentation/styles/theme.dart';
 import 'package:app_socio_test/presentation/widgets/base_app_bar.dart';
 import 'package:app_socio_test/presentation/widgets/body.dart';
@@ -92,7 +91,7 @@ class _PurchasesMenuItem extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(purchasesMenuItem.icon, color: AppColors.green900),
+            Icon(purchasesMenuItem.icon, color: CommonTheme.primaryColor),
             SizedBox(height: hJM(1)),
             Text(
               purchasesMenuItem.text,

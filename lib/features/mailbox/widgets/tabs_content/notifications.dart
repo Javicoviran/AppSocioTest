@@ -102,7 +102,7 @@ class NotificationsItem extends StatelessWidget {
                 Text(
                   body,
                   style: CommonTheme.bodyLarge.copyWith(
-                    color: AppColors.green900,
+                    color: CommonTheme.primaryColor,
                     fontWeight: FontWeight.bold,
                   ),
                   maxLines: 2,

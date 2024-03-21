@@ -2,7 +2,6 @@ import 'dart:developer';
 import 'dart:io';
 
 import 'package:app_socio_test/presentation/helpers/screen_functions.dart';
-import 'package:app_socio_test/presentation/styles/colors.dart';
 import 'package:app_socio_test/presentation/styles/theme.dart';
 import 'package:app_socio_test/presentation/widgets/base_button.dart';
 import 'package:flutter/material.dart';
@@ -77,8 +76,8 @@ class _QRScannerState extends State<QRScanner> {
                     BaseButton(
                       height: wJM(18),
                       width: wJM(18),
-                      backgroundColor: AppColors.green900.withOpacity(0.3),
-                      borderStyle: AppColors.green900.withOpacity(0.3),
+                      backgroundColor: CommonTheme.primaryColor.withOpacity(0.3),
+                      borderStyle: CommonTheme.primaryColor.withOpacity(0.3),
                       onClick: () async {
                         await controller?.flipCamera();
                       },
@@ -103,7 +102,7 @@ class _QRScannerState extends State<QRScanner> {
                       alignment: Alignment.center,
                       height: hJM(10),
                       decoration: BoxDecoration(
-                        color: AppColors.green900.withOpacity(0.3),
+                        color: CommonTheme.primaryColor.withOpacity(0.3),
                         borderRadius: BorderRadius.circular(50),
                       ),
                       child: Text(
