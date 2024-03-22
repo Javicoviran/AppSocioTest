@@ -9,9 +9,9 @@ import 'package:app_socio_test/presentation/widgets/body.dart';
 import 'package:flutter/material.dart';
 
 class PurchasesMenu extends StatelessWidget {
-  final purchases = PurchasesMenuViewModel(text: "Compras", icon: Icons.assignment, goTo: OrdersTable());
-  final transport = PurchasesMenuViewModel(text: "Transporte", icon: Icons.local_shipping, goTo: TransportTable());
-  final meat = PurchasesMenuViewModel(text: "Solicitar Pedido de Carnes", icon: Icons.store, goTo: MeatTable());
+  final purchases = PurchasesMenuViewModel(text: "Compras", icon: Icons.assignment, onPressed: OrdersTable());
+  final transport = PurchasesMenuViewModel(text: "Transporte", icon: Icons.local_shipping, onPressed: TransportTable());
+  final meat = PurchasesMenuViewModel(text: "Solicitar Pedido de Carnes", icon: Icons.store, onPressed: MeatTable());
 
   PurchasesMenu({super.key});
 
@@ -80,7 +80,7 @@ class _PurchasesMenuItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => Navigator.push(context, MaterialPageRoute(builder: (contex) => purchasesMenuItem.goTo)),
+      onTap: () => Navigator.push(context, MaterialPageRoute(builder: (contex) => purchasesMenuItem.onPressed)),
       child: Container(
         padding: EdgeInsets.all(wJM(2)),
         decoration: BoxDecoration(
