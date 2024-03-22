@@ -49,22 +49,6 @@ class PurchasesMenu extends StatelessWidget {
                   ],
                 ),
               ),
-              // Column(
-              //   children: [
-              //     SizedBox(
-              //       child: Wrap(
-              //         spacing: wJM(2),
-              //         runSpacing: wJM(4),
-              //         alignment: WrapAlignment.center,
-              // children: [
-              //   _PurchasesMenuItem(purchasesMenuItem: purchases),
-              //   _PurchasesMenuItem(purchasesMenuItem: transport),
-              //   _PurchasesMenuItem(purchasesMenuItem: meat),
-              // ],
-              //       ),
-              //     )
-              //   ],
-              // ),
             ],
           ),
         ),
