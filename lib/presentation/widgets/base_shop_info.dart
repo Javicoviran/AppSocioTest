@@ -57,7 +57,7 @@ class BaseShopInfo extends StatelessWidget {
                       SizedBox(height: hJM(2)),
                       const ProfileBaseField(
                         title: 'Plataforma',
-                        specialContent: _ShopInfoPlatformWidget(),
+                        specialContent: _ShopInventLocationWidget(),
                       ),
                       const Divider(height: 0, color: CommonTheme.dividerColor),
                       SizedBox(height: hJM(2)),
@@ -227,10 +227,10 @@ class _ShopInfoServicesItem extends StatelessWidget {
   }
 }
 
-class _ShopInfoPlatformWidget extends StatelessWidget {
+class _ShopInventLocationWidget extends StatelessWidget {
   // final InventLocationModel platform;
 
-  const _ShopInfoPlatformWidget();
+  const _ShopInventLocationWidget();
 
   @override
   Widget build(BuildContext context) {

@@ -1,5 +1,6 @@
 import 'package:app_socio_test/features/article/presentation/helpers/constants.dart';
 import 'package:app_socio_test/features/article/presentation/widgets/article_detail.dart';
+import 'package:app_socio_test/features/home/presentation/helpers/constants.dart';
 import 'package:app_socio_test/features/home/presentation/widgets/home_actions_list.dart';
 import 'package:app_socio_test/features/home/presentation/widgets/home_app_bar.dart';
 import 'package:app_socio_test/features/qr_scanner/presentation/widgets/qr_scanner.dart';
@@ -12,7 +13,6 @@ import 'package:app_socio_test/presentation/widgets/base_button.dart';
 import 'package:app_socio_test/presentation/widgets/body.dart';
 import 'package:app_socio_test/presentation/widgets/profile_avatar.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 // TODO: control focus scope (searchbarr)
 
@@ -38,8 +38,7 @@ class Home extends StatelessWidget {
                   SizedBox(height: hJM(4)),
                   const HomeActionsList(),
                   SizedBox(height: hJM(4)),
-                  const ShopsList(),
-                  SizedBox(height: hJM(4)),
+                  ShopsList(shopCardModel: sampleShopCard),
                 ],
               ),
             ),

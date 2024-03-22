@@ -8,7 +8,6 @@ import 'package:app_socio_test/presentation/styles/theme.dart';
 import 'package:app_socio_test/presentation/widgets/base_app_bar.dart';
 import 'package:app_socio_test/presentation/widgets/body.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class PurchasesMenu extends StatelessWidget {
   final purchases = PurchasesMenuItem(text: "Compras", icon: Icons.assignment, goTo: Orders());
@@ -51,22 +50,6 @@ class PurchasesMenu extends StatelessWidget {
                   ],
                 ),
               ),
-              // Column(
-              //   children: [
-              //     SizedBox(
-              //       child: Wrap(
-              //         spacing: wJM(2),
-              //         runSpacing: wJM(4),
-              //         alignment: WrapAlignment.center,
-              // children: [
-              //   _PurchasesMenuItem(purchasesMenuItem: purchases),
-              //   _PurchasesMenuItem(purchasesMenuItem: transport),
-              //   _PurchasesMenuItem(purchasesMenuItem: meat),
-              // ],
-              //       ),
-              //     )
-              //   ],
-              // ),
             ],
           ),
         ),
