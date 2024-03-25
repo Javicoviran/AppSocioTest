@@ -51,7 +51,7 @@ class SignUp extends StatelessWidget {
                     height: hJM(8),
                     width: wJM(80),
                     onClick: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const NavBar())),
-                    text: "Acceder",
+                    text: "Crear cuenta",
                     backgroundColor: CommonTheme.primaryColor,
                   ),
                   SizedBox(height: hJM(10)),
