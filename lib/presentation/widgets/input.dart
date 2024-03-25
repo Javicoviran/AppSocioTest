@@ -54,17 +54,14 @@ class Input extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         if (icon != null || label != null)
-          Padding(
-            padding: EdgeInsets.only(left: wJM(4)),
-            child: Row(
-              children: [
-                if (icon != null) ...[
-                   Icon(icon, color: CommonTheme.primaryColor, size: hJM(4)),
-                  SizedBox(width: wJM(1.5)),
-                ],
-                if (label != null) Text(label!, style: CommonTheme.titleSmall),
+          Row(
+            children: [
+              if (icon != null) ...[
+                 Icon(icon, color: CommonTheme.primaryColor, size: hJM(4)),
+                SizedBox(width: wJM(1.5)),
               ],
-            ),
+              if (label != null) Text(label!, style: CommonTheme.titleSmall),
+            ],
           ),
         TextFormField(
           initialValue: textEditingController == null ? initialValue : null,

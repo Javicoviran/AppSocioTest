@@ -1,7 +1,6 @@
-import 'package:app_socio_test/features/auth/sign_up/presentation/widgets/sign_up.dart';
 import 'package:app_socio_test/features/navbar/widgets/nav_bar.dart';
+import 'package:app_socio_test/presentation/helpers/extensions.dart';
 import 'package:app_socio_test/presentation/helpers/screen_functions.dart';
-import 'package:app_socio_test/presentation/helpers/utils.dart';
 import 'package:app_socio_test/presentation/styles/theme.dart';
 import 'package:app_socio_test/presentation/widgets/base_button.dart';
 import 'package:app_socio_test/presentation/widgets/body.dart';
@@ -9,8 +8,8 @@ import 'package:app_socio_test/presentation/widgets/input.dart';
 import 'package:app_socio_test/presentation/widgets/input_pass.dart';
 import 'package:flutter/material.dart';
 
-class SignIn extends StatelessWidget {
-  const SignIn({super.key});
+class SignUp extends StatelessWidget {
+  const SignUp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -24,23 +23,26 @@ class SignIn extends StatelessWidget {
               child: Column(
                 children: [
                   SizedBox(height: hJM(2)),
-                  Text('Inicio de sesión', style: CommonTheme.headlineMedium),
+                  Text('Crear cuenta', style: CommonTheme.headlineMedium),
                   SizedBox(height: hJM(3)),
                   Text(
-                    "¡Hola de nuevo! Por favor, ingrese su correo electrónico y contraseña",
+                    "Por favor, completa la siguiente información para registrarte utilizando tu cuenta de correo electrónico. ¡Esperamos darte la bienvenida a nuestra comunidad!",
                     style: CommonTheme.bodyMedium.copyWith(color: CommonTheme.secondaryColor),
                     textAlign: TextAlign.center,
                   ),
                   SizedBox(height: hJM(6)),
-                  const Input(label: "Correo electrónico", icon: Icons.email),
+                  const Input(label: "Codigo de socio", icon: Icons.numbers_rounded),
+                  SizedBox(height: hJM(4)),
+                  const Input(label: "Correo electrónico", icon: Icons.email_rounded),
                   SizedBox(height: hJM(4)),
                   const InputPass(label: "Contraseña", icon: Icons.lock),
                   SizedBox(height: hJM(2)),
                   Align(
-                    alignment: Alignment.centerRight,
+                    alignment: Alignment.centerLeft,
                     child: BaseButton(
-                      width: wJM(47),
-                      text: "Recuperar Contraseña",
+                      width: wJM(78),
+                      text: "Acepto los términos y condiciones",
+                      icon: const Icon(Icons.check_box_outline_blank, color: CommonTheme.linkColor),
                       buttonTextColor: CommonTheme.linkColor,
                     ),
                   ),
@@ -56,14 +58,14 @@ class SignIn extends StatelessWidget {
                   Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      Text('¿No tienes cuenta?', style: CommonTheme.bodyMedium.copyWith(fontStyle: FontStyle.italic)),
+                      Text('¿Ya tienes cuenta?', style: CommonTheme.bodyMedium.copyWith(fontStyle: FontStyle.italic)),
                       SizedBox(width: wJM(4)),
                       BaseButton(
                         width: wJM(35),
-                        text: 'Regístrate aquí',
+                        text: 'Iniciar sesión',
                         buttonTextColor: CommonTheme.linkColor,
                         borderStyle: CommonTheme.linkColor,
-                        onClick: () => Navigator.push(context, fadeTransitionRoute(const SignUp())),
+                        onClick: () => context.pop,
                       ),
                     ],
                   ),
