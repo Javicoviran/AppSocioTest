@@ -1,18 +1,17 @@
 import 'package:app_socio_test/presentation/helpers/screen_functions.dart';
-import 'package:app_socio_test/features/purchases/models/purchases_menu_model.dart';
-import 'package:app_socio_test/features/purchases/widgets/tables/meat.dart';
-import 'package:app_socio_test/features/purchases/widgets/tables/orders.dart';
-import 'package:app_socio_test/features/purchases/widgets/tables/transport.dart';
-import 'package:app_socio_test/presentation/styles/colors.dart';
+import 'package:app_socio_test/features/purchases/models/purchases_menu_view_model.dart';
+import 'package:app_socio_test/features/purchases/widgets/tables/meat_table.dart';
+import 'package:app_socio_test/features/purchases/widgets/tables/orders_table.dart';
+import 'package:app_socio_test/features/purchases/widgets/tables/transport_table.dart';
 import 'package:app_socio_test/presentation/styles/theme.dart';
 import 'package:app_socio_test/presentation/widgets/base_app_bar.dart';
 import 'package:app_socio_test/presentation/widgets/body.dart';
 import 'package:flutter/material.dart';
 
 class PurchasesMenu extends StatelessWidget {
-  final purchases = PurchasesMenuItem(text: "Compras", icon: Icons.assignment, goTo: Orders());
-  final transport = PurchasesMenuItem(text: "Transporte", icon: Icons.local_shipping, goTo: Transport());
-  final meat = PurchasesMenuItem(text: "Solicitar Pedido de Carnes", icon: Icons.store, goTo: Meat());
+  final purchases = PurchasesMenuViewModel(text: "Compras", icon: Icons.assignment, onPressed: OrdersTable());
+  final transport = PurchasesMenuViewModel(text: "Transporte", icon: Icons.local_shipping, onPressed: TransportTable());
+  final meat = PurchasesMenuViewModel(text: "Solicitar Pedido de Carnes", icon: Icons.store, onPressed: MeatTable());
 
   PurchasesMenu({super.key});
 
@@ -59,13 +58,13 @@ class PurchasesMenu extends StatelessWidget {
 }
 
 class _PurchasesMenuItem extends StatelessWidget {
-  final PurchasesMenuItem purchasesMenuItem;
+  final PurchasesMenuViewModel purchasesMenuItem;
   const _PurchasesMenuItem({required this.purchasesMenuItem});
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => Navigator.push(context, MaterialPageRoute(builder: (contex) => purchasesMenuItem.goTo)),
+      onTap: () => Navigator.push(context, MaterialPageRoute(builder: (contex) => purchasesMenuItem.onPressed)),
       child: Container(
         padding: EdgeInsets.all(wJM(2)),
         decoration: BoxDecoration(
@@ -76,7 +75,7 @@ class _PurchasesMenuItem extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(purchasesMenuItem.icon, color: AppColors.green900),
+            Icon(purchasesMenuItem.icon, color: CommonTheme.primaryColor),
             SizedBox(height: hJM(1)),
             Text(
               purchasesMenuItem.text,

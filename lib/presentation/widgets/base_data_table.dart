@@ -1,5 +1,4 @@
 import 'package:app_socio_test/presentation/helpers/screen_functions.dart';
-import 'package:app_socio_test/presentation/styles/colors.dart';
 import 'package:app_socio_test/presentation/styles/theme.dart';
 import 'package:flutter/material.dart';
 
@@ -27,16 +26,16 @@ class BaseDatatable extends StatelessWidget {
         child: DataTable(
           headingRowColor: MaterialStateProperty.resolveWith<Color?>(
             (Set<MaterialState> states) {
-              return AppColors.green900;
+              return CommonTheme.primaryColor;
             },
           ),
           border: const TableBorder(
-            bottom: BorderSide(color: AppColors.green900),
-            top: BorderSide(color: AppColors.green900),
-            left: BorderSide(color: AppColors.green900),
-            right: BorderSide(color: AppColors.green900),
-            horizontalInside: BorderSide(color: AppColors.green900),
-            verticalInside: BorderSide(color: AppColors.green900),
+            bottom: BorderSide(color: CommonTheme.primaryColor),
+            top: BorderSide(color: CommonTheme.primaryColor),
+            left: BorderSide(color: CommonTheme.primaryColor),
+            right: BorderSide(color: CommonTheme.primaryColor),
+            horizontalInside: BorderSide(color: CommonTheme.primaryColor),
+            verticalInside: BorderSide(color: CommonTheme.primaryColor),
           ),
           dataTextStyle: CommonTheme.bodyMedium.copyWith(fontWeight: FontWeight.bold),
           columns: columnTitles,

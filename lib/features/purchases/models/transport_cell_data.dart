@@ -1,11 +1,11 @@
-class TransportOrder {
+class TransportOrderCellData {
   // SHOPID
   final String shopId;
   final int date;
   final String detail;
   final int trans;
 
-  TransportOrder({
+  TransportOrderCellData({
     required this.shopId,
     required this.date,
     required this.detail,

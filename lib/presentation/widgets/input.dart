@@ -1,5 +1,4 @@
 import 'package:app_socio_test/presentation/helpers/screen_functions.dart';
-import 'package:app_socio_test/presentation/styles/colors.dart';
 import 'package:app_socio_test/presentation/styles/theme.dart';
 import 'package:flutter/material.dart';
 
@@ -60,7 +59,7 @@ class Input extends StatelessWidget {
             child: Row(
               children: [
                 if (icon != null) ...[
-                   Icon(icon, color: AppColors.green900, size: hJM(4)),
+                   Icon(icon, color: CommonTheme.primaryColor, size: hJM(4)),
                   SizedBox(width: wJM(1.5)),
                 ],
                 if (label != null) Text(label!, style: CommonTheme.titleSmall),
@@ -83,7 +82,7 @@ class Input extends StatelessWidget {
           keyboardType: textInputType,
           maxLines: 1,
           maxLength: maxLength,
-          cursorColor: AppColors.green900,
+          cursorColor: CommonTheme.primaryColor,
           textAlignVertical: TextAlignVertical.center,
           decoration: CommonTheme.inputDecoration.copyWith(
             label: Text(

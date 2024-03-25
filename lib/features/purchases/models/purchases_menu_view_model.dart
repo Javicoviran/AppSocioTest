@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class PurchasesMenuItem {
+class PurchasesMenuViewModel {
   final IconData icon;
   final String text;
-  final Widget goTo;
+  final Widget onPressed;
 
-  PurchasesMenuItem({
+  PurchasesMenuViewModel({
     required this.icon,
     required this.text,
-    required this.goTo,
+    required this.onPressed,
   });
 }

@@ -6,20 +6,20 @@ import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class CommonTheme {
-  static const primaryValue = 0xff61A60E;
+  static const primaryValue = 0xff1b5e20;
   static const primaryColorMaterial = MaterialColor(
     primaryValue,
     {
-      50: Color.fromRGBO(0, 149, 59, 1),
-      100: Color.fromRGBO(0, 149, 59, 0.9),
-      200: Color.fromRGBO(0, 149, 59, 0.8),
-      300: Color.fromRGBO(0, 149, 59, 0.7),
-      400: Color.fromRGBO(0, 149, 59, 0.6),
-      500: Color.fromRGBO(0, 149, 59, 0.5),
-      600: Color.fromRGBO(0, 149, 59, 0.4),
-      700: Color.fromRGBO(0, 149, 59, 0.3),
-      800: Color.fromRGBO(0, 149, 59, 0.2),
-      900: Color.fromRGBO(0, 149, 59, 0.1),
+      50: Color.fromRGBO(27, 94, 32, 1),
+      100: Color.fromRGBO(27, 94, 32, 0.9),
+      200: Color.fromRGBO(27, 94, 32, 0.8),
+      300: Color.fromRGBO(27, 94, 32, 0.7),
+      400: Color.fromRGBO(27, 94, 32, 0.6),
+      500: Color.fromRGBO(27, 94, 32, 0.5),
+      600: Color.fromRGBO(27, 94, 32, 0.4),
+      700: Color.fromRGBO(27, 94, 32, 0.3),
+      800: Color.fromRGBO(27, 94, 32, 0.2),
+      900: Color.fromRGBO(27, 94, 32, 0.1),
     },
   );
 
@@ -100,10 +100,10 @@ class CommonTheme {
 
   static const inputDecoration = InputDecoration(
     enabledBorder: UnderlineInputBorder(
-      borderSide: BorderSide(color: AppColors.green900, width: 1),
+      borderSide: BorderSide(color: CommonTheme.primaryColor, width: 1),
     ),
     focusedBorder: UnderlineInputBorder(
-      borderSide: BorderSide(color: AppColors.green900, width: 2),
+      borderSide: BorderSide(color: CommonTheme.primaryColor, width: 2),
     ),
     border: UnderlineInputBorder(
       borderSide: BorderSide(color: primaryColor, width: 1),

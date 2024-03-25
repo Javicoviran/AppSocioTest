@@ -1,7 +1,7 @@
 import 'package:app_socio_test/features/mailbox/helpers/constant.dart';
+import 'package:app_socio_test/features/mailbox/models/mailbox_tabs_item_view_model.dart';
 import 'package:app_socio_test/features/mailbox/providers/mailbox_controller_provider.dart';
 import 'package:app_socio_test/features/mailbox/widgets/mailbox_tabs_item.dart';
-import 'package:app_socio_test/presentation/styles/colors.dart';
 import 'package:app_socio_test/presentation/styles/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -24,7 +24,7 @@ class MailboxTabs extends ConsumerWidget {
                 border: actualTab == index
                     ? const Border(
                         bottom: BorderSide(
-                          color: AppColors.green900,
+                          color: CommonTheme.primaryColor,
                           width: 4,
                         ),
                       )
@@ -37,10 +37,12 @@ class MailboxTabs extends ConsumerWidget {
               ),
               child: Center(
                 child: MailboxTabsItem(
-                  iconData: actualTab == index ? mailboxItemsSelected.elementAt(index).iconData : mailboxItems.elementAt(index).iconData,
-                  isSelected: actualTab == index,
-                  text: mailBoxTexts[index],
-                  onPressed: () => ref.read(mailboxTabsControllerProvider.notifier).changeTab(index),
+                  mailboxTabsItemViewModel: MailboxTabsItemViewModel(
+                    iconData: actualTab == index ? mailboxItemsSelected.elementAt(index).iconData : mailboxItems.elementAt(index).iconData,
+                    isSelected: actualTab == index,
+                    text: mailBoxTexts[index],
+                    onPressed: () => ref.read(mailboxTabsControllerProvider.notifier).changeTab(index),
+                  ),
                 ),
               ),
             ),

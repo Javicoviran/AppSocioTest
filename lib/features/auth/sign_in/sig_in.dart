@@ -53,7 +53,7 @@ class SignIn extends StatelessWidget {
                       height: hJM(8),
                       onClick: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const NavBar())),
                       text: "Acceder",
-                      backgroundColor: AppColors.green900,
+                      backgroundColor: CommonTheme.primaryColor,
                     ),
                   ],
                 ),

@@ -8,7 +8,7 @@ import 'package:app_socio_test/presentation/widgets/base_data_table.dart';
 import 'package:app_socio_test/presentation/widgets/body.dart';
 import 'package:flutter/material.dart';
 
-class Transport extends StatelessWidget {
+class TransportTable extends StatelessWidget {
   final List<DataRow> listData = data2.map((order) {
     return DataRow(
       cells: <DataCell>[
@@ -42,7 +42,7 @@ class Transport extends StatelessWidget {
       ),
     );
   }).toList();
-  Transport({super.key});
+  TransportTable({super.key});
 
   @override
   Widget build(BuildContext context) {

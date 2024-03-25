@@ -2,7 +2,6 @@ import 'dart:developer';
 import 'dart:io';
 
 import 'package:app_socio_test/presentation/helpers/screen_functions.dart';
-import 'package:app_socio_test/presentation/styles/colors.dart';
 import 'package:app_socio_test/presentation/styles/theme.dart';
 import 'package:app_socio_test/presentation/widgets/base_button.dart';
 import 'package:flutter/material.dart';
@@ -36,66 +35,84 @@ class _QRScannerState extends State<QRScanner> {
       child: Scaffold(
         body: Stack(
           children: [
-            Expanded(child: _buildQrView(context)),
+            _buildQrView(context),
             Positioned(
-              bottom: 0,
+                top: hJM(5),
+                width: wJM(100),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    BaseButton(
+                      backgroundColor: Colors.transparent,
+                      borderStyle: Colors.transparent,
+                      icon: const Icon(Icons.close, color: CommonTheme.backgroundColor),
+                      onClick: () => Navigator.pop(context),
+                    ),
+                    BaseButton(
+                      height: wJM(18),
+                      width: wJM(18),
+                      backgroundColor: Colors.transparent,
+                      borderStyle: Colors.transparent,
+                      icon: const Icon(
+                        Icons.flash_on,
+                        color: CommonTheme.backgroundColor,
+                      ),
+                      onClick: () async {
+                        await controller?.toggleFlash();
+                      },
+                    ),
+                  ],
+                )),
+            Positioned(
+              top: hJM(15),
               width: wJM(100),
               child: Container(
-                color: Colors.transparent,
-                height: hJM(30),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(100),
+                ),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    if (result != null)
-                      //TODO: redirigir a widget de producto
-
-                      // BaseButton(
-                      //   onClick: () => launchUrl(Uri.parse(result!.code!), mode: LaunchMode.externalApplication),
-                      //   height: 0.05.sh,
-                      //   width: 0.33.sw,
-                      //   text: "Ir al producto",
-                      //   backgroundColor: CommonTheme.primaryColor,
-                      // )
-                      Text('${result!.code}', style: CommonTheme.bodyLarge)
-                    else
-                      Text('Scanea el producto', style: CommonTheme.bodyLarge.copyWith(color: CommonTheme.backgroundColor)),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        BaseButton(
-                          height: wJM(18),
-                          width: wJM(18),
-                          backgroundColor: AppColors.green900,
-                          borderStyle: AppColors.green900,
-                          icon: const Icon(
-                            Icons.flash_on,
-                            color: CommonTheme.backgroundColor,
-                          ),
-                          onClick: () async {
-                            await controller?.toggleFlash();
-                            setState(() {});
-                          },
-                        ),
-                        BaseButton(
-                          height: wJM(18),
-                          width: wJM(18),
-                          backgroundColor: AppColors.green900,
-                          borderStyle: AppColors.green900,
-                          onClick: () async {
-                            await controller?.flipCamera();
-                            setState(() {});
-                          },
-                          icon: const Icon(
-                            Icons.camera_enhance,
-                            color: CommonTheme.backgroundColor,
-                          ),
-                        ),
-                      ],
+                    BaseButton(
+                      height: wJM(18),
+                      width: wJM(18),
+                      backgroundColor: CommonTheme.primaryColor.withOpacity(0.3),
+                      borderStyle: CommonTheme.primaryColor.withOpacity(0.3),
+                      onClick: () async {
+                        await controller?.flipCamera();
+                      },
+                      icon: const Icon(
+                        Icons.change_circle,
+                        color: CommonTheme.backgroundColor,
+                      ),
                     )
                   ],
                 ),
               ),
-            )
+            ),
+            Positioned(
+              bottom: hJM(20),
+              width: wJM(100),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  if (result != null)
+                    Container(
+                      margin: EdgeInsets.symmetric(horizontal: wJM(10)),
+                      alignment: Alignment.center,
+                      height: hJM(10),
+                      decoration: BoxDecoration(
+                        color: CommonTheme.primaryColor.withOpacity(0.3),
+                        borderRadius: BorderRadius.circular(50),
+                      ),
+                      child: Text(
+                        '${result!.code}',
+                        style: CommonTheme.bodyLarge.copyWith(color: CommonTheme.backgroundColor),
+                      ),
+                    ),
+                ],
+              ),
+            ),
           ],
         ),
       ),
@@ -103,7 +120,7 @@ class _QRScannerState extends State<QRScanner> {
   }
 
   Widget _buildQrView(BuildContext context) {
-    var scanArea = (MediaQuery.of(context).size.width < 400 || MediaQuery.of(context).size.height < 400) ? 180.0 : 330.0;
+    var scanArea = (MediaQuery.of(context).size.width < 400 || MediaQuery.of(context).size.height < 400) ? 200.0 : 330.0;
     return QRView(
       key: qrKey,
       onQRViewCreated: _onQRViewCreated,
