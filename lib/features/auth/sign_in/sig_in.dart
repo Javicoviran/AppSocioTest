@@ -1,3 +1,4 @@
+import 'package:app_socio_test/features/auth/forgot_password/forgot_password.dart';
 import 'package:app_socio_test/features/navbar/widgets/nav_bar.dart';
 import 'package:app_socio_test/presentation/helpers/screen_functions.dart';
 import 'package:app_socio_test/presentation/styles/colors.dart';
@@ -46,6 +47,7 @@ class SignIn extends StatelessWidget {
                         width: wJM(50),
                         text: "Recuperar Contraseña",
                         buttonTextColor: CommonTheme.linkColor,
+                        onClick: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const ForgotPassword())),
                       ),
                     ),
                     SizedBox(height: hJM(4)),

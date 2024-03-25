@@ -1,3 +1,4 @@
+import 'package:app_socio_test/features/auth/change_password/widgets/change_password.dart';
 import 'package:app_socio_test/features/more/more_options/presentation/helpers/utils.dart';
 import 'package:app_socio_test/features/more/settings/presentation/widgets/settings.dart';
 import 'package:app_socio_test/presentation/helpers/utils.dart';
@@ -52,6 +53,16 @@ class MoreOptions extends ConsumerWidget {
               Navigator.push(
                 context,
                 fadeTransitionRoute(const HelpContact()),
+              );
+            },
+          ),
+          BaseListItem(
+            text: "Cambiar Contraseña",
+            icon: Icons.lock,
+            onTap: () {
+              Navigator.push(
+                context,
+                fadeTransitionRoute(const ChangePassword()),
               );
             },
           ),

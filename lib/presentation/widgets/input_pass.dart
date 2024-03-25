@@ -67,17 +67,14 @@ class _InputPassState extends State<InputPass> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         if (widget.icon != null || widget.label != null)
-          Padding(
-            padding: EdgeInsets.only(left: wJM(4)),
-            child: Row(
-              children: [
-                if (widget.icon != null) ...[
-                  Icon(widget.icon, color: CommonTheme.primaryColor, size: hJM(4)),
-                  SizedBox(width: wJM(1.5)),
-                ],
-                if (widget.label != null) Text(widget.label!, style: CommonTheme.titleSmall),
+          Row(
+            children: [
+              if (widget.icon != null) ...[
+                Icon(widget.icon, color: CommonTheme.primaryColor, size: hJM(4)),
+                SizedBox(width: wJM(1.5)),
               ],
-            ),
+              if (widget.label != null) Text(widget.label!, style: CommonTheme.titleSmall),
+            ],
           ),
         TextFormField(
           obscureText: _showPassState,
